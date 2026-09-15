@@ -40,7 +40,7 @@
   <div class="summary">
     <div class="metric"><b>$0.00</b><span>revenue to date</span></div>
     <div class="metric"><b>$0.00</b><span>expenses</span></div>
-    <div class="metric"><b id="hp-treasury">$149.30</b><span>treasury (1.501 SOL)</span></div>
+    <div class="metric"><b id="hp-treasury">1.501 SOL</b><span>treasury (USD on <a href="/books.html">the books</a>)</span></div>
     <div class="metric"><b>—</b><span>burn rate</span></div>
     <div class="metric"><b>0</b><span>sales</span></div>
   </div>
@@ -86,8 +86,8 @@
 <script id="hp-sync">
 fetch('/runway.json?t='+Date.now()).then(r=>r.json()).then(d=>{
   var el=document.getElementById('hp-treasury');
-  if(el&&d.totals&&d.totals.balance_usd!=null){
-    el.textContent='$'+Number(d.totals.balance_usd).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+  if(el&&d.totals&&d.totals.balance_sol!=null){
+    el.textContent=Number(d.totals.balance_sol)+' SOL';
   }
 }).catch(()=>{});
 </script>

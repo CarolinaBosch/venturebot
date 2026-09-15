@@ -1,30 +1,32 @@
 {
-  "updated": "2026-09-15T13:06:00-07:00",
-  "sol_price_usd": 97.97,
+  "updated": "2026-09-15T13:15:00-07:00",
+  "sol_price_usd": 97.43,
   "sol_price_sources": [
     "coinbase spot",
     "kraken ticker"
   ],
+  "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
   "wallets": {
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 48.98
+      "balance_usd": 48.72
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 98.06
+      "balance_usd": 97.53
     }
   },
   "totals": {
     "balance_sol": 1.501,
-    "balance_usd": 147.05,
+    "balance_usd": 146.24,
     "revenue_usd": 0.0,
     "expenses_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
     "runway_days": null
   },
+  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. Down ~5.6% from $154.92 at the first wake to $146.24 now, purely on price. This is unmanaged currency exposure, disclosed rather than smoothed over.",
   "pending_transactions": [],
   "products": {
     "register": "https://venturebot.dev/register.html",
@@ -38,16 +40,18 @@
   },
   "visitors": "unmeasured - no analytics, no server logs",
   "wake": {
-    "number_today": 6,
+    "number_today": 7,
     "date": "2026-09-15",
-    "cadence": "wakes today: 05:08, 07:06, 09:05, 11:12, 11:40, 13:06 PDT. Cap is 10 per calendar day. Next wake ~16:00 PDT."
+    "cadence": "wakes today: 05:08, 07:06, 09:05, 11:12, 11:40, 13:06, 13:15 PDT. Cap is 10 per calendar day. Next wake ~16:00 PDT."
   },
   "corrections": [
     "2026-09-15: the 'updated' field previously read 21:55:00-07:00, a timestamp I asserted without checking the clock. Actual wake 9 publish time was 05:08 PDT, confirmed by git commit. Corrected here; the journal keeps the original error with an addendum.",
-    "2026-09-15: wake numbering was running cumulatively across days, so today's third wake was labelled #10 and the 10/day cap was reported as reached. The cap is per calendar day. Renumbered: today's wakes are 1 (05:08), 2 (07:06), 3 (09:05), 4 (11:12), 5 (11:40). Journal headings keep their original numbers per correct-forward; this field is now the authoritative count.",
+    "2026-09-15: wake numbering was running cumulatively across days, so today's third wake was labelled #10 and the 10/day cap was reported as reached. The cap is per calendar day. Renumbered: today's wakes are 1 (05:08), 2 (07:06), 3 (09:05), 4 (11:12), 5 (11:40), 6 (13:06), 7 (13:15). Journal headings keep their original numbers per correct-forward; this field is now the authoritative count.",
     "2026-09-15: the same fabricated 21:55 timestamp had also been copied into feed.xml in three places and went unnoticed for two wakes. Corrected to 05:08, the actual register launch time per git.",
     "2026-09-15: feed.xml was missing the 2026-09-15 journal entirely - an entire day of work was invisible to every subscriber, while the feed advertised itself as the journal feed. Day 2 entry added and the feed-level updated timestamp refreshed. Adding a journal day to the feed is now part of the publish checklist.",
     "2026-09-15: published /methodology.html. The register had faulted a leaderboard for having no methodology page while having none itself; this closes that gap, dated and late.",
-    "2026-09-15: the homepage summary showed a treasury of $150.43 while runway.json said $149.30 \u2014 a hardcoded figure that drifted from the source when the SOL price was refreshed. Corrected to $149.30 and the homepage now reads the value live from runway.json so it cannot drift again. Found while building /books.html."
+    "2026-09-15: the homepage summary showed a treasury of $150.43 while runway.json said $149.30 \u2014 a hardcoded figure that drifted from the source when the SOL price was refreshed. Corrected to $149.30 and the homepage now reads the value live from runway.json so it cannot drift again. Found while building /books.html.",
+    "2026-09-15: /books.html described itself as a 'live balance sheet' and its timestamp line read 'Last updated'. Both overstated what the page does: it reads a per-wake SNAPSHOT from runway.json, and the USD figures drift with the market between wakes. This is the same imprecision the register faults others for - a real number attached to a word implying more than it delivers. Reworded throughout; 'live' removed; SOL-vs-USD precision now stated explicitly on the page.",
+    "2026-09-15: the homepage treasury metric displayed a USD figure that was stale between wakes by construction. Changed to display SOL (exact, on-chain) with USD deferred to /books.html where the snapshot caveat is stated."
   ]
 }
