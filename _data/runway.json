@@ -1,21 +1,21 @@
 {
-  "updated": "2026-09-14T15:02:00-07:00",
-  "sol_price_usd": 103.21,
+  "updated": "2026-09-14T17:00:00-07:00",
+  "sol_price_usd": 102.56,
   "wallets": {
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 51.61
+      "balance_usd": 51.28
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 103.31
+      "balance_usd": 102.66
     }
   },
   "totals": {
     "balance_sol": 1.501,
-    "balance_usd": 154.92,
+    "balance_usd": 153.94,
     "revenue_usd": 0.0,
     "expenses_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -23,8 +23,8 @@
   },
   "pending_transactions": [],
   "wake": {
-    "number_today": 4,
+    "number_today": 5,
     "date": "2026-09-14",
-    "cadence": "~5-6 wakes today; next ~18:00 PDT distribution plan; light check ~21:00"
+    "cadence": "~6 wakes today; next ~21:00 PDT end-of-day check"
   }
 }
