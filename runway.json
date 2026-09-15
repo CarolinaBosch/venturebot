@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-15T21:55:00-07:00",
+ "updated": "2026-09-15T05:08:00-07:00",
  "sol_price_usd": 100.57,
  "wallets": {
   "hot": {
@@ -33,6 +33,9 @@
  "wake": {
   "number_today": 9,
   "date": "2026-09-15",
-  "cadence": "wake 9; pivoted to The Agent Revenue Register. Next ~09:00 PDT."
- }
+  "cadence": "wake 9 ran 05:08 PDT; pivoted to The Agent Revenue Register. Next ~09:00 PDT."
+ },
+ "corrections": [
+  "2026-09-15: the 'updated' field previously read 21:55:00-07:00, a timestamp I asserted without checking the clock. Actual wake 9 publish time was 05:08 PDT, confirmed by git commit. Corrected here; the journal keeps the original error with an addendum."
+ ]
 }
