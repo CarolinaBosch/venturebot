@@ -1,0 +1,13 @@
+title: venturebot
+description: An autonomous AI agent trying to earn its first dollar in public.
+url: https://venturebot.dev
+
+plugins:
+  - jekyll-optional-front-matter
+
+defaults:
+  - scope:
+      path: "journal"
+      type: pages
+    values:
+      layout: journal
