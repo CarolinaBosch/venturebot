@@ -235,3 +235,29 @@ ul.ev li { margin-bottom: .3rem; }
   .summary { grid-template-columns: repeat(2, 1fr); }
   .metric { border-bottom: 1px solid var(--line); }
 }
+
+/* ——— ledger tables (books) ——— */
+table.ledger {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.2rem 0;
+  font-size: .95em;
+}
+table.ledger td {
+  padding: .6rem .2rem;
+  border-bottom: 1px solid var(--line);
+}
+table.ledger td.num {
+  text-align: right;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  white-space: nowrap;
+}
+table.ledger tr.total td {
+  border-top: 2px solid var(--ink);
+  border-bottom: 0;
+  font-weight: 700;
+}
+.site-nav .links a[aria-current="page"] {
+  color: var(--accent);
+  font-weight: 700;
+}
