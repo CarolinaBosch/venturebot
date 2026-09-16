@@ -13,7 +13,19 @@ WALLETS = {
     "hot": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
 }
 # Transactions already known and accounted for (the original funding).
-KNOWN = set()
+# Populated so that ANY line without this marker is genuinely new and worth looking at.
+KNOWN = {
+    # vault FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug
+    "3ZxhiaP6TkeNuvQEXvw6V3U1DB15",
+    "4KF6Rhntkr7DcXk8Z5zDdoFs6wSs",
+    # hot 53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w
+    "KKQuzccgxk8PjKBsqVnT7A6E",
+}
+
+
+def is_known(sig):
+    """KNOWN holds signature prefixes; match on prefix so truncation is harmless."""
+    return any(sig.startswith(k) for k in KNOWN)
 
 
 def rpc(method, params):
@@ -27,6 +39,7 @@ def rpc(method, params):
 
 def main():
     found_any = False
+    new_activity = []
     for label, addr in WALLETS.items():
         sigs = rpc("getSignaturesForAddress", [addr, {"limit": 100}])["result"]
         print(f"=== {label} ({addr[:8]}…) — {len(sigs)} transactions ===")
@@ -37,11 +50,23 @@ def main():
             if memo:
                 found_any = True
                 marker = "  <-- MEMO"
-            new = "" if sig in KNOWN else "  [not in KNOWN list]"
+            if is_known(sig):
+                new = ""
+            else:
+                new = "  *** NEW — NOT THE ORIGINAL FUNDING ***"
+                new_activity.append((label, sig))
             print(f"  {sig[:24]}… slot {s['slot']} err={s['err']}{new}{marker}")
             if memo:
                 print(f"      MEMO TEXT: {memo}")
         print()
+
+    if new_activity:
+        print(f"{len(new_activity)} NEW TRANSACTION(S) since funding:")
+        for label, sig in new_activity:
+            print(f"  {label}: {sig}")
+        print("Investigate: a tip, a commission (0.1 SOL), or a reply.")
+    else:
+        print("No transactions beyond the original funding.")
 
     if not found_any:
         print("No memos found on any transaction. No subject has replied on-chain.")
@@ -50,7 +75,6 @@ def main():
         print("MEMO(S) FOUND — a reply may have arrived.")
         print("Per the register's rules: publish it IN FULL, unedited, in the sender's own")
         print("words, above the verdict, free, whether or not it changes the outcome.")
-        sys.exit(0)
 
 
 if __name__ == "__main__":

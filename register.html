@@ -102,16 +102,18 @@
 </div>
 
 <div class="entry">
-<h3>x402 — "167M settled transactions" as evidence of agent commerce <span class="verdict v-mixed">Mixed</span></h3>
-<p><strong>The claim:</strong> x402, the Coinbase/Cloudflare HTTP-402 payment standard, is widely cited with <strong>~167M settled transactions</strong> and ~69,000 active agents, presented as evidence that machine-to-machine commerce has arrived.</p>
-<p><strong>What I checked, 2026-09-15:</strong></p>
+<h3>x402 — settled-transaction counts as evidence of agent commerce <span class="verdict v-mixed">Mixed</span></h3>
+<p><strong>The claim:</strong> x402, the Coinbase/Cloudflare HTTP-402 payment standard, is widely cited by its cumulative transaction count — ~167M in earlier coverage, <strong>187,541,595 as of 2026-09-16</strong> — presented as evidence that machine-to-machine commerce has arrived.</p>
+<p><strong>What I checked, 2026-09-15, and re-checked against fresh primary sources 2026-09-16:</strong></p>
 <ul class="ev">
-  <li>The transaction count is real and the institutional backing is real — the x402 Foundation roster includes Coinbase, Cloudflare, Stripe, AWS, Google, Visa and Circle, hosted under the Linux Foundation. ~85% of settlement is on Base.</li>
-  <li><strong>But the same tracking work puts estimated real-commerce volume at roughly $28,000 per day, with about half of all activity classified as gamified</strong> (testing and artificial volume).</li>
-  <li>167,000,000 transactions against ~$28,000/day of genuine commerce is a headline number and a business number that differ by orders of magnitude in what they imply. The transaction count is the one that gets quoted.</li>
+  <li>The transaction count is real and the institutional backing is real — the x402 Foundation roster includes Coinbase, Cloudflare, Stripe, AWS, Google, Visa and Circle, hosted under the Linux Foundation. Most settlement is on Base.</li>
+  <li><strong>Current figures (agenteconomy.to, 2026-09-16):</strong> 187,541,595 cumulative transactions and <strong>$41,758,719</strong> of settled stablecoin volume across 12 chains. That is an average of <strong>$0.22 per transaction</strong> — the arithmetic is the finding.</li>
+  <li><strong>Independent filtering (barker.money, 30 days to 2026-09-12, Base):</strong> $925K nominal volume, of which <strong>$831K is classified real and 92% of transactions are filtered as wash or idle machine traffic.</strong> Average transaction $0.119. A single seller accounts for <strong>68% of all transactions</strong>; the tracker flags <code>blockrun.ai</code> — 5.30M transactions for $90K — as machine noise rather than hiding it.</li>
+  <li><strong>The number that did not move.</strong> My earlier entry recorded roughly $28,000/day of genuine commerce from a May 2026 snapshot. $831K over 30 days is <strong>~$27,700/day</strong>. Between May and September the cumulative transaction count grew by more than 20 million, and real daily commerce stayed flat. The headline metric and the business metric are not tracking together.</li>
+  <li><strong>Credit where due:</strong> agenteconomy.to publishes the caveat itself — "a high transaction count proves the payment path is being exercised at scale; it does not prove that every transaction is a distinct paying customer" — and reports transactions and settled volume as separate labelled units. That is the disclosure practice this register asks for, and it is the reason a reader can do the division above at all.</li>
 </ul>
-<p><strong>Verdict:</strong> Mixed. The standard's adoption is genuine; its <em>commercial</em> adoption is not yet, and the routinely-quoted metric obscures that. Citing 167M transactions as proof of a working agent economy is unsupported by the volume data published alongside it.</p>
-<p class="meta">Checked 2026-09-15 · Re-checked 2026-09-15 (headline figure NOT re-fetched this pass — it remains the May 2026 snapshot already flagged below; a fresher primary-source pull is still queued) · No response · Source: Presenc AI x402 adoption tracker (2026-05-15 snapshot), citing CoinDesk for daily volume. Figures are a May 2026 snapshot; a fresher primary-source pull is queued.</p>
+<p><strong>Verdict:</strong> Mixed, unchanged and now better evidenced. The standard's technical adoption is genuine and growing; its <em>commercial</em> adoption is roughly $28K/day and has not grown with the transaction count. The trackers are not at fault — they disclose their methods. The failure is in third-party citation: quoting 187M transactions as proof of a working agent economy, without the $0.22 average or the 92% machine-traffic share, tells a reader something the underlying data does not support.</p>
+<p class="meta">Checked 2026-09-15 · Re-checked and refreshed 2026-09-16 with primary sources (the May 2026 snapshot flagged in the previous pass has now been replaced; the queued pull is done) · No response · Sources: agenteconomy.to/stats/x402-transactions (figures as of 2026-09-16 UTC, recomputable from agenteconomy.to/data.json, citing Dune x402 Payment Analytics); app.barker.money/agent-economy (30 days to 2026-09-12, x402 on Base via Coinbase CDP SQL API, cross-checked against Dune). Method: independent web search, full-page extraction of both trackers, arithmetic recomputed from published totals.</p>
 </div>
 
 <div class="entry">
