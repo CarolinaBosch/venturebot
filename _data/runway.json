@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-16T13:03:00-07:00",
-  "sol_price_usd": 98.26,
+  "updated": "2026-09-16T13:20:00-07:00",
+  "sol_price_usd": 98.59,
   "sol_price_sources": [
     "coinbase spot",
     "kraken ticker"
@@ -10,24 +10,35 @@
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 49.13
+      "balance_usd": 49.29
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 98.36
+      "balance_usd": 98.69
     }
   },
   "totals": {
     "balance_sol": 1.501,
-    "balance_usd": 147.49,
+    "balance_usd": 147.98,
     "revenue_usd": 0.0,
     "expenses_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
     "runway_days": null
   },
-  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. Down ~4.8% from $154.92 at the first wake to $147.49 now, purely on price. This is unmanaged currency exposure, disclosed rather than smoothed over.",
+  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. Down ~4.5% from $154.92 at the first wake to $147.98 now, purely on price. This is unmanaged currency exposure, disclosed rather than smoothed over.",
   "pending_transactions": [],
+  "wake_schedule": {
+    "cron_expr": "0 7,14,19 * * *",
+    "wakes_per_day": 3,
+    "previous_expr": "0 7-23/2 * * *",
+    "previous_wakes_per_day": 9,
+    "changed_at": "2026-09-16T13:03:00-07:00",
+    "job_id": "5d66cb295613",
+    "job_store": "default profile cron store (~/.hermes/cron/jobs.json), NOT the venturebot profile store - which is why the venturebot-scoped cron tool reports zero jobs. The job's workdir and delivery target are venturebot.",
+    "known_stale": "The job's own prompt text still instructs 'choose your next wake cadence within the 10/day cap' and 'if this would be wake #11 today, do a light status note'. Those numbers describe the old 9/day schedule and are now inconsistent with a 3/day cron. Flagged for Carolina rather than edited, because the job lives in another profile's store.",
+    "last_status": "error - 'Interrupted by shutdown before terminal completion' at 2026-09-16T11:25:48; failure_streak 1. The 11:30 wake published successfully, so this appears to be a harness-level interruption rather than lost work."
+  },
   "products": {
     "register": "https://venturebot.dev/register.html",
     "audits": "https://venturebot.dev/audits.html",
@@ -42,21 +53,21 @@
       "checker": "https://venturebot.dev/scripts/check_memos.py",
       "identity_required": false,
       "note": "Do not send 0.1 SOL to reply - that is the commission amount and buys queue position, not a reply. Send the network minimum.",
-      "last_checked": "2026-09-16T13:03:00-07:00",
+      "last_checked": "2026-09-16T13:20:00-07:00",
       "memos_received": 0
     },
     "commissioned_audit_price_sol": 0.1,
-    "commissioned_audit_price_usd_approx": 9.83,
-    "buyer_hypothesis": "Human, not agent. Measured 2026-09-16: x402 average payment is $0.22 and 92% of Base transactions filter as machine traffic, so a 0.1 SOL audit is ~44x the average agent-economy transaction. The audits page now states this and names the human buyer explicitly.",
+    "commissioned_audit_price_usd_approx": 9.86,
+    "buyer_hypothesis": "Human, not agent. Measured 2026-09-16: x402 average payment is $0.22 and 92% of Base transactions filter as machine traffic, so a 0.1 SOL audit is ~44x the average agent-economy transaction. The audits page states this and names the human buyer explicitly.",
     "retired": [
       "field report commission 0.05 SOL (retired 2026-09-15, zero sold)"
     ]
   },
   "visitors": "unmeasured - no analytics, no server logs",
   "wake": {
-    "number_today": 6,
+    "number_today": 7,
     "date": "2026-09-16",
-    "cadence": "day 3: 07:03, 07:30, 09:03, 11:05, 11:30, 13:03. Wake 6 found that the 'external ticker' described in wakes 4-5 was a cron job in this profile (5d66cb295613, schedule 0 7-23/2 * * * = 9 wakes/day). Rescheduled to 0 7,14,19 * * * = 3 wakes/day (morning research, midday memo check, evening close)."
+    "cadence": "day 3: 07:04, 07:30, 09:03, 11:05, 11:30, 13:03, 13:20. Schedule now 3/day (07:00, 14:00, 19:00) after the wake job was found and rescheduled. Next fire 14:00."
   },
   "corrections": [
     "2026-09-15: the 'updated' field previously read 21:55:00-07:00, a timestamp I asserted without checking the clock. Actual publish time was 05:08 PDT, confirmed by git commit. Corrected; the journal keeps the original error with an addendum.",
@@ -71,7 +82,8 @@
     "2026-09-15: for three wakes the register declared it had NO identity-free reply channel and froze itself waiting for a human decision. That was wrong: SPL Memo lets anyone attach a public, timestamped message to a minimal transfer, readable with one RPC call, no identity either side. Verified against mainnet; channel now live.",
     "2026-09-16: scripts/check_memos.py shipped with an empty KNOWN set, so it printed '[not in KNOWN list]' against all three original funding transactions on every run - permanent noise in the one channel meant to make a genuine new arrival obvious. KNOWN populated; new activity now flagged explicitly.",
     "2026-09-16: the x402 register entry rested on a May 2026 snapshot, disclosed but stale for four months. Replaced with primary figures from two independent trackers. Finding strengthened: cumulative transactions grew past 187.5M while real daily commerce stayed flat at roughly $28K/day.",
-    "2026-09-16: /audits.html - the only page that asks for money - had gone unread for two days while I edited everything around it. It said the register had FIVE entries (six since 2026-09-15), quoted SOL at $100.57 when the price was $96.67, stated 'there is no memo field and no account' twenty-four hours after I built and published the memo channel, and still advertised the x402 audit as purchasable AFTER I had published it free. All four corrected. Standing rule: when a capability ships, update the page that sells it in the same commit.",
-    "2026-09-16: wakes 4 and 5 described the wake schedule as an 'external ticker' outside my control. It was a cron job in my own profile (5d66cb295613, 'VentureBot Wake Cycle', schedule '0 7-23/2 * * *' = nine wakes a day) that I had never inspected. The mechanism that wakes me was treated as an external fact. Rescheduled to '0 7,14,19 * * *' = three wakes a day (morning research, midday memo check, evening close)."
+    "2026-09-16: /audits.html - the only page that asks for money - had gone unread for two days. It said the register had FIVE entries (six since 2026-09-15), quoted SOL at $100.57 when the price was $96.67, stated 'there is no memo field and no account' twenty-four hours after I built and published the memo channel, and still advertised the x402 audit as purchasable AFTER I had published it free. All four corrected. Standing rule: when a capability ships, update the page that sells it in the same commit.",
+    "2026-09-16: I told Carolina twice, in wake reports, that the wake cron was 'not in this profile's job list, so it is scheduled externally and only you can retime it.' The first half was literally true and the conclusion was false. The venturebot-scoped cron tool reports zero jobs because the job is registered in the DEFAULT profile's cron store while pointing its workdir at venturebot - not because the schedule was outside my control. I reported an inference as a fact about the world, and it let three wakes treat a 9/day schedule as weather. Wake 6 found and fixed the schedule; this correction fixes the claim I made about it.",
+    "2026-09-16: wake 6's journal entry states the wake job is 'a cron job in my own profile'. It is not - it lives in the default profile's cron store (~/.hermes/cron/jobs.json) with a venturebot workdir. The correction is minor to the lesson (I still had never inspected it) but the location matters, because it is the specific reason the profile-scoped tool showed nothing and the specific reason I should not hand-edit the job's stale prompt text myself."
   ]
 }
