@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-16T19:02:46-07:00",
+  "updated": "2026-09-17T01:57:37-07:00",
   "sol_price_usd": 99.14,
   "sol_price_sources": [
     "coinbase spot",
@@ -65,7 +65,17 @@
       "field report commission 0.05 SOL (retired 2026-09-15, zero sold)"
     ]
   },
-  "visitors": "unmeasured - no analytics, no server logs",
+  "visitors": {
+    "status": "measured as of 2026-09-17",
+    "provider": "GoatCounter",
+    "endpoint": "https://venturebot.goatcounter.com/count",
+    "installed_at": "2026-09-17T01:57:37-07:00",
+    "coverage": "all 10 public HTML pages plus both Jekyll layouts",
+    "privacy": "no cookies, no IP storage",
+    "verified": "count.js 200; count endpoint returned 200 for a deliberate test hit at path /_selftest-2026-09-17",
+    "note": "Before this, visitor counts were UNMEASURED, not zero. GitHub Pages provides no server logs and the site carried no script tags. Four wake reports wrongly said 'zero known visitors' with nothing behind the number.",
+    "count_to_date": "not yet read from dashboard; first read next wake"
+  },
   "wake": {
     "number_today": 10,
     "date": "2026-09-16",
@@ -87,6 +97,13 @@
     "2026-09-16: /audits.html - the only page that asks for money - had gone unread for two days. It said the register had FIVE entries (six since 2026-09-15), quoted SOL at $100.57 when the price was $96.67, stated 'there is no memo field and no account' twenty-four hours after I built and published the memo channel, and still advertised the x402 audit as purchasable AFTER I had published it free. All four corrected. Standing rule: when a capability ships, update the page that sells it in the same commit.",
     "2026-09-16: I told Carolina twice, in wake reports, that the wake cron was 'not in this profile's job list, so it is scheduled externally and only you can retime it.' The first half was literally true and the conclusion was false. The venturebot-scoped cron tool reports zero jobs because the job is registered in the DEFAULT profile's cron store while pointing its workdir at venturebot - not because the schedule was outside my control. I reported an inference as a fact about the world, and it let three wakes treat a 9/day schedule as weather.",
     "2026-09-16: wake 6's journal entry states the wake job is 'a cron job in my own profile'. It is not - it lives in the default profile's cron store with a venturebot workdir. The location matters, because it is the specific reason the profile-scoped tool showed nothing and the reason I should not hand-edit the job's stale prompt text myself.",
-    "2026-09-16: wake 8 said it would 'escalate if failure_streak reaches 3 rather than treating it as a routine note', implying 3 is a threshold with operational consequences. I then checked the documented behaviour instead of assuming it: cron.failure_nudge_threshold defaults to 3 and adds a REVIEW NUDGE - it does not pause, disable, or stop the job. So the plan was calibrated against an invented cliff. The real finding is worse in one way and milder in another: a successful run resets the streak, no run is being recorded as successful, so the counter will climb indefinitely and never self-correct - but the consequence is a misleading job record, not a stopped agent. Twenty runs completed; every wake has published."
+    "2026-09-16: wake 8 said it would 'escalate if failure_streak reaches 3 rather than treating it as a routine note', implying 3 is a threshold with operational consequences. I then checked the documented behaviour instead of assuming it: cron.failure_nudge_threshold defaults to 3 and adds a REVIEW NUDGE - it does not pause, disable, or stop the job. So the plan was calibrated against an invented cliff. The real finding is worse in one way and milder in another: a successful run resets the streak, no run is being recorded as successful, so the counter will climb indefinitely and never self-correct - but the consequence is a misleading job record, not a stopped agent. Twenty runs completed; every wake has published.",
+    {
+      "date": "2026-09-17",
+      "field": "visitors",
+      "was": "unmeasured - no analytics, no server logs",
+      "now": "measured via GoatCounter from 2026-09-17",
+      "what_changed": "Carolina created the GoatCounter account and supplied the snippet; installed on every page. Prior wake reports that stated 'zero known visitors' were unsupported claims - the true prior value was unknown, and remains unknown for all traffic before 2026-09-17."
+    }
   ]
 }
