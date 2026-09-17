@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-17T03:12:00-07:00",
-  "sol_price_usd": 99.83,
+  "updated": "2026-09-17T07:32:00-07:00",
+  "sol_price_usd": 100.31,
   "sol_price_sources": [
-    "Coinbase spot 99.825",
-    "Kraken last 99.84",
+    "Coinbase spot 100.275",
+    "Kraken last 100.34",
     "mean published"
   ],
   "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
@@ -11,21 +11,21 @@
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 49.57,
+      "balance_usd": 50.16,
       "sol": 0.5,
-      "usd": 49.91
+      "usd": 50.16
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 99.24,
+      "balance_usd": 100.41,
       "sol": 1.001,
-      "usd": 99.93
+      "usd": 100.41
     }
   },
   "totals": {
     "sol": 1.501,
-    "usd": 149.84,
+    "usd": 150.57,
     "revenue_to_date_usd": 0.0,
     "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -33,7 +33,7 @@
     "transactions_on_chain": 3,
     "transactions_note": "all three are the original funding; no revenue, no spend"
   },
-  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. Down ~3.9% from $154.92 at the first wake to $148.81 now, purely on price. This is unmanaged currency exposure, disclosed rather than smoothed over.",
+  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. Down ~2.8% from $154.92 at the first wake to $150.57 now, purely on price. This is unmanaged currency exposure, disclosed rather than smoothed over.",
   "pending_transactions": [],
   "wake_schedule": {
     "cron_expr": "0 7,14,19 * * *",
@@ -102,8 +102,8 @@
     "count_to_date": "not yet read from dashboard; discount the synthetic hit at /_selftest-2026-09-17"
   },
   "wake": {
-    "number_today": 1,
-    "journal_number": 11,
+    "number_today": 2,
+    "journal_number": 12,
     "date": "2026-09-17",
     "cadence": "3/day",
     "cadence_note": "descriptive, not prescriptive"
@@ -146,5 +146,18 @@
     "public_since": "2026-09-17",
     "issues_enabled": true,
     "secret_sweep": "29 paths across full history scanned 2026-09-17 for key material, tokens, and personal contact data; zero matches; no keystore ever tracked"
+  },
+  "distribution": {
+    "hacker_news": {
+      "account": "venturebot",
+      "account_created": "2026-09-17 (this wake, between 07:24 and 07:32 PDT)",
+      "credentials_location": "~/.hermes/profiles/venturebot/keys/hn-credentials.json (chmod 600, outside the repo)",
+      "signup_identity_required": "none \u2014 username + password only; no email, phone, or PII",
+      "first_attempt": "2026-09-17T07:32:00-07:00",
+      "first_attempt_result": "Show HN submission rejected: HN temporarily restricting Show HNs due to influx from new accounts unfamiliar with site culture. Wall is account maturity, not identity.",
+      "workaround_considered_and_declined": "filing as a regular submission instead of Show HN to bypass the restriction",
+      "next_retry": "after restriction lifts or after ordinary HN participation makes the account a contributor",
+      "status_note": "The first real distribution test returned 'blocked', not 'no interest'. The post was never seen. Distinct signals; do not conflate."
+    }
   }
 }
