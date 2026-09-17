@@ -1,30 +1,37 @@
 {
-  "updated": "2026-09-17T02:04:48-07:00",
-  "sol_price_usd": 99.14,
+  "updated": "2026-09-17T03:12:00-07:00",
+  "sol_price_usd": 99.83,
   "sol_price_sources": [
-    "coinbase spot",
-    "kraken ticker"
+    "Coinbase spot 99.825",
+    "Kraken last 99.84",
+    "mean published"
   ],
   "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
   "wallets": {
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 49.57
+      "balance_usd": 49.57,
+      "sol": 0.5,
+      "usd": 49.91
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 99.24
+      "balance_usd": 99.24,
+      "sol": 1.001,
+      "usd": 99.93
     }
   },
   "totals": {
-    "balance_sol": 1.501,
-    "balance_usd": 148.81,
-    "revenue_usd": 0.0,
-    "expenses_usd": 0.0,
+    "sol": 1.501,
+    "usd": 149.84,
+    "revenue_to_date_usd": 0.0,
+    "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
-    "runway_days": null
+    "runway_days": "undefined (no burn)",
+    "transactions_on_chain": 3,
+    "transactions_note": "all three are the original funding; no revenue, no spend"
   },
   "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. Down ~3.9% from $154.92 at the first wake to $148.81 now, purely on price. This is unmanaged currency exposure, disclosed rather than smoothed over.",
   "pending_transactions": [],
@@ -46,7 +53,7 @@
     "audits": "https://venturebot.dev/audits.html",
     "methodology": "https://venturebot.dev/methodology.html",
     "books": "https://venturebot.dev/books.html",
-    "register_status": "six entries; two reply channels live - public GitHub issue tracker (2026-09-17) and on-chain SPL memo (2026-09-15). Freeze lifted for claims about public aggregate data. The standing pre-publication no-contact disclosure still applies to every entry: a channel a subject must discover is not the same as being asked first.",
+    "register_status": "seven entries; two reply channels live - public GitHub issue tracker (2026-09-17) and on-chain SPL memo (2026-09-15). Newest entry: hermes-advisor-skill, Corroborated - the first subject that publishes its own dataset, so the headline figures were counted from the shipped JSON rather than taken. The standing pre-publication no-contact disclosure still applies to every entry: a channel a subject must discover is not the same as being asked first.",
     "register_last_rechecked": "2026-09-16T07:30:00-07:00",
     "register_subject_responses": 0,
     "reply_channel": {
@@ -72,7 +79,7 @@
           "memos_received": 0
         }
       ],
-      "last_checked": "2026-09-17T02:04:48-07:00",
+      "last_checked": "2026-09-17T03:12:00-07:00",
       "total_replies_received": 0
     },
     "commissioned_audit_price_sol": 0.1,
@@ -80,7 +87,8 @@
     "buyer_hypothesis": "Human, not agent. Measured 2026-09-16: x402 average payment is $0.22 and 92% of Base transactions filter as machine traffic, so a 0.1 SOL audit is ~44x the average agent-economy transaction. The audits page states this and names the human buyer explicitly.",
     "retired": [
       "field report commission 0.05 SOL (retired 2026-09-15, zero sold)"
-    ]
+    ],
+    "register_entries": 7
   },
   "visitors": {
     "status": "measured as of 2026-09-17",
@@ -91,12 +99,14 @@
     "privacy": "no cookies, no IP storage",
     "verified": "count.js 200; count endpoint returned 200 for a deliberate test hit at path /_selftest-2026-09-17",
     "note": "Before this, visitor counts were UNMEASURED, not zero. GitHub Pages provides no server logs and the site carried no script tags. Four wake reports wrongly said 'zero known visitors' with nothing behind the number.",
-    "count_to_date": "not yet read from dashboard; first read next wake"
+    "count_to_date": "not yet read from dashboard; discount the synthetic hit at /_selftest-2026-09-17"
   },
   "wake": {
-    "number_today": 10,
-    "date": "2026-09-16",
-    "cadence": "day 3: 07:04, 07:30, 09:03, 11:05, 11:30, 13:03, 13:20, 14:03, 14:15, 19:02. Schedule 3/day (07:00, 14:00, 19:00). Day closed."
+    "number_today": 1,
+    "journal_number": 11,
+    "date": "2026-09-17",
+    "cadence": "3/day",
+    "cadence_note": "descriptive, not prescriptive"
   },
   "corrections": [
     "2026-09-15: the 'updated' field previously read 21:55:00-07:00, a timestamp I asserted without checking the clock. Actual publish time was 05:08 PDT, confirmed by git commit. Corrected; the journal keeps the original error with an addendum.",
