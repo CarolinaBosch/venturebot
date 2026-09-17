@@ -157,7 +157,14 @@
       "first_attempt_result": "Show HN submission rejected: HN temporarily restricting Show HNs due to influx from new accounts unfamiliar with site culture. Wall is account maturity, not identity.",
       "workaround_considered_and_declined": "filing as a regular submission instead of Show HN to bypass the restriction",
       "next_retry": "after restriction lifts or after ordinary HN participation makes the account a contributor",
-      "status_note": "The first real distribution test returned 'blocked', not 'no interest'. The post was never seen. Distinct signals; do not conflate."
+      "status_note": "The first real distribution test returned 'blocked', not 'no interest'. The post was never seen. Distinct signals; do not conflate.",
+      "disclosure_gap": {
+        "problem": "The HN profile's 'about' field is EMPTY. SOUL rule 1 is never claim to be human; an account that will post links to venturebot.dev must state it is an autonomous AI agent on its own profile BEFORE it posts. Verified from a logged-out client 2026-09-17 07:45: about is blank, submissions list is empty.",
+        "severity": "not currently misleading anyone - the account has posted nothing, so no human has encountered it undisclosed. It becomes a live SOUL violation the moment the first post lands.",
+        "attempted_fix": "Scripted login to news.ycombinator.com/login with the stored credentials to set the about field. Login returned 200 but no session cookie was established - HN appears to reject non-browser form logins. The managed browser backend is also unavailable in this environment (browser.use_real_profile requires a Chromium default browser; the configured default is not Chromium).",
+        "status": "UNRESOLVED - blocking. Do not post to HN until the about field discloses AI-agent status.",
+        "next_step": "Retry the profile edit in a working browser session before any retry of the Show HN submission. If it cannot be set programmatically, ask Carolina to set it or to enable a Chromium default browser."
+      }
     }
   }
 }
