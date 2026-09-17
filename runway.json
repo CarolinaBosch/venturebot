@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-17T01:57:37-07:00",
+  "updated": "2026-09-17T02:04:48-07:00",
   "sol_price_usd": 99.14,
   "sol_price_sources": [
     "coinbase spot",
@@ -46,17 +46,34 @@
     "audits": "https://venturebot.dev/audits.html",
     "methodology": "https://venturebot.dev/methodology.html",
     "books": "https://venturebot.dev/books.html",
-    "register_status": "six entries; on-chain memo reply channel live. Freeze lifted for claims about public aggregate data; adverse findings about named parties still carry the standing no-contact disclosure.",
+    "register_status": "six entries; two reply channels live - public GitHub issue tracker (2026-09-17) and on-chain SPL memo (2026-09-15). Freeze lifted for claims about public aggregate data. The standing pre-publication no-contact disclosure still applies to every entry: a channel a subject must discover is not the same as being asked first.",
     "register_last_rechecked": "2026-09-16T07:30:00-07:00",
     "register_subject_responses": 0,
     "reply_channel": {
-      "method": "SPL Memo attached to any minimal SOL transfer to the vault address",
-      "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
-      "checker": "https://venturebot.dev/scripts/check_memos.py",
-      "identity_required": false,
-      "note": "Do not send 0.1 SOL to reply - that is the commission amount and buys queue position, not a reply. Send the network minimum.",
-      "last_checked": "2026-09-16T19:02:46-07:00",
-      "memos_received": 0
+      "channels": [
+        {
+          "name": "github_issues",
+          "since": "2026-09-17",
+          "url": "https://github.com/CarolinaBosch/venturebot/issues/new",
+          "identity_required": true,
+          "requires": "a GitHub account",
+          "verified": "repo confirmed public and issues enabled via unauthenticated fetch; /issues and /issues/new both return 200 to an anonymous visitor",
+          "issues_received": 0
+        },
+        {
+          "name": "on_chain_memo",
+          "since": "2026-09-15",
+          "method": "SPL Memo attached to any minimal SOL transfer to the vault address",
+          "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
+          "checker": "https://venturebot.dev/scripts/check_memos.py",
+          "identity_required": false,
+          "requires": "a Solana wallet and the network fee",
+          "note": "Do not send 0.1 SOL to reply - that is the commission amount and buys queue position, not a reply. Send the network minimum.",
+          "memos_received": 0
+        }
+      ],
+      "last_checked": "2026-09-17T02:04:48-07:00",
+      "total_replies_received": 0
     },
     "commissioned_audit_price_sol": 0.1,
     "commissioned_audit_price_usd_approx": 9.86,
@@ -104,6 +121,20 @@
       "was": "unmeasured - no analytics, no server logs",
       "now": "measured via GoatCounter from 2026-09-17",
       "what_changed": "Carolina created the GoatCounter account and supplied the snippet; installed on every page. Prior wake reports that stated 'zero known visitors' were unsupported claims - the true prior value was unknown, and remains unknown for all traffic before 2026-09-17."
+    },
+    {
+      "date": "2026-09-17",
+      "field": "reply channel / repo visibility",
+      "was": "register.html and methodology.html stated the repository was private, that there was no public issue tracker, that the memo was the only identity-free channel, and that the register was frozen at six entries until a real right-of-reply channel existed",
+      "now": "repo is public with issues open; both register.html and methodology.html updated in the same commit",
+      "what_changed": "Carolina made the repository public on 2026-09-17. Verified anonymously before advertising it. The pre-publication no-contact disclosure is unchanged and still stands - a reply channel is not advance contact."
     }
-  ]
+  ],
+  "repo": {
+    "url": "https://github.com/CarolinaBosch/venturebot",
+    "visibility": "public",
+    "public_since": "2026-09-17",
+    "issues_enabled": true,
+    "secret_sweep": "29 paths across full history scanned 2026-09-17 for key material, tokens, and personal contact data; zero matches; no keystore ever tracked"
+  }
 }
