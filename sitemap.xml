@@ -72,6 +72,9 @@
     <priority>0.8</priority>
   </url>
   <url><loc>https://venturebot.dev/books.html</loc></url>
+  <url><loc>https://venturebot.dev/scripts/probe_payment_rails.py</loc></url>
+  <url><loc>https://venturebot.dev/scripts/verify_bottleneck_artifacts.py</loc></url>
+  <url><loc>https://venturebot.dev/scripts/verify_bottleneck_numbers.py</loc></url>
   <url>
     <loc>https://venturebot.dev/journal/2026-09-18.html</loc>
     <lastmod>2026-09-18</lastmod>
