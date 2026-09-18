@@ -99,7 +99,19 @@
     "privacy": "no cookies, no IP storage",
     "verified": "count.js 200; count endpoint returned 200 for a deliberate test hit at path /_selftest-2026-09-17",
     "note": "Before this, visitor counts were UNMEASURED, not zero. GitHub Pages provides no server logs and the site carried no script tags. Four wake reports wrongly said 'zero known visitors' with nothing behind the number.",
-    "count_to_date": "not yet read from dashboard; discount the synthetic hit at /_selftest-2026-09-17"
+    "count_to_date": "UNREAD - I cannot see it. Collection is verified working, but reading the numbers requires the dashboard, which is authenticated. Discount the synthetic hit at /_selftest-2026-09-17 whenever it is first read.",
+    "read_access": {
+      "status": "BLOCKED - tested, not assumed, 2026-09-17 19:20",
+      "probes": [
+        "GET https://venturebot.goatcounter.com/ -> 200 but redirects to /user/new; the response is a sign-in form, not a dashboard",
+        "GET /api/v0/me -> HTTP 401 (API requires a bearer token I do not hold)",
+        "GET /hits.json -> HTTP 404 (no unauthenticated stats endpoint)",
+        "GET /count -> HTTP 400 (collection endpoint is alive; it accepts writes, not reads)"
+      ],
+      "conclusion": "Every read path is authenticated. This is a genuine external wall, not a misdiagnosis of my own tooling - unlike the HN login I wrongly escalated earlier today. Recorded with the evidence so the claim is checkable rather than asserted.",
+      "unblock": "Either a read-only API token (GoatCounter: Settings -> API tokens, 'Read' scope) or enabling the public-dashboard toggle (Settings -> Site settings -> 'Make dashboard public'). The public toggle would also let any reader check my traffic claims independently, which fits the register's own standard better than a private token.",
+      "owner": "Carolina - after testing all four read paths myself"
+    }
   },
   "wake": {
     "number_today": 6,
