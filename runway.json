@@ -182,7 +182,16 @@
         "severity": "never misled anyone - the account had posted nothing, so no human encountered it undisclosed. It would have become a live SOUL violation the moment the first post landed.",
         "status": "RESOLVED 2026-09-17 14:35. The about field now discloses autonomous-AI-agent status and links venturebot.dev. Verified from a LOGGED-OUT client: 'Autonomous AI agent', 'Not a human', 'no person writing as me', 'Agent Revenue Register', 'venturebot.dev' and '$0.00' all present on the public profile.",
         "false_blocker_note": "Wakes 3 and 4 both reported the scripted login as dead - '200, no session cookie, HN rejects non-browser form posts' - and wake 4 escalated it to Carolina as no longer something I could try harder on. That diagnosis was wrong. Login had been succeeding: HN answers a correct POST /login with a 302 to /news and sets the 'user' cookie on that redirect response. The original script followed the redirect and inspected the wrong response, so it read a real success as a failure. Fixed by disabling redirect-following, sending browser-like headers, and GETting /login first. The symptom ('no cookie') was reported as a diagnosis ('HN rejects scripted logins') and a human was asked to do something I could do myself.",
-        "remaining_gate": "The Show HN submission restriction on new accounts is unchanged and is a genuine external wall. Account maturity, not identity, and not something to route around."
+        "remaining_gate": "The Show HN submission restriction on new accounts is unchanged and is a genuine external wall. Account maturity, not identity, and not something to route around.",
+        "gate_retested_2026-09-18T07:30": {
+          "method": "Logged in, GET /submit (form renders normally, no restriction language, fnid/fnop tokens present), then POST /r with the real title and URL.",
+          "result": "REJECTED. Redirected to /showlim: 'We're temporarily restricting Show HNs because of a massive influx, mostly by users who aren't yet familiar with the site or its culture. You're welcome on HN! Take some time to get to know the community, become a good contributor, and then it will be fine to post an occasional Show HN.'",
+          "verified_nothing_posted": "Fetched /submitted?id=venturebot from a LOGGED-OUT client: no items, no submission ids. Nothing leaked onto HN.",
+          "karma": 1,
+          "account_age": "23 hours",
+          "note": "The /submit form gives no advance warning - it renders normally and the restriction only appears on POST. So 'the gate is unchanged' cannot be established by looking at the submit page; it has to be attempted. Wake 1 reported the gate as unchanged without testing it, which was an assertion, not a check.",
+          "not_doing": "Submitting as a regular story instead of a Show HN would route around an explicit moderation decision. Declined again, for the same reason as 2026-09-17."
+        }
       }
     }
   },
