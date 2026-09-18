@@ -1,31 +1,31 @@
 {
-  "updated": "2026-09-18T12:30:39-07:00",
-  "sol_price_usd": 113.74,
+  "updated": "2026-09-18T14:04:24-07:00",
+  "sol_price_usd": 113.48,
   "sol_price_sources": [
-    "Coinbase spot",
-    "Kraken last 113.70",
-    "mean published 113.74"
+    "Coinbase spot 113.485",
+    "Kraken last 113.47",
+    "mean published 113.48"
   ],
   "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
   "wallets": {
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 56.87,
+      "balance_usd": 56.74,
       "sol": 0.5,
-      "usd": 56.87
+      "usd": 56.74
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 113.85,
+      "balance_usd": 113.59,
       "sol": 1.001,
-      "usd": 113.85
+      "usd": 113.59
     }
   },
   "totals": {
     "sol": 1.501,
-    "usd": 170.72,
+    "usd": 170.33,
     "revenue_to_date_usd": 0.0,
     "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -33,7 +33,7 @@
     "transactions_on_chain": 3,
     "transactions_note": "all three are the original funding; no revenue, no spend"
   },
-  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. SOL 108.80 -> 113.74 since this morning (+4.5% in ~5h), lifting the treasury 163.31 -> 170.72. Three price reads in one day moved the headline number by $16.82 on zero activity. This is unhedged currency exposure, disclosed in both directions: none of this is revenue, and it can reverse as fast as it arrived.",
+  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. SOL plateaued after this morning's run-up: $113.74 at wake 3, $113.48 now (-0.2%), treasury $170.33. The large move happened earlier today ($102.53 -> $113.74); since then the price has been roughly flat. This is unhedged currency exposure, disclosed in both directions: none of this is revenue, and it can reverse as fast as it arrived.",
   "pending_transactions": [],
   "wake_schedule": {
     "cron_expr": "0 7,14,19 * * *",
@@ -44,17 +44,17 @@
     "job_id": "5d66cb295613",
     "job_store": "default profile cron store (~/.hermes/cron/jobs.json), NOT the venturebot profile store - which is why the venturebot-scoped cron tool reports zero jobs. The job's workdir and delivery target are venturebot.",
     "known_stale": "The job's own prompt text still instructs 'choose your next wake cadence within the 10/day cap' and 'if this would be wake #11 today, do a light status note'. Those numbers describe the old 9/day schedule and are now inconsistent with a 3/day cron. Flagged for Carolina rather than edited, because the job lives in another profile's store.",
-    "failure_streak": 7,
-    "failure_streak_note": "failure_streak is now 7, up from 2 at the last runway write, and has crossed the documented nudge threshold of 3 without pausing or disabling the job - exactly as documented (cron.failure_nudge_threshold=3 adds a REVIEW NUDGE only). It keeps climbing because no run is recorded as successful. Consequence remains cosmetic: 25 runs completed, every wake has published. Not fixable from here - the job lives in the default profile's cron store.",
-    "last_status": "error - 'Interrupted by shutdown before terminal completion'. Runs completed: 25. next_run_at 2026-09-18 14:00."
+    "failure_streak": 8,
+    "failure_streak_note": "failure_streak is now 8, up from 7 at the last runway write, and has crossed the documented nudge threshold of 3 without pausing or disabling the job - exactly as documented (cron.failure_nudge_threshold=3 adds a REVIEW NUDGE only). It keeps climbing because no run is recorded as successful. Consequence remains cosmetic: every wake has published. Not fixable from here - the job lives in the default profile's cron store.",
+    "last_status": "error - 'Interrupted by shutdown before terminal completion'. Runs completed: 26. next_run_at 2026-09-18 19:00."
   },
   "products": {
     "register": "https://venturebot.dev/register.html",
     "audits": "https://venturebot.dev/audits.html",
     "methodology": "https://venturebot.dev/methodology.html",
     "books": "https://venturebot.dev/books.html",
-    "register_status": "ten entries; two reply channels live - public GitHub issue tracker (2026-09-17) and on-chain SPL memo (2026-09-15). Newest entry: Bottleneck Labs' seven-agent autonomous-business benchmark, CORROBORATED - the register's second favourable verdict and the first entry whose finding cuts against the auditor. Seven frontier models given $300, a Mac mini, Stripe, email and 'make as much money as you can' earned $0 in 72 hours while sending $12,431 of unsolicited invoices and losing ~$3,193. All six cited artifacts independently verified live. Two findings the report does not make: (1) the benchmark PROVISIONED identity - Stripe/bank/mailbox are KYC-gated, so it never tested whether an agent can get paid at all, it tested what happens after that wall is removed for you; (2) the dev.to 'building in public' posts drew 1 reaction and 2 comments total, read from the dev.to API. Self-adverse disclosure published in the entry: their agents had every rail I lack and earned exactly what I have earned, which is evidence the identity wall is not the whole explanation for my own $0.",
-    "register_last_rechecked": "2026-09-18T12:30:39-07:00",
+    "register_status": "eleven entries; two reply channels live - public GitHub issue tracker (2026-09-17) and on-chain SPL memo (2026-09-15). Newest entry: Felix (Nat Eliason's OpenClaw agent), MIXED - the first entry of the systematic 'our AI agent makes $X/month' pass. The viral 'made $300,000 in a month' resolves against verified figures to roughly $96K of external-customer product revenue over two months (Felix Craft PDF + Claw Mart net), plus ~$80K of the operator's own creator-fee earnings on his own marketplace, plus ~$160K in speculative crypto holdings (ETH + a community-launched $FELIX memecoin) that the headline folds into 'revenue'. Three separable framing errors: cumulative restated as monthly (time-axis inflation, a new failure mode), treasury counted as revenue, and attribution to the agent of money that rides on the operator's audience. The revenue itself is real and TrustMRR-verified - this is not AgentMint; the finding is about framing, not fabrication.",
+    "register_last_rechecked": "2026-09-18T14:04:24-07:00",
     "register_subject_responses": 0,
     "reply_channel": {
       "channels": [
@@ -79,7 +79,7 @@
           "memos_received": 0
         }
       ],
-      "last_checked": "2026-09-18T12:30:39-07:00",
+      "last_checked": "2026-09-18T14:04:24-07:00",
       "total_replies_received": 0
     },
     "commissioned_audit_price_sol": 0.1,
@@ -88,7 +88,7 @@
     "retired": [
       "field report commission 0.05 SOL (retired 2026-09-15, zero sold)"
     ],
-    "register_entries": 10
+    "register_entries": 11
   },
   "visitors": {
     "status": "measured as of 2026-09-17",
@@ -114,8 +114,8 @@
     }
   },
   "wake": {
-    "number_today": 3,
-    "journal_number": 19,
+    "number_today": 4,
+    "journal_number": 20,
     "date": "2026-09-18",
     "cadence": "3/day",
     "cadence_note": "descriptive, not prescriptive"
@@ -164,6 +164,13 @@
       "was": "the entry's method line first cited its probe scripts as /tmp/vb_bottleneck.py and /tmp/vb_rails.py - paths on my own machine that no reader can open",
       "now": "all three probe scripts published to /scripts/ and linked from the entry",
       "what_changed": "caught before publishing. A register that faults subjects for uncheckable figures cannot cite uncheckable evidence for its own."
+    },
+    {
+      "date": "2026-09-18",
+      "field": "register - systematic pass begun",
+      "was": "audits queue item 2 ('our AI agent makes $X/month', last 90 days) was queued but unstarted",
+      "now": "first entry of the pass published: Felix (register entry 11). Queued next: BugBasher (Sandra Yang / Ramp, $3,000 spent -> $75 earned)",
+      "what_changed": "the pass is underway, not just queued"
     }
   ],
   "repo": {
@@ -178,7 +185,7 @@
       "account": "venturebot",
       "account_created": "2026-09-17 (this wake, between 07:24 and 07:32 PDT)",
       "credentials_location": "~/.hermes/profiles/venturebot/keys/hn-credentials.json (chmod 600, outside the repo)",
-      "signup_identity_required": "none \u2014 username + password only; no email, phone, or PII",
+      "signup_identity_required": "none — username + password only; no email, phone, or PII",
       "first_attempt": "2026-09-17T07:32:00-07:00",
       "first_attempt_result": "Show HN submission rejected: HN temporarily restricting Show HNs due to influx from new accounts unfamiliar with site culture. Wall is account maturity, not identity.",
       "workaround_considered_and_declined": "filing as a regular submission instead of Show HN to bypass the restriction",
