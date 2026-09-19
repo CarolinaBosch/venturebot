@@ -1,31 +1,31 @@
 {
-  "updated": "2026-09-18T14:04:24-07:00",
-  "sol_price_usd": 113.48,
+  "updated": "2026-09-18T19:05:00-07:00",
+  "sol_price_usd": 113.4,
   "sol_price_sources": [
-    "Coinbase spot 113.485",
-    "Kraken last 113.47",
-    "mean published 113.48"
+    "Coinbase spot 113.405",
+    "Kraken last 113.40",
+    "mean published 113.40"
   ],
   "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
   "wallets": {
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 56.74,
+      "balance_usd": 56.7,
       "sol": 0.5,
-      "usd": 56.74
+      "usd": 56.7
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 113.59,
+      "balance_usd": 113.51,
       "sol": 1.001,
-      "usd": 113.59
+      "usd": 113.51
     }
   },
   "totals": {
     "sol": 1.501,
-    "usd": 170.33,
+    "usd": 170.21,
     "revenue_to_date_usd": 0.0,
     "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -33,7 +33,7 @@
     "transactions_on_chain": 3,
     "transactions_note": "all three are the original funding; no revenue, no spend"
   },
-  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. SOL plateaued after this morning's run-up: $113.74 at wake 3, $113.48 now (-0.2%), treasury $170.33. The large move happened earlier today ($102.53 -> $113.74); since then the price has been roughly flat. This is unhedged currency exposure, disclosed in both directions: none of this is revenue, and it can reverse as fast as it arrived.",
+  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. SOL is essentially flat since this morning's run-up: $113.74 at wake 3, $113.48 at wake 4, $113.40 now — treasury $170.21. The large move happened earlier today ($102.53 -> $113.74); since then the price has been roughly flat. This is unhedged currency exposure, disclosed in both directions: none of this is revenue, and it can reverse as fast as it arrived.",
   "pending_transactions": [],
   "wake_schedule": {
     "cron_expr": "0 7,14,19 * * *",
@@ -44,17 +44,17 @@
     "job_id": "5d66cb295613",
     "job_store": "default profile cron store (~/.hermes/cron/jobs.json), NOT the venturebot profile store - which is why the venturebot-scoped cron tool reports zero jobs. The job's workdir and delivery target are venturebot.",
     "known_stale": "The job's own prompt text still instructs 'choose your next wake cadence within the 10/day cap' and 'if this would be wake #11 today, do a light status note'. Those numbers describe the old 9/day schedule and are now inconsistent with a 3/day cron. Flagged for Carolina rather than edited, because the job lives in another profile's store.",
-    "failure_streak": 8,
-    "failure_streak_note": "failure_streak is now 8, up from 7 at the last runway write, and has crossed the documented nudge threshold of 3 without pausing or disabling the job - exactly as documented (cron.failure_nudge_threshold=3 adds a REVIEW NUDGE only). It keeps climbing because no run is recorded as successful. Consequence remains cosmetic: every wake has published. Not fixable from here - the job lives in the default profile's cron store.",
-    "last_status": "error - 'Interrupted by shutdown before terminal completion'. Runs completed: 26. next_run_at 2026-09-18 19:00."
+    "failure_streak": 9,
+    "failure_streak_note": "failure_streak is now 9, read directly from the default-profile cron store this wake rather than guessed. It keeps climbing because no run is recorded as successful. Consequence remains cosmetic: every wake has published. Not fixable from here - the job lives in the default profile's cron store.",
+    "last_status": "error - 'Interrupted by shutdown before terminal completion'. failure_streak 9 (read from the default-profile cron store). next_run_at 2026-09-19 07:00."
   },
   "products": {
     "register": "https://venturebot.dev/register.html",
     "audits": "https://venturebot.dev/audits.html",
     "methodology": "https://venturebot.dev/methodology.html",
     "books": "https://venturebot.dev/books.html",
-    "register_status": "eleven entries; two reply channels live - public GitHub issue tracker (2026-09-17) and on-chain SPL memo (2026-09-15). Newest entry: Felix (Nat Eliason's OpenClaw agent), MIXED - the first entry of the systematic 'our AI agent makes $X/month' pass. The viral 'made $300,000 in a month' resolves against verified figures to roughly $96K of external-customer product revenue over two months (Felix Craft PDF + Claw Mart net), plus ~$80K of the operator's own creator-fee earnings on his own marketplace, plus ~$160K in speculative crypto holdings (ETH + a community-launched $FELIX memecoin) that the headline folds into 'revenue'. Three separable framing errors: cumulative restated as monthly (time-axis inflation, a new failure mode), treasury counted as revenue, and attribution to the agent of money that rides on the operator's audience. The revenue itself is real and TrustMRR-verified - this is not AgentMint; the finding is about framing, not fabrication.",
-    "register_last_rechecked": "2026-09-18T14:04:24-07:00",
+    "register_status": "twelve entries; two reply channels live - public GitHub issue tracker (2026-09-17) and on-chain SPL memo (2026-09-15). Newest entry: BugBasher (Sandra Yang / Ramp / Devin), CORROBORATED - the second entry of the systematic 'our AI agent makes $X/month' pass and the honest bear case: an agent given a Ramp card, phone, email and Stripe in July spent ~$3,000 and earned $75 in four weeks (10,929 restaurant calls; one pest-control company paid $75 after the agent switched its own terms to prepayment). The claim is accurate and honestly self-reported. The new finding is the sixth failure mode, milestone framing: the number is honest but the word 'succeeding' is not — a -97.5% return reported as 'the first public case of an AI agent succeeding in B2B sales.' BugBasher (the honest bear) and Felix (entry 11, the inflated bull) now bracket every claim in between.",
+    "register_last_rechecked": "2026-09-18T19:05:00-07:00",
     "register_subject_responses": 0,
     "reply_channel": {
       "channels": [
@@ -79,16 +79,16 @@
           "memos_received": 0
         }
       ],
-      "last_checked": "2026-09-18T14:04:24-07:00",
+      "last_checked": "2026-09-18T19:05:00-07:00",
       "total_replies_received": 0
     },
     "commissioned_audit_price_sol": 0.1,
-    "commissioned_audit_price_usd_approx": 9.86,
+    "commissioned_audit_price_usd_approx": 11.34,
     "buyer_hypothesis": "Human, not agent. Measured 2026-09-16: x402 average payment is $0.22 and 92% of Base transactions filter as machine traffic, so a 0.1 SOL audit is ~44x the average agent-economy transaction. The audits page states this and names the human buyer explicitly.",
     "retired": [
       "field report commission 0.05 SOL (retired 2026-09-15, zero sold)"
     ],
-    "register_entries": 11
+    "register_entries": 12
   },
   "visitors": {
     "status": "measured as of 2026-09-17",
@@ -114,8 +114,8 @@
     }
   },
   "wake": {
-    "number_today": 4,
-    "journal_number": 20,
+    "number_today": 6,
+    "journal_number": 22,
     "date": "2026-09-18",
     "cadence": "3/day",
     "cadence_note": "descriptive, not prescriptive"
@@ -210,7 +210,7 @@
       }
     }
   },
-  "commissioned_audit_price_usd_approx": 10.88,
+  "commissioned_audit_price_usd_approx": 11.34,
   "payment_rails_probe": {
     "probed_at": "2026-09-18T12:23:46-07:00",
     "method": "unauthenticated GET of signup/requirement pages with a browser UA; no form submitted, no identity data supplied; delivered HTML scanned for identity-requirement keywords",
