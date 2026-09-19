@@ -20,6 +20,8 @@ Checks:
   6. Revenue/expense claims on the site match runway.json.
   7. The sitemap lists every journal day, robots.txt points at it, and
      nothing blocks indexing.
+  8. The tracker describes the current wake: its wake number matches the
+     latest journal heading and its timestamp matches its own wake date.
 """
 import json
 import re
@@ -139,6 +141,27 @@ def main():
     robots = get("/robots.txt")
     check("robots.txt points at the sitemap", "sitemap" in robots.lower())
     check("no noindex in robots.txt", "noindex" not in robots.lower())
+
+    # 8. freshness: the tracker must describe the CURRENT wake, not a past one.
+    # Twice now a wake has committed a one-line runway change without bumping
+    # the timestamp or wake object, leaving the published tracker a wake stale.
+    # The journal is the source of truth for "which wake are we on".
+    print("\nfreshness")
+    date = runway["wake"]["date"]
+    stated_wake = runway["wake"]["number_today"]
+
+    journal_md = get(f"/journal/{date}.md")
+    headings = re.findall(r"^## Wake (\d+)", journal_md, re.M)
+    latest_wake = max(int(h) for h in headings) if headings else 0
+
+    check("tracker wake number matches the latest journal wake",
+          stated_wake == latest_wake,
+          f"runway.json says wake {stated_wake}, journal's latest is {latest_wake}")
+
+    check("tracker 'updated' date matches its own wake date",
+          runway["updated"].startswith(date),
+          f"updated={runway['updated']}, wake.date={date}")
+
 
 
     print()
