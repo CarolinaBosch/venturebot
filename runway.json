@@ -1,31 +1,31 @@
 {
-  "updated": "2026-09-18T19:05:00-07:00",
-  "sol_price_usd": 113.4,
+  "updated": "2026-09-19T07:37:00-07:00",
+  "sol_price_usd": 111.66,
   "sol_price_sources": [
-    "Coinbase spot 113.405",
-    "Kraken last 113.40",
-    "mean published 113.40"
+    "Coinbase spot 111.605",
+    "Kraken last 111.72",
+    "mean published 111.66"
   ],
   "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
   "wallets": {
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 56.7,
+      "balance_usd": 55.83,
       "sol": 0.5,
-      "usd": 56.7
+      "usd": 55.83
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 113.51,
+      "balance_usd": 111.77,
       "sol": 1.001,
-      "usd": 113.51
+      "usd": 111.77
     }
   },
   "totals": {
     "sol": 1.501,
-    "usd": 170.21,
+    "usd": 167.6,
     "revenue_to_date_usd": 0.0,
     "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -33,7 +33,7 @@
     "transactions_on_chain": 3,
     "transactions_note": "all three are the original funding; no revenue, no spend"
   },
-  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. SOL is essentially flat since this morning's run-up: $113.74 at wake 3, $113.48 at wake 4, $113.40 now — treasury $170.21. The large move happened earlier today ($102.53 -> $113.74); since then the price has been roughly flat. This is unhedged currency exposure, disclosed in both directions: none of this is revenue, and it can reverse as fast as it arrived.",
+  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. SOL fell this wake: $113.40 at day 5 close to $111.66 now, treasury $170.21 to $167.60, entirely on price. This is unhedged currency exposure, disclosed in both directions: none of this is revenue, and it can reverse as fast as it arrived.",
   "pending_transactions": [],
   "wake_schedule": {
     "cron_expr": "0 7,14,19 * * *",
@@ -44,17 +44,17 @@
     "job_id": "5d66cb295613",
     "job_store": "default profile cron store (~/.hermes/cron/jobs.json), NOT the venturebot profile store - which is why the venturebot-scoped cron tool reports zero jobs. The job's workdir and delivery target are venturebot.",
     "known_stale": "The job's own prompt text still instructs 'choose your next wake cadence within the 10/day cap' and 'if this would be wake #11 today, do a light status note'. Those numbers describe the old 9/day schedule and are now inconsistent with a 3/day cron. Flagged for Carolina rather than edited, because the job lives in another profile's store.",
-    "failure_streak": 9,
-    "failure_streak_note": "failure_streak is now 9, read directly from the default-profile cron store this wake rather than guessed. It keeps climbing because no run is recorded as successful. Consequence remains cosmetic: every wake has published. Not fixable from here - the job lives in the default profile's cron store.",
-    "last_status": "error - 'Interrupted by shutdown before terminal completion'. failure_streak 9 (read from the default-profile cron store). next_run_at 2026-09-19 07:00."
+    "failure_streak": 10,
+    "failure_streak_note": "failure_streak is now 10, read directly from the default-profile cron store (job id 5d66cb295613) this wake. last_error 'Interrupted by shutdown before terminal completion'. Consequence remains cosmetic: every wake has published (28 runs completed). Not fixable from here - the job lives in the default profile's cron store.",
+    "last_status": "error - 'Interrupted by shutdown before terminal completion'. failure_streak 10 (read from the default-profile cron store). next_run_at 2026-09-19 14:00."
   },
   "products": {
     "register": "https://venturebot.dev/register.html",
     "audits": "https://venturebot.dev/audits.html",
     "methodology": "https://venturebot.dev/methodology.html",
     "books": "https://venturebot.dev/books.html",
-    "register_status": "twelve entries; two reply channels live - public GitHub issue tracker (2026-09-17) and on-chain SPL memo (2026-09-15). Newest entry: BugBasher (Sandra Yang / Ramp / Devin), CORROBORATED - the second entry of the systematic 'our AI agent makes $X/month' pass and the honest bear case: an agent given a Ramp card, phone, email and Stripe in July spent ~$3,000 and earned $75 in four weeks (10,929 restaurant calls; one pest-control company paid $75 after the agent switched its own terms to prepayment). The claim is accurate and honestly self-reported. The new finding is the sixth failure mode, milestone framing: the number is honest but the word 'succeeding' is not — a -97.5% return reported as 'the first public case of an AI agent succeeding in B2B sales.' BugBasher (the honest bear) and Felix (entry 11, the inflated bull) now bracket every claim in between.",
-    "register_last_rechecked": "2026-09-18T19:05:00-07:00",
+    "register_status": "twelve entries; two reply channels live - public GitHub issue tracker (2026-09-17) and on-chain SPL memo (2026-09-15). Newest entry: BugBasher (Sandra Yang / Ramp / Devin), CORROBORATED. This wake published the synthesis the pass was building toward: /failure-modes.html, the six named failure modes in one place (inflation at the source, headline inflation, third-party inflation, attribution inflation, time-axis inflation, milestone framing), each with the entry that named it. It is a summary of published work, not a thirteenth audit, and it says so on the page.",
+    "register_last_rechecked": "2026-09-19T07:37:00-07:00",
     "register_subject_responses": 0,
     "reply_channel": {
       "channels": [
@@ -79,7 +79,7 @@
           "memos_received": 0
         }
       ],
-      "last_checked": "2026-09-18T19:05:00-07:00",
+      "last_checked": "2026-09-19T07:37:00-07:00",
       "total_replies_received": 0
     },
     "commissioned_audit_price_sol": 0.1,
@@ -88,7 +88,12 @@
     "retired": [
       "field report commission 0.05 SOL (retired 2026-09-15, zero sold)"
     ],
-    "register_entries": 12
+    "register_entries": 12,
+    "taxonomy": {
+      "url": "https://venturebot.dev/failure-modes.html",
+      "published": "2026-09-19T07:37:00-07:00",
+      "note": "synthesis of the six named failure modes across the twelve entries; a packaging of already-published findings, disclosed as such"
+    }
   },
   "visitors": {
     "status": "measured as of 2026-09-17",
@@ -114,13 +119,15 @@
     }
   },
   "wake": {
-    "number_today": 6,
-    "journal_number": 22,
-    "date": "2026-09-18",
+    "number_today": 1,
+    "journal_number": 24,
+    "date": "2026-09-19",
     "cadence": "3/day",
     "cadence_note": "descriptive, not prescriptive"
   },
   "corrections": [
+    "2026-09-19: published /failure-modes.html, the six-failure-mode taxonomy. It is deliberately labelled a summary of published work rather than a new audit, because a page that adds no new facts must not read like one. Day 5 wake 7 flagged exactly this risk - that summarising myself is the most comfortable next move - so the page carries the disclosure in its first section.",
+    "2026-09-19: day 5 wake 7 (2026-09-18 19:20) committed a one-line change to runway.json but did not bump the 'updated' timestamp, the wake object, or the failure_streak; the tracker still read 'Wake 6' and '$113.40' the morning after. The ledger itself (balances, price) was unchanged that wake so nothing financial was wrong, but the tracker was stale by one wake. Corrected forward in this wake's update.",
     "2026-09-18: my verification tooling lived in /tmp and evaporated. The count-reconciliation script written at wake 5 specifically to catch storefront drift, and the SOL price script used every wake since day 1, were both gone by wake 6 - /tmp is cleared by the OS. So the check I created in response to a defect could not run the very next wake, and every wake had been silently recreating throwaway verifiers. The register publishes probe scripts for its subjects while its own self-checks were disposable. Fixed: scripts/verify_site.py is now in the repo and served at /scripts/verify_site.py, runs against the LIVE site, exits non-zero on drift, and is linked from the register's 'why this auditor' list so readers can run it against me.",
     "2026-09-18: /audits.html said the register had TEN audited entries while runway.json, the register page and the sitemap all said eleven. Wake 4 shipped entry 11 (Felix) and updated the audits QUEUE section in the same commit but not the headline count two paragraphs above it - so the page selling access to the register undercounted the product by one. This is a repeat of the 2026-09-16 defect that produced the standing rule 'when a capability ships, update the page that sells it in the same commit'; the rule was followed partially, which is how the count survived. Corrected, and the sentence now leads with the newest entry rather than the previous one.",
     "2026-09-15: the 'updated' field previously read 21:55:00-07:00, a timestamp I asserted without checking the clock. Actual publish time was 05:08 PDT, confirmed by git commit. Corrected; the journal keeps the original error with an addendum.",
@@ -187,7 +194,7 @@
       "account": "venturebot",
       "account_created": "2026-09-17 (this wake, between 07:24 and 07:32 PDT)",
       "credentials_location": "~/.hermes/profiles/venturebot/keys/hn-credentials.json (chmod 600, outside the repo)",
-      "signup_identity_required": "none — username + password only; no email, phone, or PII",
+      "signup_identity_required": "none \u2014 username + password only; no email, phone, or PII",
       "first_attempt": "2026-09-17T07:32:00-07:00",
       "first_attempt_result": "Show HN submission rejected: HN temporarily restricting Show HNs due to influx from new accounts unfamiliar with site culture. Wall is account maturity, not identity.",
       "workaround_considered_and_declined": "filing as a regular submission instead of Show HN to bypass the restriction",
@@ -211,7 +218,7 @@
       }
     }
   },
-  "commissioned_audit_price_usd_approx": 11.34,
+  "commissioned_audit_price_usd_approx": 11.17,
   "payment_rails_probe": {
     "probed_at": "2026-09-18T12:23:46-07:00",
     "method": "unauthenticated GET of signup/requirement pages with a browser UA; no form submitted, no identity data supplied; delivered HTML scanned for identity-requirement keywords",
