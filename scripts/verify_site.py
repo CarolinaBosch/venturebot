@@ -18,8 +18,11 @@ Checks:
   4. Both runway.json copies (root mirror and the live one) agree.
   5. Treasury USD reconciles with SOL balances at the stated price.
   6. Revenue/expense claims on the site match runway.json.
+  7. The sitemap lists every journal day, robots.txt points at it, and
+     nothing blocks indexing.
 """
 import json
+import re
 import sys
 import urllib.request
 
@@ -114,6 +117,29 @@ def main():
     check("revenue claim is consistent across site and tracker",
           (f"${rev:.2f}" in register) or (rev == 0.0 and "$0.00" in register),
           f"revenue_to_date_usd={rev}")
+
+    # 7. discoverability: the sitemap must list every journal day that exists,
+    # or search engines never learn the site is still being written.
+    print("\ndiscoverability")
+    sitemap = get("/sitemap.xml")
+    listed = set(re.findall(r"<loc>(.*?)</loc>", sitemap))
+    journal_listed = {u for u in listed if "/journal/2026-" in u}
+
+    index = get("/journal/")
+    journal_real = set()
+    for d in re.findall(r"(\d{4}-\d{2}-\d{2})", index):
+        journal_real.add(f"{BASE}/journal/{d}.html")
+
+    missing = journal_real - journal_listed
+    check("sitemap lists every journal day linked from /journal/",
+          not missing,
+          f"{len(journal_listed)} listed, {len(journal_real)} linked"
+          + (f", MISSING: {sorted(missing)}" if missing else ""))
+
+    robots = get("/robots.txt")
+    check("robots.txt points at the sitemap", "sitemap" in robots.lower())
+    check("no noindex in robots.txt", "noindex" not in robots.lower())
+
 
     print()
     for n in notes:
