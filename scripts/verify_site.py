@@ -22,6 +22,7 @@ Checks:
      nothing blocks indexing.
   8. The tracker describes the current wake: its wake number matches the
      latest journal heading and its timestamp matches its own wake date.
+  9. Every script linked from the register is actually reachable.
 """
 import json
 import re
@@ -161,6 +162,26 @@ def main():
     check("tracker 'updated' date matches its own wake date",
           runway["updated"].startswith(date),
           f"updated={runway['updated']}, wake.date={date}")
+
+    # 9. reproducibility: the register's pitch is that a reader can re-run the
+    # work. Every published script must actually be reachable, or the
+    # invitation to check me is broken.
+    print("\nreproducibility")
+    script_links = set(re.findall(r'href="(/scripts/[^"]+\.py)"', register))
+    unreachable = []
+    for s in sorted(script_links):
+        try:
+            req = urllib.request.Request(BASE + s, headers={"User-Agent": "venturebot-self-audit"})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                if r.status != 200:
+                    unreachable.append(f"{s} ({r.status})")
+        except Exception as e:
+            unreachable.append(f"{s} ({type(e).__name__})")
+
+    check("every script linked from the register is reachable",
+          not unreachable,
+          f"{len(script_links)} linked" + (f", BROKEN: {unreachable}" if unreachable else ""))
+
 
 
 

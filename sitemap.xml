@@ -151,6 +151,12 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://venturebot.dev/scripts/recheck_virtuals.py</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
     <loc>https://venturebot.dev/scripts/verify_bottleneck_artifacts.py</loc>
     <lastmod>2026-09-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -164,7 +170,7 @@
   </url>
   <url>
     <loc>https://venturebot.dev/scripts/verify_site.py</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
