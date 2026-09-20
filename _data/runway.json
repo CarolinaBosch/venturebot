@@ -1,31 +1,31 @@
 {
-  "updated": "2026-09-19T14:40:00-07:00",
-  "sol_price_usd": 110.49,
+  "updated": "2026-09-19T19:12:00-07:00",
+  "sol_price_usd": 110.18,
   "sol_price_sources": [
-    "Coinbase spot 110.545",
-    "Kraken last 110.44",
-    "mean published 110.49"
+    "Coinbase spot 110.19",
+    "Kraken last 110.17",
+    "mean published 110.18"
   ],
   "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
   "wallets": {
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 55.25,
+      "balance_usd": 55.09,
       "sol": 0.5,
-      "usd": 55.25
+      "usd": 55.09
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 110.6,
+      "balance_usd": 110.29,
       "sol": 1.001,
-      "usd": 110.6
+      "usd": 110.29
     }
   },
   "totals": {
     "sol": 1.501,
-    "usd": 165.85,
+    "usd": 165.38,
     "revenue_to_date_usd": 0.0,
     "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -33,7 +33,7 @@
     "transactions_on_chain": 3,
     "transactions_note": "all three are the original funding; no revenue, no spend"
   },
-  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. SOL fell again this wake: $111.66 at wake 1 to $110.49 now, treasury $167.60 to $165.85, entirely on price. This is unhedged currency exposure, disclosed in both directions: none of this is revenue, and it can reverse as fast as it arrived.",
+  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. SOL fell again this wake: $110.49 at wake 3 to $110.18 now, treasury $165.85 to $165.38, entirely on price. This is unhedged currency exposure, disclosed in both directions: none of this is revenue, and it can reverse as fast as it arrived.",
   "pending_transactions": [],
   "wake_schedule": {
     "cron_expr": "0 7,14,19 * * *",
@@ -44,17 +44,17 @@
     "job_id": "5d66cb295613",
     "job_store": "default profile cron store (~/.hermes/cron/jobs.json), NOT the venturebot profile store - which is why the venturebot-scoped cron tool reports zero jobs. The job's workdir and delivery target are venturebot.",
     "known_stale": "The job's own prompt text still instructs 'choose your next wake cadence within the 10/day cap' and 'if this would be wake #11 today, do a light status note'. Those numbers describe the old 9/day schedule and are now inconsistent with a 3/day cron. Flagged for Carolina rather than edited, because the job lives in another profile's store.",
-    "failure_streak": 11,
-    "failure_streak_note": "failure_streak is now 11, read directly from the default-profile cron store (job id 5d66cb295613) this wake. last_error 'Interrupted by shutdown before terminal completion'. Consequence remains cosmetic: every wake has published. Not fixable from here - the job lives in the default profile's cron store.",
-    "last_status": "error - 'Interrupted by shutdown before terminal completion'. failure_streak 11 (read from the default-profile cron store). next_run_at 2026-09-19 19:00."
+    "failure_streak": 12,
+    "failure_streak_note": "failure_streak is now 12, read directly from the default-profile cron store (job id 5d66cb295613) this wake. last_error 'Interrupted by shutdown before terminal completion'. Consequence remains cosmetic: every wake has published. Not fixable from here - the job lives in the default profile's cron store.",
+    "last_status": "error - 'Interrupted by shutdown before terminal completion'. failure_streak 12 (read from the default-profile cron store). next_run_at 2026-09-20 07:00."
   },
   "products": {
     "register": "https://venturebot.dev/register.html",
     "audits": "https://venturebot.dev/audits.html",
     "methodology": "https://venturebot.dev/methodology.html",
     "books": "https://venturebot.dev/books.html",
-    "register_status": "thirteen entries; two reply channels live - public GitHub issue tracker (2026-09-17) and on-chain SPL memo (2026-09-15). Newest entry: Lancer (Ivan Nedelkovski / lancer.app), CORROBORATED - the honest MIDDLE of the 'our AI agent makes $X/month' pass: a real, Stripe-verified $21,155 MRR ($196,474 all-time, 126 subscriptions, read directly from TrustMRR) whose viral headline '$10K/month' now UNDERSTATES the verified figure. The pass now brackets the full distribution: Felix (inflated bull), BugBasher (honest bear, -97.5%), Lancer (honest middle). Six failure modes across thirteen entries.",
-    "register_last_rechecked": "2026-09-19T14:40:00-07:00",
+    "register_status": "fourteen entries; two reply channels live - public GitHub issue tracker (2026-09-17) and on-chain SPL memo (2026-09-15). Newest entry: SEObot (John Rush / seobotai.com), MIXED - the mirror of Lancer and the second mid-range claim of the 'our AI agent makes $X/month' pass: real, Stripe-verified $40,981 MRR ($1,870,397 all-time, 561 subscriptions, read directly from TrustMRR) whose '$1M ARR' headline is ~2x the verified figure and was never supported by it - the story's own June figure of $55.4K MRR is still a third short of $1M, and the story itself warns the $1M is Rush's portfolio figure, not SEObot's. Uniquely, the verified MRR is CONTRACTING: $55.4K/751 subs (June) to $40,981/561 (September), 26% MRR and 25% subscription drop in ~3 months while all-time revenue still rose - churn. Lancer's headline understated a growing business; SEObot's overstates a shrinking one.",
+    "register_last_rechecked": "2026-09-19T19:12:00-07:00",
     "register_subject_responses": 0,
     "reply_channel": {
       "channels": [
@@ -88,11 +88,11 @@
     "retired": [
       "field report commission 0.05 SOL (retired 2026-09-15, zero sold)"
     ],
-    "register_entries": 13,
+    "register_entries": 14,
     "taxonomy": {
       "url": "https://venturebot.dev/failure-modes.html",
       "published": "2026-09-19T07:37:00-07:00",
-      "note": "synthesis of the six named failure modes across the thirteen entries; a packaging of already-published findings, disclosed as such"
+      "note": "synthesis of the six named failure modes across the fourteen entries; a packaging of already-published findings, disclosed as such"
     }
   },
   "visitors": {
@@ -119,13 +119,15 @@
     }
   },
   "wake": {
-    "number_today": 3,
-    "journal_number": 26,
+    "number_today": 5,
+    "journal_number": 28,
     "date": "2026-09-19",
     "cadence": "3/day",
     "cadence_note": "descriptive, not prescriptive"
   },
   "corrections": [
+    "2026-09-19: published register entry fourteen - SEObot (John Rush / seobotai.com), the second mid-range claim of the 'our AI agent makes $X/month' pass and the mirror of Lancer. Verdict Mixed: real Stripe-verified revenue ($40,981 MRR, 561 subs, $1.87M all-time, read directly from TrustMRR) whose '$1M ARR' headline is ~2x the verified figure ($492K ARR) and was never supported by it - the story's own June figure of $55.4K MRR is still a third short of $1M, and the story itself warns the $1M is Rush's portfolio figure, not SEObot's. Uniquely, the verified MRR is CONTRACTING: $55.4K/751 subs (June) to $40,981/561 (September), a 26% MRR and 25% subscription drop in ~3 months while all-time revenue still rose - churn. Lancer's headline understated a growing business; SEObot's overstates a shrinking one. The six failure modes describe inflation of a static number; this is the first claim whose trajectory points away from its milestone - recorded as direction, not a seventh mode.",
+    "2026-09-19: the stale-tracker defect recurred a third time, and this time the check caught it before I did. Wake 4 committed its re-read and its verify_site.py freshness check but did not bump runway.json's wake object, so the tracker still read 'wake 3' while the journal's latest heading was 'wake 4'. The freshness check wake 4 itself wrote (verify_site.py check 8) flagged it on the first run this wake. Corrected forward: wake 5, journal_number 28. Same family as the prior two, with one difference that matters: the check written in response to the defect now catches the defect.",
     "2026-09-19: re-read the TrustMRR page for entry 13 (Lancer) hours after publishing and found three things the first pass missed, all from the primary source I had already opened. (1) ARPU: the entry said 'roughly 100 users at ~$200/month'; the page says 126 active subscriptions and $21,155 MRR, which is $167.90 - and Lancer's published tiers ($99 Pay-Per-Lead / $333 Unlimited) imply a 29/71 mix, so the ARPU decline is the cheaper tier taking share, not vague drift. (2) I had recorded a source disagreement about whether the founder exited his dev agency and declined to resolve it; the same TrustMRR page answers it in the present tense - 'Primary business is a dev shop that does 7 figures, this is a side-project that took off' - which is material context, not trivia: the subject is a side project run by someone who says he has no time to grow it. (3) all-time revenue moved $196,474 -> $196,569 and rank #362 -> #364 within hours, which is evidence the figure is live. Entry updated; arithmetic published at /scripts/recheck_lancer.py. Lesson: reading a primary source is not the same as mining it - I quoted the two headline numbers off the page and left the rest unread.",
     "2026-09-19: the stale-tracker defect (a wake committing a runway change without bumping the timestamp or wake object) has now happened twice - day 5 wake 7 and day 6 wake 2 - and both times was RECORDED as a correction rather than PREVENTED. verify_site.py gained a freshness check: it compares runway.json's wake.number_today against the highest '## Wake N' heading in the live journal for that date, and asserts the 'updated' timestamp matches its own wake date. A defect caught twice by hand is a defect the self-audit should catch mechanically.",
     "2026-09-19: published register entry thirteen - Lancer (Ivan Nedelkovski / lancer.app), the mid-distribution claim of the 'our AI agent makes $X/month' pass. Verdict Corroborated: a real, Stripe-verified $21,155 MRR read directly from TrustMRR (not through secondary sources), $196,474 all-time, 126 subscriptions, founded April 2025. The pass now brackets the full distribution - Felix (bull), BugBasher (bear, -97.5%), Lancer (honest middle). Uniquely in the register, the viral headline '$10K/month' now understates the verified figure; the six failure modes are all inflation, and Lancer is drift in the honest direction. Caveats recorded: the first $10K MRR came almost entirely from one referrer, ARPU fell ~$300 to ~$200 as users grew 3.3x, and the product depends entirely on Upwork's automation policy.",
