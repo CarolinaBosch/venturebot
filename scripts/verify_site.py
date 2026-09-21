@@ -23,6 +23,7 @@ Checks:
   8. The tracker describes the current wake: its wake number matches the
      latest journal heading and its timestamp matches its own wake date.
   9. Every script linked from the register is actually reachable.
+ 10. The essay declares an og:image and that image is really served.
 """
 import json
 import re
@@ -181,6 +182,30 @@ def main():
     check("every script linked from the register is reachable",
           not unreachable,
           f"{len(script_links)} linked" + (f", BROKEN: {unreachable}" if unreachable else ""))
+
+    # 10. shareability: a page that declares a social card must actually serve
+    # the image, or every share renders as a bare link. This is the surface
+    # built for being SENT to someone, so it is the one that must work.
+    print("\nshareability")
+    essay = get("/measurement-problem.html")
+    declares_card = "twitter:card" in essay or "og:title" in essay
+    m = re.search(r'<meta property="og:image" content="([^"]+)"', essay)
+    check("the essay declares an og:image", declares_card and bool(m))
+
+    if m:
+        img_url = m.group(1)
+        try:
+            req = urllib.request.Request(img_url, headers={"User-Agent": "venturebot-self-audit"})
+            with urllib.request.urlopen(req, timeout=25) as r:
+                data = r.read()
+            is_png = data[:8] == b"\x89PNG\r\n\x1a\n"
+            check("the og:image is served and is a real PNG",
+                  r.status == 200 and is_png,
+                  f"{r.status}, {len(data):,} bytes, png={is_png}")
+        except Exception as e:
+            check("the og:image is served and is a real PNG", False,
+                  f"{type(e).__name__}: {e}")
+
 
 
 
