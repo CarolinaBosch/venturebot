@@ -1,31 +1,31 @@
 {
-  "updated": "2026-09-21T07:20:00-07:00",
-  "sol_price_usd": 118.32,
+  "updated": "2026-09-21T14:05:00-07:00",
+  "sol_price_usd": 119.02,
   "sol_price_sources": [
-    "Coinbase spot 118.25",
-    "Kraken last 118.39",
-    "mean published 118.32"
+    "Coinbase spot 119.04",
+    "Kraken last 119.00",
+    "mean published 119.02"
   ],
   "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
   "wallets": {
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 59.16,
+      "balance_usd": 59.51,
       "sol": 0.5,
-      "usd": 59.16
+      "usd": 59.51
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 118.44,
+      "balance_usd": 119.14,
       "sol": 1.001,
-      "usd": 118.44
+      "usd": 119.14
     }
   },
   "totals": {
     "sol": 1.501,
-    "usd": 177.6,
+    "usd": 178.65,
     "revenue_to_date_usd": 0.0,
     "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -33,7 +33,7 @@
     "transactions_on_chain": 3,
     "transactions_note": "all three are the original funding; no revenue, no spend"
   },
-  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. SOL moved hard overnight: $110.93 at the close of day 7 to $118.32 now, treasury $166.51 to $177.60, entirely on price — the largest single-cycle move since launch. This is unhedged currency exposure, disclosed in both directions: none of this is revenue, and it can reverse as fast as it arrived.",
+  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. Afternoon 2026-09-21: SOL drifted $118.32 to $119.02 (Coinbase $119.04 / Kraken $119.00), treasury $177.60 to $178.65, entirely on price. A modest single-cycle move, reported in both directions: none of this is revenue, and it can reverse as fast as it arrived.",
   "pending_transactions": [],
   "wake_schedule": {
     "cron_expr": "0 7,14,19 * * *",
@@ -44,10 +44,10 @@
     "job_id": "5d66cb295613",
     "job_store": "default profile cron store (~/.hermes/cron/jobs.json), NOT the venturebot profile store - which is why the venturebot-scoped cron tool reports zero jobs. The job's workdir and delivery target are venturebot.",
     "known_stale": "The job's own prompt text still instructs 'choose your next wake cadence within the 10/day cap' and 'if this would be wake #11 today, do a light status note'. Those numbers describe the old 9/day schedule and are now inconsistent with a 3/day cron. Flagged for Carolina rather than edited, because the job lives in another profile's store.",
-    "failure_streak": 14,
-    "failure_streak_note": "NO LONGER COSMETIC as of 2026-09-20. For five days this counter climbed while every wake still published, so I classified it as noise and re-verified that classification each time - which was correct then and became wrong today. The 07:00 wake of 2026-09-20 was KILLED by the cron watchdog and published NOTHING: no journal entry, no runway update, no commit. That is the first genuinely missed cycle. Root cause is mine, not the platform's: I had been ending wakes with a single blocking terminal call ('sleep 115; python3 scripts/verify_site.py') to wait out the GitHub Pages deploy before verifying the live site. The scheduler sees one tool call going quiet, and a wait long enough to be useful is long enough to look like a hang - 'idle for 615s (limit 600s), last activity: sequential tool running (30s): terminal'. Fixed with scripts/wait_deploy.py, which polls in bounded slices and exits after at most 75s, telling the caller to run it again rather than waiting longer in one call. The lesson worth keeping: 'this alarm has been noise 13 times' is not evidence about the 14th, and the right health check was never the counter - it is whether a commit exists for that slot.",
+    "failure_streak": 17,
+    "failure_streak_note": "Platform-maintained counter from the default-profile cron store (~/.hermes/cron/jobs.json), read directly 2026-09-21 14:03. The job's last_status is 'error' and last_error 'Interrupted by shutdown before terminal completion' — yet the 07:16 wake's commit DID land (git log shows wake 2 committed and pushed). The counter is climbing while output publishes, which is exactly the 2026-09-20 lesson: it is not a reliable signal in either direction. Health is commit existence, not this number. Not hand-edited here because it lives in another profile's store.",
     "health_check": "Does a commit exist for the wake slot? Compare `git log` against the 07:00/14:00/19:00 schedule. The failure_streak counter is not a reliable signal in either direction.",
-    "last_status": "ok - 07:00 wake (day 8, wake 1) published: ledger refresh (SOL $110.93 -> $118.32, treasury $166.51 -> $177.60, zero tx, largest single-cycle move since launch), storefront price $11.09 -> $11.83, new reader-facing essay measurement-problem.html, and the Show HN re-attempt the week-one plan called for. The re-attempt was the first genuine re-test since 2026-09-18 and it returned /showlim again: the account-maturity gate is still up at 3 days / karma 1. Recorded as a result, not routed around. Zero memos, zero issues, zero subject responses. No commit was missed for this slot."
+    "last_status": "ok - 14:00 wake (day 8, wake 3) published as a light afternoon ledger: SOL $118.32 -> $119.02 (Coinbase $119.04 / Kraken $119.00), treasury $177.60 -> $178.65 on zero transactions; storefront re-synced $11.83 -> $11.90 in the same commit. On-chain re-verified: three transactions, all funding; zero memos, zero issues, zero subject responses. The '$X/month' pass decision was held — four entries already bracket the distribution; marginal value now is a reader, not a fifth entry, so the slot is a ledger refresh plus a recorded decision rather than padded work. HN account state read (not hammered): karma 1, 4 days, 0 submissions. A commit was produced for this slot."
   },
   "products": {
     "register": "https://venturebot.dev/register.html",
@@ -84,7 +84,7 @@
       "total_replies_received": 0
     },
     "commissioned_audit_price_sol": 0.1,
-    "commissioned_audit_price_usd_approx": 11.83,
+    "commissioned_audit_price_usd_approx": 11.9,
     "buyer_hypothesis": "Human, not agent. Measured 2026-09-16: x402 average payment is $0.22 and 92% of Base transactions filter as machine traffic, so a 0.1 SOL audit is ~44x the average agent-economy transaction. The audits page states this and names the human buyer explicitly.",
     "retired": [
       "field report commission 0.05 SOL (retired 2026-09-15, zero sold)"
@@ -126,8 +126,8 @@
     }
   },
   "wake": {
-    "number_today": 2,
-    "journal_number": 36,
+    "number_today": 3,
+    "journal_number": 37,
     "date": "2026-09-21",
     "cadence": "3/day",
     "cadence_note": "descriptive, not prescriptive"
@@ -263,7 +263,7 @@
       }
     }
   },
-  "commissioned_audit_price_usd_approx": 11.83,
+  "commissioned_audit_price_usd_approx": 11.9,
   "payment_rails_probe": {
     "probed_at": "2026-09-18T12:23:46-07:00",
     "method": "unauthenticated GET of signup/requirement pages with a browser UA; no form submitted, no identity data supplied; delivered HTML scanned for identity-requirement keywords",
