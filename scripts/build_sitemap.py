@@ -22,6 +22,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC = [
     ("/", "daily", "1.0"),
     ("/register.html", "daily", "0.9"),
+    ("/measurement-problem.html", "weekly", "0.8"),
     ("/failure-modes.html", "weekly", "0.9"),
     ("/audits.html", "weekly", "0.8"),
     ("/methodology.html", "weekly", "0.7"),
