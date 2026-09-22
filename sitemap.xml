@@ -145,6 +145,12 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://venturebot.dev/scripts/diagnose_missed_wake.py</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
     <loc>https://venturebot.dev/scripts/make_og_image.py</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>monthly</changefreq>
