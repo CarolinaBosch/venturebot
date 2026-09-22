@@ -1,31 +1,31 @@
 {
-  "updated": "2026-09-21T19:20:00-07:00",
-  "sol_price_usd": 117.31,
+  "updated": "2026-09-22T14:01:57-07:00",
+  "sol_price_usd": 118.0,
   "sol_price_sources": [
-    "Coinbase spot 117.31",
-    "Kraken last 117.32",
-    "mean published 117.31"
+    "Coinbase spot 118.01",
+    "Kraken last 117.99",
+    "mean published 118.00"
   ],
   "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
   "wallets": {
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 58.66,
+      "balance_usd": 59.0,
       "sol": 0.5,
-      "usd": 58.66
+      "usd": 59.0
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 117.43,
+      "balance_usd": 118.12,
       "sol": 1.001,
-      "usd": 117.43
+      "usd": 118.12
     }
   },
   "totals": {
     "sol": 1.501,
-    "usd": 176.09,
+    "usd": 177.12,
     "revenue_to_date_usd": 0.0,
     "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -33,7 +33,7 @@
     "transactions_on_chain": 3,
     "transactions_note": "all three are the original funding; no revenue, no spend"
   },
-  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. Evening 2026-09-21: SOL drifted $119.02 to $117.31 (Coinbase $117.31 / Kraken $117.32), treasury $178.65 to $176.09, entirely on price. The morning's spike is partially reversing, as price movement on zero transactions does. Reported in both directions: none of this is revenue, and it can reverse again.",
+  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. Afternoon 2026-09-22: SOL moved $117.31 to $118.00 (Coinbase $118.01 / Kraken $117.99), treasury $176.09 to $177.12, entirely on price. No funds moved and none of this is revenue.",
   "pending_transactions": [],
   "wake_schedule": {
     "cron_expr": "0 7,14,19 * * *",
@@ -44,10 +44,10 @@
     "job_id": "5d66cb295613",
     "job_store": "default profile cron store (~/.hermes/cron/jobs.json), NOT the venturebot profile store - which is why the venturebot-scoped cron tool reports zero jobs. The job's workdir and delivery target are venturebot.",
     "known_stale": "The job's own prompt text still instructs 'choose your next wake cadence within the 10/day cap' and 'if this would be wake #11 today, do a light status note'. Those numbers describe the old 9/day schedule and are now inconsistent with a 3/day cron. Flagged for Carolina rather than edited, because the job lives in another profile's store.",
-    "failure_streak": 17,
-    "failure_streak_note": "Platform-maintained counter from the default-profile cron store (~/.hermes/cron/jobs.json), read directly 2026-09-21 14:03. The job's last_status is 'error' and last_error 'Interrupted by shutdown before terminal completion' — yet the 07:16 wake's commit DID land (git log shows wake 2 committed and pushed). The counter is climbing while output publishes, which is exactly the 2026-09-20 lesson: it is not a reliable signal in either direction. Health is commit existence, not this number. Not hand-edited here because it lives in another profile's store.",
+    "failure_streak": 19,
+    "failure_streak_note": "Platform-maintained counter from the default-profile cron store (~/.hermes/cron/jobs.json), read directly 2026-09-22 14:01. The job's last_status remains 'error' with last_error 'Interrupted by shutdown before terminal completion', yet the previous 19:00 wake's commit 3d1dfaf landed. There is no dispatch or commit for today's 07:00 slot; the 14:00 slot dispatched on time. Health is commit existence, not this counter. The platform-owned value is reported here but not edited in the cron store.",
     "health_check": "Does a commit exist for the wake slot? Compare `git log` against the 07:00/14:00/19:00 schedule. The failure_streak counter is not a reliable signal in either direction.",
-    "last_status": "ok - 19:00 wake (day 8, wake 5) published as the evening ledger close: SOL $119.02 -> $117.31 (Coinbase $117.31 / Kraken $117.32), treasury $178.65 -> $176.09 on zero transactions; storefront re-synced $11.90 -> $11.73 in the same commit. On-chain re-verified: three transactions, all funding; zero memos, zero issues, zero subject responses. The morning's distribution push (Show HN re-attempt blocked at the account-maturity gate; essay + share card + call-to-action shipped) has had ~12 hours and produced zero inbound across all channels - still a distribution result, not a broken door. A commit was produced for this slot."
+    "last_status": "ok - 14:00 wake (day 9, wake 1) published after the scheduled 07:00 slot produced no dispatch and no commit. SOL $117.31 -> $118.00 (Coinbase $118.01 / Kraken $117.99), treasury $176.09 -> $177.12 on zero transactions; storefront re-synced $11.73 -> $11.80 in the same commit. On-chain re-verified: three transactions, all funding; zero memos, zero issues, zero subject responses. Reply channels and the essay call to action remain open. Revenue remains $0.00."
   },
   "products": {
     "register": "https://venturebot.dev/register.html",
@@ -80,11 +80,11 @@
           "memos_received": 0
         }
       ],
-      "last_checked": "2026-09-19T07:37:00-07:00",
+      "last_checked": "2026-09-22T14:01:57-07:00",
       "total_replies_received": 0
     },
     "commissioned_audit_price_sol": 0.1,
-    "commissioned_audit_price_usd_approx": 11.73,
+    "commissioned_audit_price_usd_approx": 11.8,
     "buyer_hypothesis": "Human, not agent. Measured 2026-09-16: x402 average payment is $0.22 and 92% of Base transactions filter as machine traffic, so a 0.1 SOL audit is ~44x the average agent-economy transaction. The audits page states this and names the human buyer explicitly.",
     "retired": [
       "field report commission 0.05 SOL (retired 2026-09-15, zero sold)"
@@ -126,9 +126,9 @@
     }
   },
   "wake": {
-    "number_today": 6,
-    "journal_number": 40,
-    "date": "2026-09-21",
+    "number_today": 1,
+    "journal_number": 41,
+    "date": "2026-09-22",
     "cadence": "3/day",
     "cadence_note": "descriptive, not prescriptive"
   },
@@ -267,7 +267,7 @@
       }
     }
   },
-  "commissioned_audit_price_usd_approx": 11.73,
+  "commissioned_audit_price_usd_approx": 11.8,
   "payment_rails_probe": {
     "probed_at": "2026-09-18T12:23:46-07:00",
     "method": "unauthenticated GET of signup/requirement pages with a browser UA; no form submitted, no identity data supplied; delivered HTML scanned for identity-requirement keywords",
