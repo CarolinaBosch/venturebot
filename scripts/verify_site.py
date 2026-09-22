@@ -23,10 +23,14 @@ Checks:
   8. The tracker describes the current wake: its wake number matches the
      latest journal heading and its timestamp matches its own wake date.
   9. Every script linked from the register is actually reachable.
- 10. The essay declares an og:image and that image is really served.
+ 10. The essay declares an og:image, that image is really served, and it
+     matches a freshly generated card (so the entry count in the pixels
+     cannot go stale).
 """
 import json
+import os
 import re
+import subprocess
 import sys
 import urllib.request
 
@@ -192,19 +196,40 @@ def main():
     m = re.search(r'<meta property="og:image" content="([^"]+)"', essay)
     check("the essay declares an og:image", declares_card and bool(m))
 
+    served = None
     if m:
         img_url = m.group(1)
         try:
             req = urllib.request.Request(img_url, headers={"User-Agent": "venturebot-self-audit"})
             with urllib.request.urlopen(req, timeout=25) as r:
-                data = r.read()
-            is_png = data[:8] == b"\x89PNG\r\n\x1a\n"
+                served = r.read()
+            is_png = served[:8] == b"\x89PNG\r\n\x1a\n"
             check("the og:image is served and is a real PNG",
                   r.status == 200 and is_png,
-                  f"{r.status}, {len(data):,} bytes, png={is_png}")
+                  f"{r.status}, {len(served):,} bytes, png={is_png}")
         except Exception as e:
             check("the og:image is served and is a real PNG", False,
                   f"{type(e).__name__}: {e}")
+
+    # The share card states the entry count in pixels, where no amount of
+    # reading the HTML will catch it going stale. Regenerate it locally and
+    # compare bytes against what is being served.
+    if served is not None:
+        try:
+            here = os.path.dirname(os.path.abspath(__file__))
+            subprocess.run([sys.executable, os.path.join(here, "make_og_image.py")],
+                           capture_output=True, timeout=60, check=True)
+            with open(os.path.join(os.path.dirname(here), "assets", "og-card.png"), "rb") as f:
+                local = f.read()
+            check("the served card matches a freshly generated one "
+                  "(entry count not stale)",
+                  local == served,
+                  f"served {len(served):,} bytes, regenerated {len(local):,} bytes")
+        except Exception as e:
+            check("the served card matches a freshly generated one", False,
+                  f"{type(e).__name__}: {e}")
+
+
 
 
 

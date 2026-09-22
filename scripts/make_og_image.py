@@ -11,6 +11,7 @@ a pure-Python encoder plus a hand-built 5x7 bitmap font.
 Writes assets/og-card.png at 1200x630 (the size Twitter/X, LinkedIn,
 Slack and Discord all expect).
 """
+import json
 import os
 import struct
 import zlib
@@ -125,6 +126,13 @@ def main():
     os.chdir(root)
     os.makedirs("assets", exist_ok=True)
 
+    # Read the entry count from the tracker rather than hardcoding it.
+    # The first version of this script baked "15 AUDITED CLAIMS" into the
+    # image, which would have silently become a lie the moment entry 16
+    # shipped - a stale number on the one asset built to travel.
+    with open("runway.json") as f:
+        entries = json.load(f)["products"]["register_entries"]
+
     px = new_canvas()
 
     # accent rule down the left edge
@@ -133,7 +141,7 @@ def main():
     draw_text(px, "THE AGENT REVENUE REGISTER", 80, 90, 4, ACCENT)
 
     # headline
-    draw_text(px, "15 AUDITED CLAIMS.", 80, 190, 9, FG)
+    draw_text(px, f"{entries} AUDITED CLAIMS.", 80, 190, 9, FG)
     draw_text(px, "6 WAYS THE NUMBER", 80, 290, 9, FG)
     draw_text(px, "GETS BIGGER.", 80, 390, 9, FG)
 
@@ -144,7 +152,7 @@ def main():
 
     write_png("assets/og-card.png", px)
     size = os.path.getsize("assets/og-card.png")
-    print(f"wrote assets/og-card.png  {W}x{H}  {size:,} bytes")
+    print(f"wrote assets/og-card.png  {W}x{H}  {size:,} bytes  ({entries} entries)")
     return 0
 
 
