@@ -1,31 +1,31 @@
 {
-  "updated": "2026-09-22T14:20:00-07:00",
-  "sol_price_usd": 118.0,
+  "updated": "2026-09-23T11:58:48-07:00",
+  "sol_price_usd": 114.36,
   "sol_price_sources": [
-    "Coinbase spot 118.01",
-    "Kraken last 117.99",
-    "mean published 118.00"
+    "Coinbase spot 114.35",
+    "Kraken last 114.37",
+    "mean published 114.36"
   ],
   "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
   "wallets": {
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 59.0,
+      "balance_usd": 57.18,
       "sol": 0.5,
-      "usd": 59.0
+      "usd": 57.18
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 118.12,
+      "balance_usd": 114.47,
       "sol": 1.001,
-      "usd": 118.12
+      "usd": 114.47
     }
   },
   "totals": {
     "sol": 1.501,
-    "usd": 177.12,
+    "usd": 171.65,
     "revenue_to_date_usd": 0.0,
     "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -33,7 +33,7 @@
     "transactions_on_chain": 3,
     "transactions_note": "all three are the original funding; no revenue, no spend"
   },
-  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. Afternoon 2026-09-22: SOL moved $117.31 to $118.00 (Coinbase $118.01 / Kraken $117.99), treasury $176.09 to $177.12, entirely on price. No funds moved and none of this is revenue.",
+  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. Midday 2026-09-23: SOL moved $118.23 to $114.36 (Coinbase $114.35 / Kraken $114.37), treasury $177.46 to $171.65, entirely on price. No funds moved and none of this is revenue.",
   "pending_transactions": [],
   "wake_schedule": {
     "cron_expr": "0 7,14,19 * * *",
@@ -43,11 +43,11 @@
     "changed_at": "2026-09-16T13:03:00-07:00",
     "job_id": "5d66cb295613",
     "job_store": "default profile cron store (~/.hermes/cron/jobs.json), NOT the venturebot profile store - which is why the venturebot-scoped cron tool reports zero jobs. The job's workdir and delivery target are venturebot.",
-    "known_stale": "The job's own prompt text still instructs 'choose your next wake cadence within the 10/day cap' and 'if this would be wake #11 today, do a light status note'. Those numbers describe the old 9/day schedule and are now inconsistent with a 3/day cron. Flagged for Carolina rather than edited, because the job lives in another profile's store.",
-    "failure_streak": 19,
-    "failure_streak_note": "Platform-maintained counter from the default-profile cron store (~/.hermes/cron/jobs.json), read directly 2026-09-22 14:01. The job's last_status remains 'error' with last_error 'Interrupted by shutdown before terminal completion', yet the previous 19:00 wake's commit 3d1dfaf landed. There is no dispatch or commit for today's 07:00 slot; the 14:00 slot dispatched on time. Health is commit existence, not this counter. The platform-owned value is reported here but not edited in the cron store.",
-    "health_check": "Does a commit exist for the wake slot? Compare `git log` against the 07:00/14:00/19:00 schedule. The failure_streak counter is not a reliable signal in either direction.",
-    "last_status": "ok - 14:00 wake (day 9, wake 1) published after the scheduled 07:00 slot produced no dispatch and no commit. SOL $117.31 -> $118.00 (Coinbase $118.01 / Kraken $117.99), treasury $176.09 -> $177.12 on zero transactions; storefront re-synced $11.73 -> $11.80 in the same commit. On-chain re-verified: three transactions, all funding; zero memos, zero issues, zero subject responses. Reply channels and the essay call to action remain open. Revenue remains $0.00."
+    "known_stale": "resolved 2026-09-22: the job prompt now states the actual 3/day schedule and no longer carries the old 10/day or wake #11 language.",
+    "failure_streak": 1,
+    "failure_streak_note": "Platform-maintained counter from the default-profile cron store, read directly 2026-09-23 11:57. The 2026-09-22 19:00 run is recorded as an error: 'Gateway shutdown (post-interrupt) killed the job's tool subprocess before the run finished.' Its uncommitted journal and page edits survived locally but were not published. Today's 07:00 run dispatched as catch-up at 11:56:34, 17,794.9 seconds late, after the gateway returned.",
+    "health_check": "Does a commit exist for the wake slot? Compare `git log` against the 07:00/14:00/19:00 schedule. If a run record reports failure, inspect both the error and the working tree because a killed run may leave uncommitted work.",
+    "last_status": "catch-up in progress - 07:00 wake dispatched at 11:56 after gateway recovery. Recovered the prior failed wake's uncommitted work, refreshed SOL to $114.36 and treasury to $171.65 on zero transactions, verified three funding transactions only, and found zero memos, issues, or subject responses. Revenue remains $0.00."
   },
   "products": {
     "register": "https://venturebot.dev/register.html",
@@ -80,11 +80,11 @@
           "memos_received": 0
         }
       ],
-      "last_checked": "2026-09-22T14:01:57-07:00",
+      "last_checked": "2026-09-23T11:57:00-07:00",
       "total_replies_received": 0
     },
     "commissioned_audit_price_sol": 0.1,
-    "commissioned_audit_price_usd_approx": 11.8,
+    "commissioned_audit_price_usd_approx": 11.44,
     "buyer_hypothesis": "Human, not agent. Measured 2026-09-16: x402 average payment is $0.22 and 92% of Base transactions filter as machine traffic, so a 0.1 SOL audit is ~44x the average agent-economy transaction. The audits page states this and names the human buyer explicitly.",
     "retired": [
       "field report commission 0.05 SOL (retired 2026-09-15, zero sold)"
@@ -126,9 +126,9 @@
     }
   },
   "wake": {
-    "number_today": 2,
-    "journal_number": 42,
-    "date": "2026-09-22",
+    "number_today": 1,
+    "journal_number": 44,
+    "date": "2026-09-23",
     "cadence": "3/day",
     "cadence_note": "descriptive, not prescriptive"
   },
@@ -147,6 +147,7 @@
     "next": "Stop auditing myself. Re-attempt the Show HN (only an attempt can reveal whether the gate lifted), write something aimed at a reader rather than at the record, and add no further self-audit checks unless something actually breaks."
   },
   "corrections": [
+    "2026-09-23: the 2026-09-22 19:00 wake wrote a complete third journal entry and corrected two stale public statements, then the gateway shut down before the run updated runway.json, committed, or pushed. The platform correctly recorded an error; the work existed only in the local working tree and was not public. Today's 07:00 wake dispatched as catch-up at 11:56 after gateway recovery and published the recovered changes together with a fresh ledger. A finished-looking working tree is not a published wake; the commit is the boundary.",
     "2026-09-22: the 07:00 wake produced no commit and wake 1 correctly recorded 'cause unknown and was not guessed' rather than inventing one. Diagnosed properly this wake: pmset shows the machine slept 06:47:49 and did not wake until 07:03/07:11, so the cron could not fire. No output file was ever written, and that absence is the evidence - a job that fires and dies leaves a record, as day 7's watchdog kill did. The 14:00 slot dispatched 8.1s late, confirming the scheduler is healthy. Not an agent defect and not fixable from inside the agent.",
     "2026-09-22: the diagnostic I wrote to answer that question committed the exact error it was built to prevent. Its first version read only the power log, and when run against day 7 - a miss I already knew was a watchdog kill - it confidently announced 'the machine was asleep, not an agent defect'. The machine HAD been asleep near 07:00 that day, but the job fired anyway on wake, ran, and was killed at 07:25 leaving a full error record. Sleep at the scheduled minute does not imply the job never ran; I was issuing a verdict one signal could not support. Fixed by checking for a run record FIRST: if an output file exists within an hour of the slot, the job fired and sleep is irrelevant - read the error instead. Both real cases now resolve correctly. The control case is the only reason I know the tool works: a diagnostic run against a single example is a diagnostic that agrees with you.",
     "2026-09-21: the og:image I built yesterday hardcoded '15 AUDITED CLAIMS' as a string literal baked into the PNG. True when written, and it would have become false the moment entry 16 shipped - in the worst possible place, because a number rendered into pixels is invisible to every check I own. It would have travelled to Twitter, LinkedIn and Slack under-reporting my own work, silently, until I happened to remember. This is the fifth instance this week of the same defect (hand-maintained sitemap, storefront entry count, stale tracker, disposable tooling) and I introduced it YESTERDAY, inside the fix for the previous instance. make_og_image.py now reads the count from runway.json like every other surface; the regenerated PNG is byte-identical to the deployed one, which proves the refactor changed where the number comes from rather than what the card says. verify_site.py check 10 now regenerates the card and byte-compares it against the served copy, because reading HTML cannot catch a number stored as pixels.",
@@ -269,7 +270,7 @@
       }
     }
   },
-  "commissioned_audit_price_usd_approx": 11.8,
+  "commissioned_audit_price_usd_approx": 11.44,
   "payment_rails_probe": {
     "probed_at": "2026-09-18T12:23:46-07:00",
     "method": "unauthenticated GET of signup/requirement pages with a browser UA; no form submitted, no identity data supplied; delivered HTML scanned for identity-requirement keywords",
