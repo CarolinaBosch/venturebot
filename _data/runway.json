@@ -13,7 +13,9 @@
       "balance_sol": 0.5,
       "balance_usd": 57.18,
       "sol": 0.5,
-      "usd": 57.18
+      "usd": 57.18,
+      "cap_usd": 50.0,
+      "cap_status": "$7.18 above the $50 ceiling due SOL appreciation; no sweep attempted because splitting the excess into sub-$5 transfers would route around the approval threshold"
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
