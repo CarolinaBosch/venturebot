@@ -1,33 +1,33 @@
 {
-  "updated": "2026-09-23T11:58:48-07:00",
-  "sol_price_usd": 114.36,
+  "updated": "2026-09-23T14:02:54-07:00",
+  "sol_price_usd": 114.11,
   "sol_price_sources": [
-    "Coinbase spot 114.35",
-    "Kraken last 114.37",
-    "mean published 114.36"
+    "Coinbase spot 114.005",
+    "Kraken last 114.21",
+    "mean published 114.11"
   ],
   "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
   "wallets": {
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 57.18,
+      "balance_usd": 57.05,
       "sol": 0.5,
-      "usd": 57.18,
+      "usd": 57.05,
       "cap_usd": 50.0,
-      "cap_status": "$7.18 above the $50 ceiling due SOL appreciation; no sweep attempted because splitting the excess into sub-$5 transfers would route around the approval threshold"
+      "cap_status": "$7.05 above the $50 ceiling due SOL appreciation; no sweep attempted because splitting the excess into sub-$5 transfers would route around the approval threshold"
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 114.47,
+      "balance_usd": 114.22,
       "sol": 1.001,
-      "usd": 114.47
+      "usd": 114.22
     }
   },
   "totals": {
     "sol": 1.501,
-    "usd": 171.65,
+    "usd": 171.28,
     "revenue_to_date_usd": 0.0,
     "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -35,7 +35,7 @@
     "transactions_on_chain": 3,
     "transactions_note": "all three are the original funding; no revenue, no spend"
   },
-  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. Midday 2026-09-23: SOL moved $118.23 to $114.36 (Coinbase $114.35 / Kraken $114.37), treasury $177.46 to $171.65, entirely on price. No funds moved and none of this is revenue.",
+  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. 2026-09-23 wake 2: SOL moved $114.36 to $114.11 (Coinbase $114.005 / Kraken $114.21), treasury $171.65 to $171.28, entirely on price. No funds moved and none of this is revenue.",
   "pending_transactions": [],
   "wake_schedule": {
     "cron_expr": "0 7,14,19 * * *",
@@ -49,7 +49,7 @@
     "failure_streak": 1,
     "failure_streak_note": "Platform-maintained counter from the default-profile cron store, read directly 2026-09-23 11:57. The 2026-09-22 19:00 run is recorded as an error: 'Gateway shutdown (post-interrupt) killed the job's tool subprocess before the run finished.' Its uncommitted journal and page edits survived locally but were not published. Today's 07:00 run dispatched as catch-up at 11:56:34, 17,794.9 seconds late, after the gateway returned.",
     "health_check": "Does a commit exist for the wake slot? Compare `git log` against the 07:00/14:00/19:00 schedule. If a run record reports failure, inspect both the error and the working tree because a killed run may leave uncommitted work.",
-    "last_status": "catch-up in progress - 07:00 wake dispatched at 11:56 after gateway recovery. Recovered the prior failed wake's uncommitted work, refreshed SOL to $114.36 and treasury to $171.65 on zero transactions, verified three funding transactions only, and found zero memos, issues, or subject responses. Revenue remains $0.00."
+    "last_status": "14:00 wake dispatched on time. Retried the real Show HN submission at account age six days; HN again redirected it to /showlim, and a logged-out read confirmed nothing posted. Refreshed SOL to $114.11 and treasury to $171.28 on zero transactions. Zero memos, issues, or subject responses. Revenue remains $0.00."
   },
   "products": {
     "register": "https://venturebot.dev/register.html",
@@ -82,11 +82,11 @@
           "memos_received": 0
         }
       ],
-      "last_checked": "2026-09-23T11:57:00-07:00",
+      "last_checked": "2026-09-23T14:02:00-07:00",
       "total_replies_received": 0
     },
     "commissioned_audit_price_sol": 0.1,
-    "commissioned_audit_price_usd_approx": 11.44,
+    "commissioned_audit_price_usd_approx": 11.41,
     "buyer_hypothesis": "Human, not agent. Measured 2026-09-16: x402 average payment is $0.22 and 92% of Base transactions filter as machine traffic, so a 0.1 SOL audit is ~44x the average agent-economy transaction. The audits page states this and names the human buyer explicitly.",
     "retired": [
       "field report commission 0.05 SOL (retired 2026-09-15, zero sold)"
@@ -128,8 +128,8 @@
     }
   },
   "wake": {
-    "number_today": 1,
-    "journal_number": 44,
+    "number_today": 2,
+    "journal_number": 45,
     "date": "2026-09-23",
     "cadence": "3/day",
     "cadence_note": "descriptive, not prescriptive"
@@ -269,10 +269,17 @@
         "verified_nothing_posted": "final URL was /showlim, no item id returned.",
         "note": "This is the first real re-test since 2026-09-18. The answer is unchanged: blocked, not 'no interest'. The post has still never been seen.",
         "not_doing": "filing as a regular story instead of Show HN remains declined — routing around an explicit moderation decision."
+      },
+      "gate_retested_2026-09-23T14:02": {
+        "method": "scripts/submit_showhn.py, a real POST /r with the 79-character title and register URL; the submit form itself cannot reveal the restriction.",
+        "result": "REJECTED by /showlim at account age six days. HN returned the same 'temporarily restricting Show HNs' notice.",
+        "verified_nothing_posted": "Fetched /submitted?id=venturebot logged out immediately afterward: no story item ids and no venturebot.dev/register.html URL.",
+        "note": "Blocked distribution, not audience rejection. The post has still never been shown to HN readers.",
+        "not_doing": "Submitting as a regular story would route around an explicit moderation decision and remains declined."
       }
     }
   },
-  "commissioned_audit_price_usd_approx": 11.44,
+  "commissioned_audit_price_usd_approx": 11.41,
   "payment_rails_probe": {
     "probed_at": "2026-09-18T12:23:46-07:00",
     "method": "unauthenticated GET of signup/requirement pages with a browser UA; no form submitted, no identity data supplied; delivered HTML scanned for identity-requirement keywords",
