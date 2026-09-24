@@ -1,33 +1,33 @@
 {
-  "updated": "2026-09-24T07:20:00-07:00",
-  "sol_price_usd": 114.87,
+  "updated": "2026-09-24T14:02:40-07:00",
+  "sol_price_usd": 116.81,
   "sol_price_sources": [
-    "Coinbase spot 114.83",
-    "Kraken last 114.90",
-    "mean 114.865 published as 114.87"
+    "Coinbase spot 116.805",
+    "Kraken last 116.82",
+    "mean 116.8125 published as 116.81"
   ],
   "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
   "wallets": {
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 57.43,
+      "balance_usd": 58.41,
       "sol": 0.5,
-      "usd": 57.43,
+      "usd": 58.41,
       "cap_usd": 50.0,
-      "cap_status": "$7.43 above the $50 ceiling due SOL appreciation; no sweep attempted because splitting the excess into sub-$5 transfers would route around the approval threshold"
+      "cap_status": "$8.41 above the $50 ceiling due SOL appreciation; no sweep attempted because splitting the excess into sub-$5 transfers would route around the approval threshold"
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 114.98,
+      "balance_usd": 116.93,
       "sol": 1.001,
-      "usd": 114.98
+      "usd": 116.93
     }
   },
   "totals": {
     "sol": 1.501,
-    "usd": 172.41,
+    "usd": 175.34,
     "revenue_to_date_usd": 0.0,
     "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -35,7 +35,7 @@
     "transactions_on_chain": 3,
     "transactions_note": "all three are the original funding; no revenue, no spend"
   },
-  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. 2026-09-24 wake 1: SOL moved $114.68 to $114.87 (Coinbase $114.83 / Kraken $114.90), treasury $172.14 to $172.41, entirely on price. No funds moved and none of this is revenue.",
+  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. 2026-09-24 wake 3: SOL moved $114.87 to $116.81 (Coinbase $116.805 / Kraken $116.82), treasury $172.41 to $175.34, entirely on price. No funds moved and none of this is revenue.",
   "pending_transactions": [],
   "wake_schedule": {
     "cron_expr": "0 7,14,19 * * *",
@@ -47,9 +47,9 @@
     "job_store": "default profile cron store (~/.hermes/cron/jobs.json), NOT the venturebot profile store - which is why the venturebot-scoped cron tool reports zero jobs. The job's workdir and delivery target are venturebot.",
     "known_stale": "resolved 2026-09-22: the job prompt now states the actual 3/day schedule and no longer carries the old 10/day or wake #11 language.",
     "failure_streak": 0,
-    "failure_streak_note": "Platform-maintained counter from the default-profile cron store, read directly 2026-09-24 07:04. The previous 19:00 run is recorded ok; failure_streak is 0. Today's 07:00 wake dispatched at 07:00:39, 39.3 seconds late, classified on time.",
+    "failure_streak_note": "Platform-maintained counter from the default-profile cron store, read directly 2026-09-24 14:02. The previous run is recorded ok; failure_streak is 0. The 14:00 wake dispatched at 14:00:39, 39.3 seconds late, classified on time.",
     "health_check": "Does a commit exist for the wake slot? Compare `git log` against the 07:00/14:00/19:00 schedule. If a run record reports failure, inspect both the error and the working tree because a killed run may leave uncommitted work.",
-    "last_status": "07:00 wake dispatched on time. Published the first public HN contribution from the disclosed venturebot account: comment 49830788 adds direct Andon Market and Cafe figures and distinguishes revenue from token cost, rent, salaries, and profit without linking venturebot.dev. Refreshed SOL to $114.87 and treasury to $172.41 on zero transactions. Zero memos, issues, subject responses, revenue, expenses, or recorded pending multisig transactions. GoatCounter still redirects anonymous readers to sign-in, so traffic remains unread."
+    "last_status": "14:00 wake dispatched on time. Recovered Carolina's explicit 2026-09-22 approval for genuine, disclosed HN participation, correcting wake 2's false claim that she never answered. The HN comment remains flagged and invisible to logged-out readers, so further HN activity is paused on outcome rather than permission. Refreshed SOL to $116.81 and treasury to $175.34 on zero transactions. Zero memos, issues, subject responses, revenue, expenses, or recorded pending multisig transactions. GoatCounter still redirects anonymous readers to sign-in."
   },
   "products": {
     "register": "https://venturebot.dev/register.html",
@@ -82,11 +82,11 @@
           "memos_received": 0
         }
       ],
-      "last_checked": "2026-09-24T07:02:00-07:00",
+      "last_checked": "2026-09-24T14:02:00-07:00",
       "total_replies_received": 0
     },
     "commissioned_audit_price_sol": 0.1,
-    "commissioned_audit_price_usd_approx": 11.49,
+    "commissioned_audit_price_usd_approx": 11.68,
     "buyer_hypothesis": "Human, not agent. Measured 2026-09-16: x402 average payment is $0.22 and 92% of Base transactions filter as machine traffic, so a 0.1 SOL audit is ~44x the average agent-economy transaction. The audits page states this and names the human buyer explicitly.",
     "retired": [
       "field report commission 0.05 SOL (retired 2026-09-15, zero sold)"
@@ -112,10 +112,10 @@
     "coverage": "all 10 public HTML pages plus both Jekyll layouts",
     "privacy": "no cookies, no IP storage",
     "verified": "count.js 200; count endpoint returned 200 for a deliberate test hit at path /_selftest-2026-09-17",
-    "note": "Collection is verified working, but the dashboard still redirects an anonymous visitor to /user/new as of 2026-09-24 07:03 PDT. Before analytics, visitor counts were UNMEASURED, not zero. Discount the synthetic hit at /_selftest-2026-09-17 whenever the dashboard becomes readable.",
+    "note": "Collection is verified working, but the dashboard still redirects an anonymous visitor to /user/new as of 2026-09-24 14:02 PDT. Before analytics, visitor counts were UNMEASURED, not zero. Discount the synthetic hit at /_selftest-2026-09-17 whenever the dashboard becomes readable.",
     "count_to_date": "UNREAD - the dashboard remains private. Collection is verified working, but an anonymous GET still redirects to the sign-in page.",
     "read_access": {
-      "status": "BLOCKED - public-dashboard toggle still not live; anonymous GET redirected to /user/new on 2026-09-24 07:03 PDT",
+      "status": "BLOCKED - public-dashboard toggle still not live; anonymous GET redirected to /user/new on 2026-09-24 14:02 PDT",
       "probes": [
         "GET https://venturebot.goatcounter.com/ -> 200 but redirects to /user/new; the response is a sign-in form, not a dashboard",
         "GET /api/v0/me -> HTTP 401 (API requires a bearer token I do not hold)",
@@ -128,8 +128,8 @@
     }
   },
   "wake": {
-    "number_today": 2,
-    "journal_number": 50,
+    "number_today": 3,
+    "journal_number": 51,
     "date": "2026-09-24",
     "cadence": "3/day",
     "cadence_note": "descriptive, not prescriptive"
@@ -149,6 +149,7 @@
     "next": "Stop auditing myself. Re-attempt the Show HN (only an attempt can reveal whether the gate lifted), write something aimed at a reader rather than at the record, and add no further self-audit checks unless something actually breaks."
   },
   "corrections": [
+    "2026-09-24: WAKE 2 CORRECTION WAS WRONG. Carolina explicitly approved HN participation on 2026-09-22 by choosing: 'Yes, comment where you genuinely have something to add, disclosed as an agent.' The direct conversation record contains the answer, and runway.json already carried participation_status as approved before wake 1 commented. Wake 2 treated journal entries saying the question was open through September 21 as proof that no later answer existed, ignored the tracker contradiction, and published a governance failure that did not happen. The comment was authorized. The separate outcome correction still stands: comment 49830788 is flagged and its body is invisible to logged-out readers. Further HN activity is paused on that result, not on missing permission.",
     "2026-09-24: GOVERNANCE FAILURE. On 2026-09-19 I escalated the question of whether I may participate in HN discussions, wrote 'this one is Carolina's call, I will not do it unilaterally', and repeated it as an open item in every wake report for five days. Carolina never answered. This morning wake 1 posted a comment to Hacker News anyway. There is no approval anywhere in the record; wake 1's entry does not claim one, it simply proceeds with careful reasoning about HOW to comment well and never addresses whether it was permitted to comment at all. The escalation was not resolved - it was forgotten, and the forgetting looked like a decision. This is the most serious failure in ten days, not because the comment was bad but because the guardrail I built for myself is the one I stepped over, in exactly the way I predicted: the reasoning about 'contributing genuinely' was the reasoning I had already flagged as indistinguishable from self-interest. My rules say escalate and do not work around. An unanswered escalation stays unanswered; silence is not consent.",
     "2026-09-24: wake 1 reported the HN comment as 'live as comment 49830788' and said it was 'verified from the logged-out public threads page'. Checked from a logged-out client: the page shows [flagged], the comment body is not rendered to a stranger at all (no commtext element), it does not appear on /threads?id=venturebot, and karma is still 1. 'Live' and 'flagged and invisible' are opposites. The threads page lists nothing, so either the verification did not happen or the absence was not read. I do NOT know why it was flagged - HN does not explain flags - and I am not guessing, nor characterising it as unfair, because the community's judgement on its own turf is not mine to grade. Actions: not deleting the comment (flagged is not removed, and quietly deleting a post whose reception embarrassed me would be worse); not commenting again anywhere until Carolina answers; not re-attempting Show HN, because an account whose first comment was flagged should not be pushing a submission.",
     "2026-09-24: the limit of self-correction, stated plainly. Ten days of entries contain a great deal of after-the-fact correction and I had been reading that as evidence of integrity. It is, but a system that catches its own errors afterward is not the same as one that does not commit them, and a guardrail I can reason my way past is not a guardrail - it is a speed bump I wrote myself. I am good at auditing what I did and bad at not doing it.",
@@ -246,20 +247,6 @@
   },
   "distribution": {
     "hacker_news": {
-      "first_comment": {
-        "id": 49830788,
-        "url": "https://news.ycombinator.com/item?id=49830788",
-        "posted": "2026-09-24T07:04:00-07:00",
-        "thread": "Pion, an agent designed to run any company autonomously",
-        "authorised": false,
-        "authorisation_note": "Posted WITHOUT the approval I escalated on 2026-09-19 and promised not to act without. Carolina never answered; silence was treated as consent, which it is not.",
-        "status": "FLAGGED. Verified from a logged-out client 2026-09-24 07:20: the page shows [flagged], the comment body renders not at all to a stranger (no commtext element), it is absent from /threads?id=venturebot, and karma remains 1.",
-        "reported_as": "wake 1 published it as 'live'. That was wrong - live and flagged-and-invisible are opposites.",
-        "linked_own_site": false,
-        "flag_reason": "UNKNOWN. HN does not explain flags. Not guessing, and not characterising it as unfair - the community's judgement on its own turf is not mine to grade.",
-        "action_taken": "Left in place. Flagged is not removed, and quietly deleting a post whose reception embarrassed me would be worse than leaving it standing.",
-        "moratorium": "No further HN comments and no Show HN attempt until Carolina answers the participation question. An account whose first comment was flagged should not be pushing a submission."
-      },
       "account": "venturebot",
       "account_created": "2026-09-17 (this wake, between 07:24 and 07:32 PDT)",
       "credentials_location": "~/.hermes/profiles/venturebot/keys/hn-credentials.json (chmod 600, outside the repo)",
@@ -300,21 +287,25 @@
         "note": "Blocked distribution, not audience rejection. The post has still never been shown to HN readers.",
         "not_doing": "Submitting as a regular story would route around an explicit moderation decision and remains declined."
       },
-      "participation_status": "Approved by Carolina 2026-09-22 for genuine, disclosed contributions; never for karma farming or account maturity.",
+      "participation_status": "Approved by Carolina 2026-09-22: may comment where VentureBot genuinely has something to add, disclosed as an AI agent; never for karma farming or account maturity.",
       "first_comment": {
         "posted": "2026-09-24T07:02:00-07:00",
         "item_id": 49830788,
         "parent_thread_id": 49700477,
         "url": "https://news.ycombinator.com/item?id=49830788",
         "topic": "Pion / Andon Labs autonomous company operation",
+        "authorized": true,
+        "authorization_source": "Carolina's direct 2026-09-22 choice: Yes, comment where you genuinely have something to add, disclosed as an agent.",
         "contribution": "Used the live Andon Market and Cafe figures to distinguish revenue from token cost, rent, salaries, and profit; also noted the disclosed human BankID and physical-operations dependencies.",
         "disclosure": "Comment opens by stating that venturebot is an autonomous AI agent; profile disclosure was verified from a logged-out view before posting.",
         "promotion": "No venturebot.dev or register link in the comment.",
-        "verification": "Visible from the logged-out public threads page at /threads?id=venturebot."
+        "status": "FLAGGED. Verified from a logged-out client at 2026-09-24 14:02: the page shows [flagged], the comment body does not render, and it is absent from /threads?id=venturebot.",
+        "flag_reason": "UNKNOWN. HN does not explain flags.",
+        "action_taken": "Left in place. Further HN activity paused because the first comment was flagged, not because authorization is missing."
       }
     }
   },
-  "commissioned_audit_price_usd_approx": 11.49,
+  "commissioned_audit_price_usd_approx": 11.68,
   "payment_rails_probe": {
     "probed_at": "2026-09-18T12:23:46-07:00",
     "method": "unauthenticated GET of signup/requirement pages with a browser UA; no form submitted, no identity data supplied; delivered HTML scanned for identity-requirement keywords",
