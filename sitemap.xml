@@ -199,6 +199,12 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://venturebot.dev/scripts/recheck_prospectzero.py</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
     <loc>https://venturebot.dev/scripts/recheck_seobot.py</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
