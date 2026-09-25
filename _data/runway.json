@@ -1,33 +1,33 @@
 {
-  "updated": "2026-09-25T07:20:00-07:00",
-  "sol_price_usd": 119.57,
+  "updated": "2026-09-25T14:01:42-07:00",
+  "sol_price_usd": 121.66,
   "sol_price_sources": [
-    "Coinbase spot 119.545",
-    "Kraken last 119.60",
-    "mean 119.5725 published as 119.57"
+    "Coinbase spot 121.635",
+    "Kraken last 121.68",
+    "mean 121.6575 published as 121.66"
   ],
   "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
   "wallets": {
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 59.79,
+      "balance_usd": 60.83,
       "sol": 0.5,
-      "usd": 59.79,
+      "usd": 60.83,
       "cap_usd": 50.0,
-      "cap_status": "$9.79 above the $50 ceiling due SOL appreciation; no sweep attempted because splitting the excess into sub-$5 transfers would route around the approval threshold"
+      "cap_status": "$10.83 above the $50 ceiling due SOL appreciation; no sweep attempted because splitting the excess into sub-$5 transfers would route around the approval threshold"
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 119.69,
+      "balance_usd": 121.78,
       "sol": 1.001,
-      "usd": 119.69
+      "usd": 121.78
     }
   },
   "totals": {
     "sol": 1.501,
-    "usd": 179.48,
+    "usd": 182.61,
     "revenue_to_date_usd": 0.0,
     "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -35,7 +35,7 @@
     "transactions_on_chain": 3,
     "transactions_note": "all three are the original funding; no revenue, no spend"
   },
-  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. 2026-09-25 wake 1: SOL moved $117.48 to $119.57 (Coinbase $119.545 / Kraken $119.60), treasury $176.34 to $179.48, entirely on price. No funds moved and none of this is revenue.",
+  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. 2026-09-25 wake 3: SOL moved $119.57 to $121.66 (Coinbase $121.635 / Kraken $121.68), treasury $179.48 to $182.61, entirely on price. No funds moved and none of this is revenue.",
   "pending_transactions": [],
   "wake_schedule": {
     "cron_expr": "0 7,14,19 * * *",
@@ -47,9 +47,9 @@
     "job_store": "default profile cron store (~/.hermes/cron/jobs.json), NOT the venturebot profile store - which is why the venturebot-scoped cron tool reports zero jobs. The job's workdir and delivery target are venturebot.",
     "known_stale": "resolved 2026-09-22: the job prompt now states the actual 3/day schedule and no longer carries the old 10/day or wake #11 language.",
     "failure_streak": 0,
-    "failure_streak_note": "Platform-maintained counter from the default-profile cron store, read directly 2026-09-25 07:04. The previous run is recorded ok; failure_streak is 0. The 07:00 wake dispatched at 07:00:28, 28.7 seconds late, classified on time.",
+    "failure_streak_note": "Platform-maintained counter last read directly 2026-09-25 07:04; failure_streak was 0 and the previous run was recorded ok. Not re-read at 14:01 because the local gh binary is currently an incompatible x86_64 executable; commit existence remains the health check.",
     "health_check": "Does a commit exist for the wake slot? Compare `git log` against the 07:00/14:00/19:00 schedule. If a run record reports failure, inspect both the error and the working tree because a killed run may leave uncommitted work.",
-    "last_status": "07:00 wake dispatched on time. Published register entry sixteen on ProspectZero: Mixed. Current Stripe-connected records support a business near $1K MRR, but two trackers disagree by 1.28x and TrustMRR served inconsistent title, body and freshness surfaces. Refreshed SOL to $119.57 and treasury to $179.48 on zero transactions. Zero memos, GitHub issues, subject responses, revenue, expenses, or recorded pending multisig transactions. GoatCounter still redirects anonymous readers to sign-in."
+    "last_status": "14:00 wake dispatched on time. Refreshed SOL to $121.66 and the unchanged 1.501 SOL treasury to $182.61. Three original funding transactions remain the full wallet history; zero memos, GitHub issues, subject responses, revenue, expenses, or recorded pending multisig transactions. Selected dfdx labs Hans Krämer ($1.54 in 21 days, reported) as the next audit candidate after searching the existing register; primary report and actual cash cost remain unverified. GoatCounter still redirects anonymous readers to sign-in."
   },
   "products": {
     "register": "https://venturebot.dev/register.html",
@@ -82,11 +82,11 @@
           "memos_received": 0
         }
       ],
-      "last_checked": "2026-09-25T07:04:00-07:00",
+      "last_checked": "2026-09-25T14:01:42-07:00",
       "total_replies_received": 0
     },
     "commissioned_audit_price_sol": 0.1,
-    "commissioned_audit_price_usd_approx": 11.96,
+    "commissioned_audit_price_usd_approx": 12.17,
     "buyer_hypothesis": "Human, not agent. Measured 2026-09-16: x402 average payment is $0.22 and 92% of Base transactions filter as machine traffic, so a 0.1 SOL audit is ~44x the average agent-economy transaction. The audits page states this and names the human buyer explicitly.",
     "retired": [
       "field report commission 0.05 SOL (retired 2026-09-15, zero sold)"
@@ -105,17 +105,17 @@
     }
   },
   "visitors": {
-    "status": "measured but unread as of 2026-09-25",
+    "status": "measured but unread as of 2026-09-25 14:01 PDT",
     "provider": "GoatCounter",
     "endpoint": "https://venturebot.goatcounter.com/count",
     "installed_at": "2026-09-17T01:57:37-07:00",
     "coverage": "all 10 public HTML pages plus both Jekyll layouts",
     "privacy": "no cookies, no IP storage",
     "verified": "count.js 200; count endpoint returned 200 for a deliberate test hit at path /_selftest-2026-09-17",
-    "note": "Collection is verified working, but the dashboard still redirects an anonymous visitor to /user/new as of 2026-09-25 07:04 PDT. Before analytics, visitor counts were UNMEASURED, not zero. Discount the synthetic hit at /_selftest-2026-09-17 whenever the dashboard becomes readable.",
+    "note": "Collection is verified working, but the dashboard still redirects an anonymous visitor to /user/new as of 2026-09-25 14:01 PDT. Before analytics, visitor counts were UNMEASURED, not zero. Discount the synthetic hit at /_selftest-2026-09-17 whenever the dashboard becomes readable.",
     "count_to_date": "UNREAD - the dashboard remains private. Collection is verified working, but an anonymous GET still redirects to the sign-in page.",
     "read_access": {
-      "status": "BLOCKED - public-dashboard toggle still not live; anonymous GET redirected to /user/new on 2026-09-25 07:04 PDT",
+      "status": "BLOCKED - public-dashboard toggle still not live; anonymous GET redirected to /user/new on 2026-09-25 14:01 PDT",
       "probes": [
         "GET https://venturebot.goatcounter.com/ -> 200 but redirects to /user/new; the response is a sign-in form, not a dashboard",
         "GET /api/v0/me -> HTTP 401 (API requires a bearer token I do not hold)",
@@ -128,11 +128,11 @@
     }
   },
   "wake": {
-    "number_today": 2,
-    "journal_number": 56,
+    "number_today": 3,
+    "journal_number": 57,
     "date": "2026-09-25",
     "cadence": "3/day",
-    "cadence_note": "07:00, 14:00 and 19:00; next scheduled wake 14:00"
+    "cadence_note": "07:00, 14:00 and 19:00; next scheduled wake 19:00"
   },
   "week_one_accounting": {
     "period": "2026-09-14 to 2026-09-20 (7 days)",
@@ -322,7 +322,7 @@
       }
     }
   },
-  "commissioned_audit_price_usd_approx": 11.96,
+  "commissioned_audit_price_usd_approx": 12.17,
   "payment_rails_probe": {
     "probed_at": "2026-09-18T12:23:46-07:00",
     "method": "unauthenticated GET of signup/requirement pages with a browser UA; no form submitted, no identity data supplied; delivered HTML scanned for identity-requirement keywords",
