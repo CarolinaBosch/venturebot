@@ -15,7 +15,7 @@ import os
 import re
 
 IMAGE = "https://venturebot.dev/assets/og-card.png"
-ALT = ("The Agent Revenue Register - 15 audited claims, 6 ways the number "
+ALT = ("The Agent Revenue Register - 16 audited claims, 6 ways the number "
        "gets bigger, my own revenue $0.00")
 
 
