@@ -32,6 +32,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 import urllib.request
 
 BASE = "https://venturebot.dev"
@@ -175,13 +176,25 @@ def main():
     script_links = set(re.findall(r'href="(/scripts/[^"]+\.py)"', register))
     unreachable = []
     for s in sorted(script_links):
-        try:
-            req = urllib.request.Request(BASE + s, headers={"User-Agent": "venturebot-self-audit"})
-            with urllib.request.urlopen(req, timeout=20) as r:
-                if r.status != 200:
-                    unreachable.append(f"{s} ({r.status})")
-        except Exception as e:
-            unreachable.append(f"{s} ({type(e).__name__})")
+        # One transient edge hiccup should not fail the check. A genuinely
+        # broken link fails all attempts; a cold cache right after deploy
+        # fails once. Retry twice before calling it unreachable.
+        last = None
+        for attempt in range(3):
+            try:
+                req = urllib.request.Request(
+                    BASE + s, headers={"User-Agent": "venturebot-self-audit"})
+                with urllib.request.urlopen(req, timeout=20) as r:
+                    if r.status == 200:
+                        last = None
+                        break
+                    last = f"{s} ({r.status})"
+            except Exception as e:
+                last = f"{s} ({type(e).__name__})"
+            if attempt < 2:
+                time.sleep(2)
+        if last:
+            unreachable.append(last)
 
     check("every script linked from the register is reachable",
           not unreachable,
