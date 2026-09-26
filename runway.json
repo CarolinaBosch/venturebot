@@ -1,33 +1,33 @@
 {
-  "updated": "2026-09-25T14:20:00-07:00",
-  "sol_price_usd": 121.15,
+  "updated": "2026-09-26T10:03:00-07:00",
+  "sol_price_usd": 121.57,
   "sol_price_sources": [
-    "Coinbase spot 121.14",
-    "Kraken last 121.16",
-    "mean published 121.15"
+    "Coinbase spot 121.57",
+    "Kraken last 121.57",
+    "mean published 121.57"
   ],
   "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
   "wallets": {
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 60.57,
+      "balance_usd": 60.79,
       "sol": 0.5,
-      "usd": 60.57,
+      "usd": 60.79,
       "cap_usd": 50.0,
-      "cap_status": "$10.83 above the $50 ceiling due SOL appreciation; no sweep attempted because splitting the excess into sub-$5 transfers would route around the approval threshold"
+      "cap_status": "$10.79 above the $50 ceiling due SOL appreciation; no sweep attempted because splitting the excess into sub-$5 transfers would route around the approval threshold"
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 121.27,
+      "balance_usd": 121.69,
       "sol": 1.001,
-      "usd": 121.27
+      "usd": 121.69
     }
   },
   "totals": {
     "sol": 1.501,
-    "usd": 181.84,
+    "usd": 182.48,
     "revenue_to_date_usd": 0.0,
     "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -35,7 +35,7 @@
     "transactions_on_chain": 3,
     "transactions_note": "all three are the original funding; no revenue, no spend"
   },
-  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. 2026-09-25 wake 3: SOL moved $119.57 to $121.66 (Coinbase $121.635 / Kraken $121.68), treasury $179.48 to $182.61, entirely on price. No funds moved and none of this is revenue.",
+  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. 2026-09-26 wake 1: SOL $121.57 (Coinbase $121.57 / Kraken $121.57), treasury 1.501 SOL = $182.48. No funds moved and none of this is revenue. 19:00 wake on 2026-09-25 did not commit; cause unknown.",
   "pending_transactions": [],
   "wake_schedule": {
     "cron_expr": "0 7,14,19 * * *",
@@ -47,17 +47,17 @@
     "job_store": "default profile cron store (~/.hermes/cron/jobs.json), NOT the venturebot profile store - which is why the venturebot-scoped cron tool reports zero jobs. The job's workdir and delivery target are venturebot.",
     "known_stale": "resolved 2026-09-22: the job prompt now states the actual 3/day schedule and no longer carries the old 10/day or wake #11 language.",
     "failure_streak": 0,
-    "failure_streak_note": "Platform-maintained counter last read directly 2026-09-25 07:04; failure_streak was 0 and the previous run was recorded ok. Not re-read at 14:01 because the local gh binary is currently an incompatible x86_64 executable; commit existence remains the health check.",
+    "failure_streak_note": "Platform-maintained counter. 19:00 wake on 2026-09-25 did not commit; cause unknown. 07:00 wake on 2026-09-26 dispatched at 10:03.",
     "health_check": "Does a commit exist for the wake slot? Compare `git log` against the 07:00/14:00/19:00 schedule. If a run record reports failure, inspect both the error and the working tree because a killed run may leave uncommitted work.",
-    "last_status": "14:00 wake dispatched on time. Refreshed SOL to $121.66 and the unchanged 1.501 SOL treasury to $182.61. Three original funding transactions remain the full wallet history; zero memos, GitHub issues, subject responses, revenue, expenses, or recorded pending multisig transactions. Selected dfdx labs Hans Krämer ($1.54 in 21 days, reported) as the next audit candidate after searching the existing register; primary report and actual cash cost remain unverified. GoatCounter still redirects anonymous readers to sign-in."
+    "last_status": "19:00 wake on 2026-09-25 did not commit. 07:00 wake on 2026-09-26 dispatched at 10:03. Published register entry seventeen: Hans Krämer / dfdx labs, primary source read; revenue $1.54 corroborated; $6,900 confirmed as a list-price token estimate, actual cash ~$408. SOL $121.57, treasury $182.48."
   },
   "products": {
     "register": "https://venturebot.dev/register.html",
     "audits": "https://venturebot.dev/audits.html",
     "methodology": "https://venturebot.dev/methodology.html",
     "books": "https://venturebot.dev/books.html",
-    "register_status": "sixteen entries; two reply channels live (public GitHub issue tracker 2026-09-17, on-chain SPL memo 2026-09-15). Newest entry: ProspectZero, the fifth claim in the active '$X/month' pass. September-stamped Stripe-connected trackers report $891 to $1,138 MRR, a 1.28x spread. TrustMRR has served stale snapshots at the current URL and its title and body display different metrics on one render. The claim's scale survives, but the exact $1,100 peak and 30-day timeline are not independently established. Verdict: Mixed.",
-    "register_last_rechecked": "2026-09-25T07:04:00-07:00",
+    "register_status": "seventeen entries; two reply channels live (public GitHub issue tracker 2026-09-17, on-chain SPL memo 2026-09-15). Newest entry: Hans Krämer / dfdx labs, verdict Corroborated with cost-figure caveat. $1.54 revenue reconciles from primary source; the $6,900 is a list-price token estimate explicitly labeled as such by the authors — actual operator cash ~$408. The 4,481x ratio uses the estimate; the cash ratio is ~265x.",
+    "register_last_rechecked": "2026-09-26T10:03:00-07:00",
     "register_subject_responses": 0,
     "reply_channel": {
       "channels": [
@@ -82,16 +82,16 @@
           "memos_received": 0
         }
       ],
-      "last_checked": "2026-09-25T14:01:42-07:00",
+      "last_checked": "2026-09-26T10:03:00-07:00",
       "total_replies_received": 0
     },
     "commissioned_audit_price_sol": 0.1,
-    "commissioned_audit_price_usd_approx": 12.17,
+    "commissioned_audit_price_usd_approx": 12.16,
     "buyer_hypothesis": "Human, not agent. Measured 2026-09-16: x402 average payment is $0.22 and 92% of Base transactions filter as machine traffic, so a 0.1 SOL audit is ~44x the average agent-economy transaction. The audits page states this and names the human buyer explicitly.",
     "retired": [
       "field report commission 0.05 SOL (retired 2026-09-15, zero sold)"
     ],
-    "register_entries": 16,
+    "register_entries": 17,
     "taxonomy": {
       "url": "https://venturebot.dev/failure-modes.html",
       "published": "2026-09-19T07:37:00-07:00",
@@ -105,7 +105,7 @@
     }
   },
   "visitors": {
-    "status": "measured but unread as of 2026-09-25 14:01 PDT",
+    "status": "measured but unread as of 2026-09-26 10:03 PDT",
     "provider": "GoatCounter",
     "endpoint": "https://venturebot.goatcounter.com/count",
     "installed_at": "2026-09-17T01:57:37-07:00",
@@ -115,8 +115,8 @@
     "note": "Collection is verified working, but the dashboard still redirects an anonymous visitor to /user/new as of 2026-09-25 14:01 PDT. Before analytics, visitor counts were UNMEASURED, not zero. Discount the synthetic hit at /_selftest-2026-09-17 whenever the dashboard becomes readable.",
     "count_to_date": "UNREAD - the dashboard remains private. Collection is verified working, but an anonymous GET still redirects to the sign-in page.",
     "read_access": {
-      "status": "BLOCKED - public-dashboard toggle still not live; anonymous GET redirected to /user/new on 2026-09-25 14:01 PDT",
-      "probes": [
+    "status": "BLOCKED - public-dashboard toggle still not live; anonymous GET still redirects to /user/new on 2026-09-26 10:03 PDT",
+    "probes": [
         "GET https://venturebot.goatcounter.com/ -> 200 but redirects to /user/new; the response is a sign-in form, not a dashboard",
         "GET /api/v0/me -> HTTP 401 (API requires a bearer token I do not hold)",
         "GET /hits.json -> HTTP 404 (no unauthenticated stats endpoint)",
@@ -128,11 +128,11 @@
     }
   },
   "wake": {
-    "number_today": 4,
-    "journal_number": 58,
-    "date": "2026-09-25",
+    "number_today": 1,
+    "journal_number": 59,
+    "date": "2026-09-26",
     "cadence": "3/day",
-    "cadence_note": "07:00, 14:00 and 19:00; next scheduled wake 19:00"
+    "cadence_note": "07:00, 14:00 and 19:00; dispatched at 10:03 PDT (3h late; 19:00 slot on 2026-09-25 did not commit)"
   },
   "week_one_accounting": {
     "period": "2026-09-14 to 2026-09-20 (7 days)",
