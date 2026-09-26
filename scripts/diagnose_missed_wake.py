@@ -18,16 +18,38 @@ import sys
 
 
 def power_events(day):
+    """Real Sleep/Wake/DarkWake state changes for a day.
+
+    pmset's log is dominated by 'Assertions' lines (processes asking to keep
+    the machine awake) that contain the words Sleep and Wake without being
+    state changes. An earlier version of this script matched those loosely
+    and then found none of them, reporting 'cannot determine cause' for a
+    day whose log was complete - a false unknown.
+
+    Real state changes appear in the event-type column, which follows the
+    timestamp and timezone, e.g.:
+        2026-09-22 06:47:49 -0700 Sleep               Entering Sleep state...
+    """
     out = subprocess.run(["pmset", "-g", "log"],
                          capture_output=True, text=True).stdout
     events = []
     for line in out.splitlines():
         if not line.startswith(day):
             continue
-        m = re.search(r"\b(DarkWake|Wake|Sleep)\s{2,}", line)
-        if m:
-            events.append((line[:19], m.group(1)))
+        # timestamp(2) + timezone(1) = 3 fields before the event type
+        parts = line.split(None, 4)
+        if len(parts) >= 4 and parts[3] in ("Sleep", "Wake", "DarkWake"):
+            events.append((line[:19], parts[3]))
     return events
+
+
+def log_covers(day):
+    """Did pmset record ANYTHING that day? Distinguishes 'no events' from
+    'no log'. Without this, a rotated log looks identical to a quiet day."""
+    out = subprocess.run(["pmset", "-g", "log"],
+                         capture_output=True, text=True).stdout
+    hours = {l[11:13] for l in out.splitlines() if l.startswith(day)}
+    return len(hours)
 
 
 def output_files(day):
@@ -77,8 +99,11 @@ def main():
         return 2
 
     events = power_events(day)
-    if not events:
-        print(f"\nno power events recorded for {day} - cannot determine cause")
+    hours_logged = log_covers(day)
+
+    if hours_logged == 0:
+        print(f"\npmset has NO log coverage for {day} (rotated out).")
+        print("Cannot determine the cause. Say 'unknown' and mean it.")
         return 2
 
     prior = [e for e in events
@@ -87,6 +112,8 @@ def main():
              if datetime.datetime.strptime(e[0], "%Y-%m-%d %H:%M:%S") > target]
 
     print(f"\n=== power state at {target} ===")
+    print(f"  pmset log covers {hours_logged}/24 hours of {day}")
+    print(f"  Sleep/Wake state changes that day: {len(events)}")
     if prior:
         ts, kind = prior[-1]
         print(f"  last event before slot: {ts}  {kind}")
@@ -106,9 +133,26 @@ def main():
         print("crashed. Not an agent defect - recovery is the next wake.")
         return 0
 
-    print("VERDICT: machine appears to have been awake and no run record")
-    print("exists. Neither sleep nor a logged failure explains this - look")
-    print("at the scheduler itself before assuming anything.")
+    # Coverage gate. pmset's log rotates, so an old day can show zero events
+    # simply because its lines are gone. Only claim the machine was awake
+    # when the log is dense enough to have recorded a sleep had one occurred.
+    if hours_logged < 20:
+        print(f"VERDICT: INSUFFICIENT EVIDENCE. pmset covers only "
+              f"{hours_logged}/24 hours")
+        print("of that day - its log has rotated - so the absence of sleep")
+        print("events proves nothing about the slot. No run record exists,")
+        print("but the cause cannot be established from here. Unknown, and")
+        print("saying so is the honest answer rather than inferring 'awake'")
+        print("from a log that is simply missing.")
+        return 2
+
+    print("VERDICT: the machine was AWAKE through the slot - pmset logged")
+    print(f"activity across {hours_logged}/24 hours of that day and recorded")
+    print("zero sleep/wake transitions - yet no run record exists and no")
+    print("commit landed. Sleep is ruled out. The job did not fire at all,")
+    print("which points at the scheduler or the host process, not at the")
+    print("agent: a wake that ran and failed would have left an output")
+    print("file, as the 2026-09-20 watchdog kill did.")
     return 2
 
 
