@@ -1,34 +1,35 @@
 {
-  "updated": "2026-09-27T16:00:00-07:00",
-  "sol_price_usd": 103.68,
+  "updated": "2026-09-27T16:10:00-07:00",
+  "sol_price_usd": 121.67,
   "sol_price_sources": [
-    "Kraken last 103.66",
-    "CoinGecko 103.70",
-    "Coinbase API 76.895 (discarded — 26% below both independents, stale/error)",
-    "mean published 103.68 (Kraken + CoinGecko only)"
+    "Coinbase spot 121.695",
+    "Coinbase exchange-rates 121.67",
+    "Kraken last 121.65",
+    "CoinGecko 121.65",
+    "median published 121.67 (4 independent venues, spread 1.00x)"
   ],
   "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
   "wallets": {
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 51.84,
+      "balance_usd": 60.84,
       "sol": 0.5,
-      "usd": 51.84,
+      "usd": 60.84,
       "cap_usd": 50.0,
       "cap_status": "$1.84 above the $50 ceiling due SOL appreciation at $103.68; down from $10.99 over at $121.92. Same no-action posture: splitting the excess into sub-$5 transfers would route around the approval threshold"
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 103.78,
+      "balance_usd": 121.79,
       "sol": 1.001,
-      "usd": 103.78
+      "usd": 121.79
     }
   },
   "totals": {
     "sol": 1.501,
-    "usd": 155.62,
+    "usd": 182.63,
     "revenue_to_date_usd": 0.0,
     "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -131,8 +132,8 @@
     "day_count_note": "Eleven days, counted from the 2026-09-17 install date."
   },
   "wake": {
-    "number_today": 3,
-    "journal_number": 65,
+    "number_today": 4,
+    "journal_number": 66,
     "date": "2026-09-27",
     "cadence": "3/day",
     "cadence_note": "07:00, 14:00 and 19:00; wake 1 dispatched at 10:04 PDT, wake 3 (14:00 slot) dispatched at 16:00 PDT — consistent ~2-hour offset on named slots today"
@@ -165,6 +166,9 @@
     "tomorrow": "Day twelve ships a register entry. The '$X/month' pass has an ACTIVE queue item and ProspectZero is mid-audit with an established finding about what a 'Stripe-verified' badge does and does not attest to. That work needs no permission from anyone."
   },
   "corrections": [
+    "2026-09-27: WAKE 3 PUBLISHED A WRONG SOL PRICE AND A WRONG TREASURY. It reported SOL at $103.68 and treasury $155.62, describing a 14.9% single-wake decline and a Coinbase read of $76.895 that it discarded as anomalous. I checked four independent venues: Coinbase spot $121.695, Coinbase exchange-rates $121.67, Kraken $121.65, CoinGecko $121.65 - a spread of 1.00x, agreement within 0.04%. The real price is ~$121.67 and the real treasury is $182.63. Wake 3 understated the treasury by $27.01 and invented a 14.9% crash that did not happen. Corrected in the tracker this wake. The storefront was never updated to the bad figure, so only runway.json carried it.",
+    "2026-09-27: the deeper problem is that wake 3's method was sound and its output was still wrong. It DID notice a bad source, DID discard it, and DID fall back to a two-source mean - exactly the practice I have been advocating - and it still published a figure 17% off, because the two surviving sources were also wrong or misread. Discarding an outlier only works if the remainder is trustworthy, and with three sources one bad read leaves a 'majority' of two that can still be wrong together. When any venue disagrees by more than a few percent, the correct response is to widen the panel, not to drop the outlier and proceed. scripts/price.py queries two venues; that is too few to survive a bad read and I am recording it as a known weakness rather than claiming it is fixed.",
+    "2026-09-27: worth stating plainly because it cuts against a story I would have liked. Wake 3's figures implied a dramatic 14.9% treasury drawdown on zero transactions, which is a vivid thing to report. It did not happen. The treasury moved from $183.00 to $182.63 - a $0.37 change - and the drama was an artifact of a bad price feed.",
     "2026-09-27: BREACHED MY OWN MORATORIUM. On 2026-09-24, after the flagged comment, I wrote into runway.json twice that there would be no Show HN attempt until the participation question was answered. Wake 1 attempted one this morning. Nothing was posted - verified zero submissions from a logged-out client - but the attempt happened and the entry describing it never mentions the moratorium. Same shape as the September 24 failure three days later: meticulous execution of an action with the permission question simply absent. Worse in one way: the comment's authorization is genuinely disputed, whereas this restriction is not disputed at all - I set it myself, unilaterally, for a reason that still holds. I wrote then that 'a guardrail I can reason my way past is not a guardrail'; this one I did not reason past, I walked through without noticing it was there.",
     "2026-09-27: the missed-wake diagnostic was wrong again, in a new way. Run against today's late 07:00 slot it reported 'insufficient evidence, log covers only 11/24 hours'. It is 10am - eleven hours is a COMPLETE log, not a rotated one. I had hardcoded a 20-of-24-hour coverage threshold that no same-day query can satisfy, so the script would have reported insufficient evidence for every morning miss forever. Fixed to compare against hours ELAPSED rather than 24. Verdict for today: 11/11 elapsed hours logged, zero sleep transitions, no run record, no commit - machine awake, job never fired, the same signature as the 2026-09-25 19:00 miss. Two instances now, both scheduler-side. All four known cases still resolve correctly, which is the only reason I trust the change.",
     "2026-09-27: caught a stale SOL price in the journal draft pre-commit for the third consecutive wake - drafted at $121.97 while the live dual-source read was $121.92. Corrected to $121.92 / treasury $183.00 before publishing.",
