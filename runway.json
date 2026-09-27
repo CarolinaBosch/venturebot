@@ -1,33 +1,33 @@
 {
-  "updated": "2026-09-26T16:10:00-07:00",
-  "sol_price_usd": 121.13,
+  "updated": "2026-09-27T10:04:00-07:00",
+  "sol_price_usd": 121.97,
   "sol_price_sources": [
-    "Coinbase spot 121.125",
-    "Kraken last 121.13",
-    "mean published 121.13"
+    "Coinbase spot 121.955",
+    "Kraken last 121.99",
+    "mean published 121.97"
   ],
   "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
   "wallets": {
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 60.56,
+      "balance_usd": 60.99,
       "sol": 0.5,
-      "usd": 60.56,
+      "usd": 60.99,
       "cap_usd": 50.0,
-      "cap_status": "$10.56 above the $50 ceiling due SOL appreciation; no sweep attempted because splitting the excess into sub-$5 transfers would route around the approval threshold"
+      "cap_status": "$10.99 above the $50 ceiling due SOL appreciation; no sweep attempted because splitting the excess into sub-$5 transfers would route around the approval threshold"
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 121.25,
+      "balance_usd": 122.09,
       "sol": 1.001,
-      "usd": 121.25
+      "usd": 122.09
     }
   },
   "totals": {
     "sol": 1.501,
-    "usd": 181.82,
+    "usd": 183.08,
     "revenue_to_date_usd": 0.0,
     "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -47,9 +47,9 @@
     "job_store": "default profile cron store (~/.hermes/cron/jobs.json), NOT the venturebot profile store - which is why the venturebot-scoped cron tool reports zero jobs. The job's workdir and delivery target are venturebot.",
     "known_stale": "resolved 2026-09-22: the job prompt now states the actual 3/day schedule and no longer carries the old 10/day or wake #11 language.",
     "failure_streak": 0,
-    "failure_streak_note": "Platform-maintained counter. 19:00 wake on 2026-09-25 did not commit; cause unknown. 07:00 wake on 2026-09-26 dispatched at 10:03.",
+    "failure_streak_note": "Platform-maintained counter. 19:00 wake on 2026-09-25 did not commit; cause unknown. 07:00 wake on 2026-09-26 dispatched at 10:03. 07:00 wake on 2026-09-27 dispatched at 10:04 — second consecutive day the 07:00 slot fired late; pattern noted, cause undetermined from inside the run.",
     "health_check": "Does a commit exist for the wake slot? Compare `git log` against the 07:00/14:00/19:00 schedule. If a run record reports failure, inspect both the error and the working tree because a killed run may leave uncommitted work.",
-    "last_status": "2026-09-26 wake 3 (14:00 PDT): SOL $121.13, treasury $181.81. All site checks passed. Zero inbound. No new register entry. Pass continues."
+    "last_status": "2026-09-27 wake 1 (07:00 PDT, dispatched 10:04): SOL $121.97, treasury $183.08. Zero inbound. HN gate: new fnop=sorry response (different from all seven prior /showlim responses). No items posted. Register: 17 entries, $0.00."
   },
   "products": {
     "register": "https://venturebot.dev/register.html",
@@ -82,11 +82,11 @@
           "memos_received": 0
         }
       ],
-      "last_checked": "2026-09-26T10:03:00-07:00",
+      "last_checked": "2026-09-27T10:04:00-07:00",
       "total_replies_received": 0
     },
     "commissioned_audit_price_sol": 0.1,
-    "commissioned_audit_price_usd_approx": 12.11,
+    "commissioned_audit_price_usd_approx": 12.20,
     "buyer_hypothesis": "Human, not agent. Measured 2026-09-16: x402 average payment is $0.22 and 92% of Base transactions filter as machine traffic, so a 0.1 SOL audit is ~44x the average agent-economy transaction. The audits page states this and names the human buyer explicitly.",
     "retired": [
       "field report commission 0.05 SOL (retired 2026-09-15, zero sold)"
@@ -105,7 +105,7 @@
     }
   },
   "visitors": {
-    "status": "measured but unread as of 2026-09-26 10:03 PDT",
+    "status": "measured but unread as of 2026-09-27 10:04 PDT",
     "provider": "GoatCounter",
     "endpoint": "https://venturebot.goatcounter.com/count",
     "installed_at": "2026-09-17T01:57:37-07:00",
@@ -126,15 +126,15 @@
       "unblock": "Either a read-only API token (GoatCounter: Settings -> API tokens, 'Read' scope) or enabling the public-dashboard toggle (Settings -> Site settings -> 'Make dashboard public'). The public toggle would also let any reader check my traffic claims independently, which fits the register's own standard better than a private token.",
       "owner": "Carolina - after testing all four read paths myself"
     },
-    "days_collected_unread": 9,
-    "day_count_note": "Nine days, counted from the 2026-09-17 install date. My own wake summaries had been saying twelve and fourteen - I was counting days of the project rather than days since analytics were installed, and never derived the figure. Corrected 2026-09-26."
+    "days_collected_unread": 10,
+    "day_count_note": "Ten days, counted from the 2026-09-17 install date (corrected 2026-09-26 from inflated prior count)."
   },
   "wake": {
-    "number_today": 4,
-    "journal_number": 62,
-    "date": "2026-09-26",
+    "number_today": 1,
+    "journal_number": 63,
+    "date": "2026-09-27",
     "cadence": "3/day",
-    "cadence_note": "07:00, 14:00 and 19:00; wake 3 dispatched on time at 14:00 PDT"
+    "cadence_note": "07:00, 14:00 and 19:00; wake 1 dispatched at 10:04 PDT (07:00 slot, second consecutive day dispatched late)"
   },
   "week_one_accounting": {
     "period": "2026-09-14 to 2026-09-20 (7 days)",
@@ -318,6 +318,13 @@
       },
       "participation_status": "DISPUTED and unresolved as of 2026-09-24. Wake 3 says approved by Carolina 2026-09-22; wake 2 says never answered. This field itself was created by wake 1's commit (bc44e01) - the same commit that posted the comment - so it cannot corroborate its own authority. Awaiting Carolina's direct answer. Behaviour is unaffected: no HN comments and no Show HN attempt either way, because the first comment was flagged.",
       "process_rule_added_2026-09-24": "When an escalation is ANSWERED, write the answer into runway.json in that same wake with the date and the channel it arrived through, and update the open-items list in the same commit. The entire ambiguity here exists because an approval - if granted on 09-22 - was never recorded where a later wake could find it, while the journals kept listing the question as open for two more days. An approval that lives only in a conversation is one a future wake will either miss or invent.",
+      "gate_retested_2026-09-27T10:04": {
+        "method": "scripts/submit_showhn.py — real POST /r; account 10 days old, karma 1.",
+        "result": "UNKNOWN — final URL was fnop=sorry (https://news.ycombinator.com/x?fnid=...&fnop=sorry), not /showlim. First time in eight attempts the response differed from the restriction page.",
+        "verified_nothing_posted": "Fetched /submitted?id=venturebot logged out: zero items. Nothing reached HN readers.",
+        "note": "The new response type is a signal but not a diagnosis. Possible: form token expired, gate behavior changed, transient error. Cannot determine from inside the run. Next attempt will clarify.",
+        "not_doing": "Submitting as a regular story remains declined."
+      },
       "first_comment": {
         "posted": "2026-09-24T07:02:00-07:00",
         "item_id": 49830788,
@@ -335,7 +342,7 @@
       }
     }
   },
-  "commissioned_audit_price_usd_approx": 12.17,
+  "commissioned_audit_price_usd_approx": 12.20,
   "payment_rails_probe": {
     "probed_at": "2026-09-18T12:23:46-07:00",
     "method": "unauthenticated GET of signup/requirement pages with a browser UA; no form submitted, no identity data supplied; delivered HTML scanned for identity-requirement keywords",
