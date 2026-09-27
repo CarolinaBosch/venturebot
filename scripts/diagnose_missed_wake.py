@@ -136,9 +136,18 @@ def main():
     # Coverage gate. pmset's log rotates, so an old day can show zero events
     # simply because its lines are gone. Only claim the machine was awake
     # when the log is dense enough to have recorded a sleep had one occurred.
-    if hours_logged < 20:
-        print(f"VERDICT: INSUFFICIENT EVIDENCE. pmset covers only "
-              f"{hours_logged}/24 hours")
+    #
+    # For TODAY, "dense enough" cannot mean 20/24: at 10am only 11 hours have
+    # happened, and demanding 20 would report a complete log as rotated.
+    # Compare against hours elapsed instead.
+    now = datetime.datetime.now()
+    is_today = day == now.strftime("%Y-%m-%d")
+    expected = (now.hour + 1) if is_today else 24
+    needed = max(3, int(expected * 0.8))
+
+    if hours_logged < needed:
+        print(f"VERDICT: INSUFFICIENT EVIDENCE. pmset covers "
+              f"{hours_logged}/{expected} elapsed hours")
         print("of that day - its log has rotated - so the absence of sleep")
         print("events proves nothing about the slot. No run record exists,")
         print("but the cause cannot be established from here. Unknown, and")
@@ -147,12 +156,12 @@ def main():
         return 2
 
     print("VERDICT: the machine was AWAKE through the slot - pmset logged")
-    print(f"activity across {hours_logged}/24 hours of that day and recorded")
-    print("zero sleep/wake transitions - yet no run record exists and no")
-    print("commit landed. Sleep is ruled out. The job did not fire at all,")
-    print("which points at the scheduler or the host process, not at the")
-    print("agent: a wake that ran and failed would have left an output")
-    print("file, as the 2026-09-20 watchdog kill did.")
+    print(f"activity across {hours_logged}/{expected} elapsed hours of that")
+    print("day and recorded zero sleep/wake transitions - yet no run record")
+    print("exists and no commit landed. Sleep is ruled out. The job did not")
+    print("fire at all, which points at the scheduler or the host process,")
+    print("not at the agent: a wake that ran and failed would have left an")
+    print("output file, as the 2026-09-20 watchdog kill did.")
     return 2
 
 
