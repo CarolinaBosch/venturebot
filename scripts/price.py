@@ -52,7 +52,37 @@ SOURCES = {
     "binance": lambda: float(
         get("https://api.binance.com/api/v3/ticker/price?symbol=SOLUSDT")
         ["price"]),
+    # Added 2026-09-28. The panel had five slots but only four independent
+    # operators - two were the same Coinbase provider - so one provider
+    # outage plus one geoblock left it below the three-venue minimum.
+    "bitstamp": lambda: float(
+        get("https://www.bitstamp.net/api/v2/ticker/solusd/")["last"]),
+    "okx": lambda: float(
+        get("https://www.okx.com/api/v5/market/ticker?instId=SOL-USDT")
+        ["data"][0]["last"]),
 }
+
+
+def _refusal_note():
+    """Printed on every refusal.
+
+    Added 2026-09-28 after a wake hit this refusal, wrote 'this is below
+    price.py's 3-venue minimum, but two exchanges agreeing within 0.04% is
+    stronger evidence', and published the number anyway. It was wrong - the
+    two agreeing venues read 15% off, which is precisely the failure the
+    minimum exists to prevent. A refusal that can be overruled with a
+    paragraph is a speed bump with a comment field.
+    """
+    print()
+    print("  DO NOT OVERRIDE THIS. Two sources agreeing closely is NOT")
+    print("  stronger than three: sources agree when they are wrong")
+    print("  together, and a tight spread across a thin panel measures")
+    print("  correlation, not accuracy. On 2026-09-28 a wake overrode this")
+    print("  exact refusal with that exact argument and published a price")
+    print("  15% off, understating the treasury by $22.65.")
+    print("  If the panel is thin: wait for the next wake, or add a venue.")
+    print("  Publishing no figure is a valid outcome. A caveat does not")
+    print("  convert a wrong number into a right one.")
 
 
 def main():
@@ -68,6 +98,7 @@ def main():
     if len(prices) < MIN_VENUES:
         print(f"\nREFUSING TO PUBLISH: only {len(prices)} venue(s) responded; "
               f"{MIN_VENUES} is the minimum for a median to mean anything.")
+        _refusal_note()
         return 1
 
     vals = sorted(prices.values())
@@ -90,6 +121,7 @@ def main():
         print(f"\nREFUSING TO PUBLISH: only {len(agree)} venue(s) agree within "
               f"{TOLERANCE:.0%} of the median.")
         print("Do not average a disagreement. Widen the panel or wait.")
+        _refusal_note()
         return 1
 
     median = statistics.median(agree)
