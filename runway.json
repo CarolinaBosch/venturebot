@@ -1,35 +1,36 @@
 {
-  "updated": "2026-09-27T16:10:00-07:00",
-  "sol_price_usd": 121.67,
+  "updated": "2026-09-28T10:00:00-07:00",
+  "sol_price_usd": 103.68,
   "sol_price_sources": [
-    "Coinbase spot 121.695",
-    "Coinbase exchange-rates 121.67",
-    "Kraken last 121.65",
-    "CoinGecko 121.65",
-    "median published 121.67 (4 independent venues, spread 1.00x)"
+    "Kraken last 103.66",
+    "CoinGecko 103.70",
+    "median 103.68 (2 confirming venues, 0.04% spread)",
+    "Coinbase spot 76.895 DISCARDED — same stale value as 2026-09-27 anomaly, second consecutive day",
+    "Binance 72.04 DISCARDED — ~30% below Kraken/CoinGecko cluster",
+    "NOTE: only 2 of 5 venues usable; Coinbase appears to have a stale feed since at least 2026-09-27 wake 3"
   ],
   "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
   "wallets": {
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 60.84,
+      "balance_usd": 51.84,
       "sol": 0.5,
-      "usd": 60.84,
+      "usd": 51.84,
       "cap_usd": 50.0,
-      "cap_status": "$1.84 above the $50 ceiling due SOL appreciation at $103.68; down from $10.99 over at $121.92. Same no-action posture: splitting the excess into sub-$5 transfers would route around the approval threshold"
+      "cap_status": "$1.84 above the $50 ceiling on SOL appreciation alone. No action: splitting to cure a dollar-denominated cap while holding SOL would route around the guardrail's intent. Cap redenomination in SOL is Carolina's call."
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 121.79,
+      "balance_usd": 103.78,
       "sol": 1.001,
-      "usd": 121.79
+      "usd": 103.78
     }
   },
   "totals": {
     "sol": 1.501,
-    "usd": 182.63,
+    "usd": 155.62,
     "revenue_to_date_usd": 0.0,
     "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -37,7 +38,7 @@
     "transactions_on_chain": 3,
     "transactions_note": "all three are the original funding; no revenue, no spend"
   },
-  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. 2026-09-27 wake 3: SOL $103.68 (Kraken $103.66 / CoinGecko $103.70; Coinbase $76.895 discarded), treasury 1.501 SOL = $155.62. Treasury down $27.38 from wake 2 ($183.00) on 14.9% SOL price decline — zero transactions. No funds moved and none of this is revenue. 19:00 wake on 2026-09-25 did not commit; scheduler-side miss (pmset: machine awake 24/24, no run record, job never fired — same signature as another scheduler-side miss on this run).",
+  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. 2026-09-28 wake 1: SOL $103.68 (Kraken $103.66 / CoinGecko $103.70; Coinbase spot and Binance discarded), treasury 1.501 SOL = $155.62. Down $27.01 from yesterday's corrected $182.63 on genuine SOL price decline — zero transactions. Coinbase spot stuck at $76.895 for second consecutive day; same stale value as yesterday's discarded anomaly. Binance $72.04 divergent. Only 2 of 5 configured venues usable this wake.",
   "pending_transactions": [],
   "wake_schedule": {
     "cron_expr": "0 7,14,19 * * *",
@@ -49,9 +50,9 @@
     "job_store": "default profile cron store (~/.hermes/cron/jobs.json), NOT the venturebot profile store - which is why the venturebot-scoped cron tool reports zero jobs. The job's workdir and delivery target are venturebot.",
     "known_stale": "resolved 2026-09-22: the job prompt now states the actual 3/day schedule and no longer carries the old 10/day or wake #11 language.",
     "failure_streak": 0,
-    "failure_streak_note": "Platform-maintained counter. 19:00 wake on 2026-09-25 did not commit; scheduler-side miss. 07:00 wake on 2026-09-26 dispatched at 10:03. 07:00 wake on 2026-09-27 dispatched at 10:04 — second consecutive day the 07:00 slot fired late. 14:00 slot on 2026-09-27 dispatched at 16:00 — same ~2-hour offset pattern, consistent across named morning and afternoon slots today.",
+    "failure_streak_note": "Platform-maintained counter. 19:00 wake on 2026-09-25 did not commit; scheduler-side miss. 07:00 wake on 2026-09-26 dispatched at 10:03. 07:00 wake on 2026-09-27 dispatched at 10:04. 07:00 wake on 2026-09-28 dispatched at ~10:00 — third consecutive day the 07:00 slot fires ~3 hours late. 14:00 slot on 2026-09-27 dispatched at ~16:00. Consistent offset pattern across morning and afternoon slots; cause undiagnosed from inside the run.",
     "health_check": "Does a commit exist for the wake slot? Compare `git log` against the 07:00/14:00/19:00 schedule. If a run record reports failure, inspect both the error and the working tree because a killed run may leave uncommitted work.",
-    "last_status": "2026-09-27 wake 3 (14:00 PDT, dispatched 16:00): SOL $103.68 (Kraken $103.66 / CoinGecko $103.70; Coinbase discarded), treasury 1.501 SOL = $155.62. Down $27.38 from wake 2 on price movement alone. Zero inbound. HN moratorium in force. Register: 17 entries, $0.00."
+    "last_status": "2026-09-28 wake 1 (07:00 PDT, dispatched ~10:00): SOL $103.68 (Kraken $103.66 / CoinGecko $103.70; Coinbase and Binance discarded), treasury 1.501 SOL = $155.62. Down $27.01 from corrected $182.63 on genuine price movement. Zero inbound. HN moratorium in force. Register: 17 entries, $0.00. python3 binary broken; memo check skipped."
   },
   "products": {
     "register": "https://venturebot.dev/register.html",
@@ -128,15 +129,15 @@
       "unblock": "Either a read-only API token (GoatCounter: Settings -> API tokens, 'Read' scope) or enabling the public-dashboard toggle (Settings -> Site settings -> 'Make dashboard public'). The public toggle would also let any reader check my traffic claims independently, which fits the register's own standard better than a private token.",
       "owner": "Carolina - after testing all four read paths myself"
     },
-    "days_collected_unread": 11,
-    "day_count_note": "Eleven days, counted from the 2026-09-17 install date."
+    "days_collected_unread": 12,
+    "day_count_note": "Twelve days, counted from the 2026-09-17 install date."
   },
   "wake": {
-    "number_today": 4,
-    "journal_number": 66,
-    "date": "2026-09-27",
+    "number_today": 1,
+    "journal_number": 67,
+    "date": "2026-09-28",
     "cadence": "3/day",
-    "cadence_note": "07:00, 14:00 and 19:00; wake 1 dispatched at 10:04 PDT, wake 3 (14:00 slot) dispatched at 16:00 PDT — consistent ~2-hour offset on named slots today"
+    "cadence_note": "07:00, 14:00 and 19:00; wake 1 dispatched at ~10:00 PDT — third consecutive day with 07:00 slot firing ~3 hours late"
   },
   "week_one_accounting": {
     "period": "2026-09-14 to 2026-09-20 (7 days)",
