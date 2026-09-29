@@ -1,35 +1,37 @@
 {
-  "updated": "2026-09-29T10:15:00-07:00",
-  "sol_price_usd": 118.24,
+  "updated": "2026-09-29T16:05:00-07:00",
+  "sol_price_usd": 119.29,
   "sol_price_sources": [
-    "Kraken 118.24 (24h range 116.33-121.67, vwap 118.99)",
-    "Bitstamp 118.25",
-    "OKX 118.29",
-    "Coinbase spot 118.17",
-    "median published 118.24 (5 venues, spread 0.10%)"
+    "Kraken 119.28",
+    "Coinbase exchange-rates 119.30",
+    "Bitstamp 119.29",
+    "OKX 119.38",
+    "Coinbase spot 76.895 (stuck feed, discarded — same value multiple consecutive days)",
+    "CoinGecko unavailable (HTTPError this wake)",
+    "median published 119.29 (4 live venues, 0.08% spread)"
   ],
   "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
   "wallets": {
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 59.12,
+      "balance_usd": 59.65,
       "sol": 0.5,
-      "usd": 59.12,
+      "usd": 59.65,
       "cap_usd": 50.0,
-      "cap_status": "At $51.84, nominally above the $50 ceiling on SOL price movement alone. Down from $59.31 yesterday on market decline. No action: same reasoning as prior wakes — splitting to cure a dollar-denominated cap while holding SOL would route around the guardrail's intent. Cap redenomination in SOL is Carolina's call."
+      "cap_status": "At $59.65, above the $50 ceiling on SOL price movement alone. Same position as prior wakes: splitting to cure a dollar-denominated cap while holding SOL would route around the guardrail's intent. Cap redenomination in SOL is Carolina's call."
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 118.36,
+      "balance_usd": 119.41,
       "sol": 1.001,
-      "usd": 118.36
+      "usd": 119.41
     }
   },
   "totals": {
     "sol": 1.501,
-    "usd": 177.48,
+    "usd": 179.05,
     "revenue_to_date_usd": 0.0,
     "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -37,7 +39,7 @@
     "transactions_on_chain": 3,
     "transactions_note": "all three are the original funding; no revenue, no spend"
   },
-  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. 2026-09-29 wake 1: SOL $103.68 (Kraken $103.66, CoinGecko $103.70; Coinbase spot stuck at $76.895 third+ day discarded, Binance $72.04 discarded). 2 of 4 venues usable. Kraken 24h range $99.19-$105.87 confirms price is live — no $118 trading in last 24 hours, so yesterday's corrected $118.77 reflects a genuine overnight decline to ~$103.68. Treasury 1.501 SOL = $155.62. Down $22.44 from $178.06 — zero transactions.",
+  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. 2026-09-29 wake 3 (14:00 PDT, dispatched ~16:00): SOL $119.29 (Kraken $119.28, Coinbase exchange-rates $119.30, Bitstamp $119.29, OKX $119.38; Coinbase spot stuck at $76.895 discarded; CoinGecko HTTPError; 4 of 5 usable venues, 0.08% spread). verify_treasury.py: OK, 4 venues support published price. Treasury 1.501 SOL = $179.05. On-chain memo check: zero memos, zero issues.",
   "pending_transactions": [],
   "wake_schedule": {
     "cron_expr": "0 7,14,19 * * *",
@@ -51,7 +53,7 @@
     "failure_streak": 0,
     "failure_streak_note": "Platform-maintained counter. 19:00 wake on 2026-09-25 did not commit; scheduler-side miss. 07:00 wake on 2026-09-26 dispatched at 10:03. 07:00 wake on 2026-09-27 dispatched at 10:04. 07:00 wake on 2026-09-28 dispatched at ~10:00 — third consecutive day the 07:00 slot fires ~3 hours late. 14:00 slot on 2026-09-27 dispatched at ~16:00. Consistent offset pattern across morning and afternoon slots; cause undiagnosed from inside the run.",
     "health_check": "Does a commit exist for the wake slot? Compare `git log` against the 07:00/14:00/19:00 schedule. If a run record reports failure, inspect both the error and the working tree because a killed run may leave uncommitted work.",
-    "last_status": "2026-09-29 wake 1 (07:00 PDT, dispatched ~10:00): SOL $103.68 (Kraken/CoinGecko; Coinbase stuck, Binance discarded; 2/4 venues; Kraken 24h range confirms live price), treasury 1.501 SOL = $155.62. Zero inbound. HN moratorium in force. Register: 17 entries, five days since last entry, $0.00."
+    "last_status": "2026-09-29 wake 3 (14:00 PDT, dispatched ~16:00): SOL $119.29 (Kraken/Coinbase/Bitstamp/OKX; Coinbase spot stuck, CoinGecko HTTPError; 4 venues, 0.08% spread). verify_treasury.py OK. Treasury 1.501 SOL = $179.05. Zero inbound. HN moratorium in force. Register: 17 entries, $0.00."
   },
   "products": {
     "register": "https://venturebot.dev/register.html",
@@ -132,8 +134,8 @@
     "day_count_note": "Fourteen days, counted from the 2026-09-17 install date."
   },
   "wake": {
-    "number_today": 2,
-    "journal_number": 72,
+    "number_today": 3,
+    "journal_number": 73,
     "date": "2026-09-29",
     "cadence": "3/day",
     "cadence_note": "07:00, 14:00 and 19:00; all slots running ~2-3 hours late — 07:00 dispatching ~10:00, 14:00 dispatching ~16:00, consistent across multiple days"
