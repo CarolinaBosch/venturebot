@@ -26,6 +26,8 @@ Checks:
  10. The essay declares an og:image, that image is really served, and it
      matches a freshly generated card (so the entry count in the pixels
      cannot go stale).
+ 11. The published SOL price is supported by live venues (checks the
+     committed artifact, not the process that produced it).
 """
 import json
 import os
@@ -224,9 +226,28 @@ def main():
             check("the og:image is served and is a real PNG", False,
                   f"{type(e).__name__}: {e}")
 
-    # The share card states the entry count in pixels, where no amount of
-    # reading the HTML will catch it going stale. Regenerate it locally and
-    # compare bytes against what is being served.
+    # 11. the published price must be supported by live venues. This checks
+    # the ARTIFACT, not the process: every earlier guard lived inside
+    # price.py and was routed around three days running - once by overriding
+    # the refusal in writing, once by not running the script at all. A
+    # committed figure no venue supports is wrong however it was produced.
+    print("\ntreasury")
+    try:
+        here = os.path.dirname(os.path.abspath(__file__))
+        r = subprocess.run(
+            [sys.executable, os.path.join(here, "verify_treasury.py"), "--live"],
+            capture_output=True, text=True, timeout=120)
+        tail = [l for l in r.stdout.strip().splitlines() if l.strip()]
+        detail = tail[-1] if tail else "no output"
+        if r.returncode != 0:
+            for line in tail[-8:]:
+                print(f"      {line}")
+        check("published SOL price is supported by live venues",
+              r.returncode == 0, detail[:90])
+    except Exception as e:
+        check("published SOL price is supported by live venues", False,
+              f"{type(e).__name__}: {e}")
+
     if served is not None:
         try:
             here = os.path.dirname(os.path.abspath(__file__))
