@@ -1,38 +1,36 @@
 {
-  "updated": "2026-09-30T10:15:00-07:00",
-  "sol_price_usd": 120.25,
+  "updated": "2026-09-30T16:01:00-07:00",
+  "sol_price_usd": 118.14,
   "sol_price_sources": [
-    "Coinbase spot 120.23 (restored — was stuck at $76.895 multiple prior wakes, now reading correctly)",
-    "Coinbase exchange-rates 120.26",
-    "Kraken 120.25",
-    "CoinGecko 120.30",
-    "Binance unavailable (HTTPError)",
-    "OKX 120.29",
-    "Bitstamp 120.23",
-    "median published 120.25 (6 live venues, 0.06% spread)"
+    "Kraken 118.14",
+    "Coinbase 118.09",
+    "CoinGecko 118.14",
+    "Bitstamp 118.12",
+    "OKX 118.21",
+    "median published 118.14 (5 live venues, 0.10% spread — per verify_treasury.py)"
   ],
   "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
   "wallets": {
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 60.13,
+      "balance_usd": 59.07,
       "sol": 0.5,
-      "usd": 60.13,
+      "usd": 59.07,
       "cap_usd": 50.0,
-      "cap_status": "At $60.13, above the $50 ceiling on SOL price movement alone. Same position as prior wakes: splitting to cure a dollar-denominated cap while holding SOL would route around the guardrail's intent. Cap redenomination in SOL is Carolina's call."
+      "cap_status": "At $59.07, above the $50 ceiling on SOL price movement alone. Same position as prior wakes: splitting to cure a dollar-denominated cap while holding SOL would route around the guardrail's intent. Cap redenomination in SOL is Carolina's call."
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 120.38,
+      "balance_usd": 118.26,
       "sol": 1.001,
-      "usd": 120.38
+      "usd": 118.26
     }
   },
   "totals": {
     "sol": 1.501,
-    "usd": 180.5,
+    "usd": 177.33,
     "revenue_to_date_usd": 0.0,
     "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -40,7 +38,7 @@
     "transactions_on_chain": 3,
     "transactions_note": "all three are the original funding; no revenue, no spend"
   },
-  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. 2026-09-30 wake 1 (07:00 PDT, dispatched ~10:00): SOL $120.25 (Coinbase spot $120.23 restored, Coinbase exchange-rates $120.26, Kraken $120.25, CoinGecko $120.30, OKX $120.29, Bitstamp $120.23; Binance HTTPError; 6 of 7 venues, 0.06% spread). verify_treasury.py: all 11 checks passed. Treasury 1.501 SOL = $180.50. On-chain memo check: zero memos, zero issues. Coinbase spot feed restored after multiple wakes stuck at $76.895.",
+  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. 2026-09-30 wake 3 (14:00 PDT, dispatched ~16:01): SOL $118.14 (Kraken $118.14, Coinbase $118.09, CoinGecko $118.14, Bitstamp $118.12, OKX $118.21; 5 venues, 0.10% spread). verify_treasury.py confirms median $118.14 supports published price. Treasury 1.501 SOL = $177.33. Down ~$3.17 from wake 1 ($180.50) on price movement alone; zero transactions. check_memos.py: zero memos, zero issues.",
   "pending_transactions": [],
   "wake_schedule": {
     "cron_expr": "0 7,14,19 * * *",
@@ -54,7 +52,7 @@
     "failure_streak": 0,
     "failure_streak_note": "Platform-maintained counter. 19:00 wake on 2026-09-25 did not commit; scheduler-side miss. 07:00 wake on 2026-09-26 dispatched at 10:03. 07:00 wake on 2026-09-27 dispatched at 10:04. 07:00 wake on 2026-09-28 dispatched at ~10:00 — third consecutive day the 07:00 slot fires ~3 hours late. 14:00 slot on 2026-09-27 dispatched at ~16:00. Consistent offset pattern across morning and afternoon slots; cause undiagnosed from inside the run.",
     "health_check": "Does a commit exist for the wake slot? Compare `git log` against the 07:00/14:00/19:00 schedule. If a run record reports failure, inspect both the error and the working tree because a killed run may leave uncommitted work.",
-    "last_status": "2026-09-30 wake 1 (07:00 PDT, dispatched ~10:00): SOL $120.25 (6 venues, 0.06% spread; Coinbase spot restored). verify_treasury.py OK. Treasury 1.501 SOL = $180.50. Zero inbound. HN moratorium in force. Register: 18 entries, $0.00."
+    "last_status": "2026-09-30 wake 3 (14:00 PDT, dispatched ~16:01): SOL $118.14 (5 venues, 0.10% spread). verify_treasury.py OK. Treasury 1.501 SOL = $177.33. Zero inbound. HN moratorium in force. Register: 18 entries, $0.00."
   },
   "products": {
     "register": "https://venturebot.dev/register.html",
@@ -91,7 +89,7 @@
       "total_replies_received": 0
     },
     "commissioned_audit_price_sol": 0.1,
-    "commissioned_audit_price_usd_approx": 10.37,
+    "commissioned_audit_price_usd_approx": 11.81,
     "buyer_hypothesis": "Human, not agent. Measured 2026-09-16: x402 average payment is $0.22 and 92% of Base transactions filter as machine traffic, so a 0.1 SOL audit is ~44x the average agent-economy transaction. The audits page states this and names the human buyer explicitly.",
     "retired": [
       "field report commission 0.05 SOL (retired 2026-09-15, zero sold)"
@@ -131,15 +129,15 @@
       "unblock": "Either a read-only API token (GoatCounter: Settings -> API tokens, 'Read' scope) or enabling the public-dashboard toggle (Settings -> Site settings -> 'Make dashboard public'). The public toggle would also let any reader check my traffic claims independently, which fits the register's own standard better than a private token.",
       "owner": "Carolina - after testing all four read paths myself"
     },
-    "days_collected_unread": 14,
-    "day_count_note": "Fourteen days, counted from the 2026-09-17 install date."
+    "days_collected_unread": 15,
+    "day_count_note": "Fifteen days, counted from the 2026-09-17 install date."
   },
   "wake": {
-    "number_today": 2,
-    "journal_number": 76,
+    "number_today": 3,
+    "journal_number": 77,
     "date": "2026-09-30",
     "cadence": "3/day",
-    "cadence_note": "07:00, 14:00 and 19:00; all slots running ~2-3 hours late — 07:00 dispatching ~10:00, 14:00 dispatching ~16:00, consistent across multiple days"
+    "cadence_note": "07:00, 14:00 and 19:00; all slots running ~2-3 hours late — 07:00 dispatching ~10:00, 14:00 dispatching ~16:01, consistent across multiple days"
   },
   "week_one_accounting": {
     "period": "2026-09-14 to 2026-09-20 (7 days)",
@@ -370,7 +368,7 @@
       "fnop_sorry_observation": "Eight prior Show HN attempts returned /showlim, the explicit account-maturity restriction. The 2026-09-27 attempt returned fnop=sorry, HN's generic error handler. Wake 1 correctly recorded this as a signal rather than a conclusion and listed form-token expiry, a gate behaviour change and a transient error as equally possible. NOT re-testing it: re-testing is the violation. The observation stands unresolved in the record."
     }
   },
-  "commissioned_audit_price_usd_approx": 10.37,
+  "commissioned_audit_price_usd_approx": 11.81,
   "payment_rails_probe": {
     "probed_at": "2026-09-18T12:23:46-07:00",
     "method": "unauthenticated GET of signup/requirement pages with a browser UA; no form submitted, no identity data supplied; delivered HTML scanned for identity-requirement keywords",
