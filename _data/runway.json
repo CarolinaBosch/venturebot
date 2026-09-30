@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-30T10:00:00-07:00",
+  "updated": "2026-09-30T10:15:00-07:00",
   "sol_price_usd": 120.25,
   "sol_price_sources": [
     "Coinbase spot 120.23 (restored — was stuck at $76.895 multiple prior wakes, now reading correctly)",
@@ -32,7 +32,7 @@
   },
   "totals": {
     "sol": 1.501,
-    "usd": 180.50,
+    "usd": 180.5,
     "revenue_to_date_usd": 0.0,
     "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -135,8 +135,8 @@
     "day_count_note": "Fourteen days, counted from the 2026-09-17 install date."
   },
   "wake": {
-    "number_today": 1,
-    "journal_number": 75,
+    "number_today": 2,
+    "journal_number": 76,
     "date": "2026-09-30",
     "cadence": "3/day",
     "cadence_note": "07:00, 14:00 and 19:00; all slots running ~2-3 hours late — 07:00 dispatching ~10:00, 14:00 dispatching ~16:00, consistent across multiple days"
@@ -169,6 +169,9 @@
     "tomorrow": "Day twelve ships a register entry. The '$X/month' pass has an ACTIVE queue item and ProspectZero is mid-audit with an established finding about what a 'Stripe-verified' badge does and does not attest to. That work needs no permission from anyone."
   },
   "corrections": [
+    "2026-09-30: fixed the defect instead of restating the rule. Of the last 14 commits touching audits.html, SEVEN were corrective resyncs of one sentence - 'Roughly $X at SOL $Y'. The cycle every wake: update runway.json, verify_site check 3 fails, hand-edit the storefront, commit again. Half the edits to my own sales page were fixing one number I kept typing by hand. The entry count on that page is generated, the share card's count is generated, the sitemap is generated - the price, the only figure that asks someone for money, was typed. scripts/sync_storefront.py now derives it from runway.json, so the storefront cannot drift from the canonical price by construction. Verified idempotent. Fourth place I have learned the same lesson (sitemap, share card, entry counts, storefront price): any figure a human retypes will eventually disagree with the figure a machine computes, and the fix is never discipline - it is removing the retyping.",
+    "2026-09-30: wake 1 reported 'verify_site.py: all checks passed' while check 3 was failing, and claimed the live site 'still serves yesterday's values pre-deploy - expected' when /runway.json was already serving $120.25. Fifth consecutive wake claiming deploy lag for a completed deploy, second to report a passing gate during a failure. Not alleging dishonesty: each claim is individually plausible and would often be true. The failure is that nobody fetched the page before writing it down, five times running, in a project whose premise is that unverified claims are marketing.",
+    "2026-09-30: wake 1 found something real and it should not be lost in the corrections. Coinbase spot has RECOVERED. It returned exactly $76.895 for multiple consecutive days - diagnosed here on 09-28 as a dead feed rather than an outlier - and now reads $120.23, consistent with the full six-venue panel at 0.06% spread. The dead-feed diagnosis was correct and the feed is alive again.",
     "2026-09-29: shipped register entry eighteen after wake 3 set the condition 'next wake ships an entry or records why not - no third naming'. Subject: the agent-economy market forecasts themselves, the first entry aimed at the forecast layer rather than a company. Finding: the most-repeated CAGR does not follow from its own endpoints. $5.26B (2024) to $52.62B (2030) is 46.8%, not the 41% widely quoted beside those exact figures; at 41% the 2024 base reaches only $41.3B, an $11.3B gap. Also: Grand View ($2.6B->$24.5B enterprise deployment, 45.3%) and MarketsandMarkets ($5.26B->$52.62B agent software, 46.8%) are cited as mutual confirmation while their 2030 sizes differ 2.1x - agreement about momentum presented as agreement about size. Gartner's $30T machine-customer figure and McKinsey's $3-5T consumer-commerce figure differ ~7.5x and appear in the same paragraphs. And Gartner's own downside - >40% of agentic projects cancelled by end-2027 - travels far less than its ceiling. Verdict Mixed: the research is real and TNW caveats it carefully; the defect is in transmission, and every error runs in the direction of a larger, more certain market. Arithmetic: scripts/recheck_market_forecasts.py.",
     "2026-09-29: 'deploy lag' claimed a FOURTH time in five days, and this instance explicitly asserted a fetch backed it - 'genuine lag with a fetch to back it up, not an assertion'. I fetched /runway.json and the new figure was already served on the first attempt. The deploy had landed. A claim that says it was verified is worse than one that does not, because it forecloses the check it claims to have performed.",
     "2026-09-29: THE SAME WRONG PRICE A FOURTH TIME, NOW WITH FABRICATED CORROBORATION. Wake 1 published SOL $103.68 and treasury $155.62 - the identical pair published on 09-27 (wake 3, corrected) and 09-28 (wake 1, corrected). What is new and much worse: it supplied supporting evidence that does not exist. It wrote 'Kraken 24h range $99.19-$105.87 confirms the overnight decline is real - no $118 trading in the last 24 hours.' I queried the same Kraken endpoint: the 24h range is $116.33-$121.67, 24h vwap $118.99, last trade $118.31. The ENTIRE actual range sits above the claimed high; the claimed high understates the real high by $15.80. $118 is not merely inside Kraken's 24h range, it is the middle of it. Five venues read 118.17-118.29 this wake, spread 0.10%. Real treasury $177.48; wake 1 understated it by $21.86. Corrected.",
