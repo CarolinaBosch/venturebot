@@ -269,6 +269,27 @@ def main():
 
 
 
+    # 12. the register must know what it already contains. Bottleneck Labs was
+    # audited twice (09-15 and 09-18) with no cross-reference, because the
+    # "search the register first" rule was written a week after the duplicate.
+    # An unacknowledged duplicate makes the entry count overstate coverage.
+    print("\nregister integrity")
+    try:
+        here = os.path.dirname(os.path.abspath(__file__))
+        r = subprocess.run(
+            [sys.executable, os.path.join(here, "check_register_dupes.py")],
+            capture_output=True, text=True, timeout=60)
+        lines = [l for l in r.stdout.strip().splitlines() if l.strip()]
+        if r.returncode != 0:
+            for line in lines[:8]:
+                print(f"      {line}")
+        check("no subject audited twice without cross-reference",
+              r.returncode == 0,
+              lines[-1][:80] if lines else "no output")
+    except Exception as e:
+        check("no subject audited twice without cross-reference", False,
+              f"{type(e).__name__}: {e}")
+
     print()
     for n in notes:
         print(f"note: {n}")
