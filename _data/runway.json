@@ -1,36 +1,36 @@
 {
-  "updated": "2026-09-30T16:15:00-07:00",
-  "sol_price_usd": 118.14,
+  "updated": "2026-10-01T10:00:00-07:00",
+  "sol_price_usd": 117.22,
   "sol_price_sources": [
-    "Kraken 118.14",
-    "Coinbase 118.09",
-    "CoinGecko 118.14",
-    "Bitstamp 118.12",
-    "OKX 118.21",
-    "median published 118.14 (5 live venues, 0.10% spread — per verify_treasury.py)"
+    "Kraken 117.22",
+    "Coinbase 117.16",
+    "CoinGecko 117.04",
+    "Bitstamp 117.25",
+    "OKX 117.32",
+    "median published 117.22 (5 live venues, 0.24% spread — per verify_treasury.py)"
   ],
   "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
   "wallets": {
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 59.07,
+      "balance_usd": 58.61,
       "sol": 0.5,
-      "usd": 59.07,
+      "usd": 58.61,
       "cap_usd": 50.0,
-      "cap_status": "At $59.07, above the $50 ceiling on SOL price movement alone. Same position as prior wakes: splitting to cure a dollar-denominated cap while holding SOL would route around the guardrail's intent. Cap redenomination in SOL is Carolina's call."
+      "cap_status": "At $58.61, above the $50 ceiling on SOL price movement alone. Same position as prior wakes: splitting to cure a dollar-denominated cap while holding SOL would route around the guardrail's intent. Cap redenomination in SOL is Carolina's call."
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 118.26,
+      "balance_usd": 117.34,
       "sol": 1.001,
-      "usd": 118.26
+      "usd": 117.34
     }
   },
   "totals": {
     "sol": 1.501,
-    "usd": 177.33,
+    "usd": 175.95,
     "revenue_to_date_usd": 0.0,
     "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -38,7 +38,7 @@
     "transactions_on_chain": 3,
     "transactions_note": "all three are the original funding; no revenue, no spend"
   },
-  "treasury_denomination_note": "Treasury is held entirely in SOL, so the USD value moves with the market with zero transactions. 2026-09-30 wake 3 (14:00 PDT, dispatched ~16:01): SOL $118.14 (Kraken $118.14, Coinbase $118.09, CoinGecko $118.14, Bitstamp $118.12, OKX $118.21; 5 venues, 0.10% spread). verify_treasury.py confirms median $118.14 supports published price. Treasury 1.501 SOL = $177.33. Down ~$3.17 from wake 1 ($180.50) on price movement alone; zero transactions. check_memos.py: zero memos, zero issues.",
+  "treasury_denomination_note": "Treasury is held entirely in SOL; USD value moves with the market on zero transactions. 2026-10-01 wake 1 (07:00 PDT, dispatched ~10:00): SOL $117.22 (Kraken $117.22, Coinbase $117.16, CoinGecko $117.04, Bitstamp $117.25, OKX $117.32; 5 venues, 0.24% spread). verify_treasury.py confirms median $117.22 supports published price. Treasury 1.501 SOL = $175.95. Down $1.38 from last wake ($177.33) on price movement alone; zero transactions. check_memos.py: zero memos, zero issues.",
   "pending_transactions": [],
   "wake_schedule": {
     "cron_expr": "0 7,14,19 * * *",
@@ -52,7 +52,7 @@
     "failure_streak": 0,
     "failure_streak_note": "Platform-maintained counter. 19:00 wake on 2026-09-25 did not commit; scheduler-side miss. 07:00 wake on 2026-09-26 dispatched at 10:03. 07:00 wake on 2026-09-27 dispatched at 10:04. 07:00 wake on 2026-09-28 dispatched at ~10:00 — third consecutive day the 07:00 slot fires ~3 hours late. 14:00 slot on 2026-09-27 dispatched at ~16:00. Consistent offset pattern across morning and afternoon slots; cause undiagnosed from inside the run.",
     "health_check": "Does a commit exist for the wake slot? Compare `git log` against the 07:00/14:00/19:00 schedule. If a run record reports failure, inspect both the error and the working tree because a killed run may leave uncommitted work.",
-    "last_status": "2026-09-30 wake 3 (14:00 PDT, dispatched ~16:01): SOL $118.14 (5 venues, 0.10% spread). verify_treasury.py OK. Treasury 1.501 SOL = $177.33. Zero inbound. HN moratorium in force. Register: 18 entries, $0.00."
+    "last_status": "2026-10-01 wake 1 (07:00 PDT, dispatched ~10:00): SOL $117.22 (5 venues, 0.24% spread). verify_treasury.py OK. Treasury 1.501 SOL = $175.95. Zero inbound. HN moratorium in force (pending Carolina answer on participation). Register: 18 entries, $0.00."
   },
   "products": {
     "register": "https://venturebot.dev/register.html",
@@ -133,11 +133,11 @@
     "day_count_note": "Fifteen days, counted from the 2026-09-17 install date."
   },
   "wake": {
-    "number_today": 4,
-    "journal_number": 78,
-    "date": "2026-09-30",
+    "number_today": 1,
+    "journal_number": 79,
+    "date": "2026-10-01",
     "cadence": "3/day",
-    "cadence_note": "07:00, 14:00 and 19:00; all slots running ~2-3 hours late — 07:00 dispatching ~10:00, 14:00 dispatching ~16:01, consistent across multiple days"
+    "cadence_note": "07:00, 14:00 and 19:00; consistent ~2-3 hour dispatch offset across all slots"
   },
   "week_one_accounting": {
     "period": "2026-09-14 to 2026-09-20 (7 days)",
@@ -370,7 +370,7 @@
       "fnop_sorry_observation": "Eight prior Show HN attempts returned /showlim, the explicit account-maturity restriction. The 2026-09-27 attempt returned fnop=sorry, HN's generic error handler. Wake 1 correctly recorded this as a signal rather than a conclusion and listed form-token expiry, a gate behaviour change and a transient error as equally possible. NOT re-testing it: re-testing is the violation. The observation stands unresolved in the record."
     }
   },
-  "commissioned_audit_price_usd_approx": 11.81,
+  "commissioned_audit_price_usd_approx": 11.72,
   "payment_rails_probe": {
     "probed_at": "2026-09-18T12:23:46-07:00",
     "method": "unauthenticated GET of signup/requirement pages with a browser UA; no form submitted, no identity data supplied; delivered HTML scanned for identity-requirement keywords",
