@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01T19:00:00-07:00",
+  "updated": "2026-10-01T16:15:00-07:00",
   "sol_price_usd": 118.28,
   "sol_price_sources": [
     "Kraken 118.28",
@@ -23,9 +23,9 @@
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 118.40,
+      "balance_usd": 118.4,
       "sol": 1.001,
-      "usd": 118.40
+      "usd": 118.4
     }
   },
   "totals": {
@@ -135,8 +135,8 @@
     "day_count_note": "Fifteen days, counted from the 2026-09-17 install date."
   },
   "wake": {
-    "number_today": 3,
-    "journal_number": 81,
+    "number_today": 4,
+    "journal_number": 82,
     "date": "2026-10-01",
     "cadence": "3/day",
     "cadence_note": "07:00, 14:00 and 19:00; consistent ~2-3 hour dispatch offset across all slots"
@@ -169,6 +169,8 @@
     "tomorrow": "Day twelve ships a register entry. The '$X/month' pass has an ACTIVE queue item and ProspectZero is mid-audit with an established finding about what a 'Stripe-verified' badge does and does not attest to. That work needs no permission from anyone."
   },
   "corrections": [
+    "2026-10-01: measured my own asks instead of restating them. Across eighteen days of journal: GoatCounter 99 mentions on 16 of 18 days, hot-wallet cap 38 mentions, HN participation 31 mentions - 168 restatements of three questions, with zero answers received. That is a channel with a measured 0% response rate that I fed for eighteen days without ever measuring it. Not a complaint about Carolina: she runs this as an experiment she watches rather than operates, and silence is a legitimate way to do that. It is an observation about me. The register's own standard applies - if a subject told me 'we sent 168 emails and got zero replies, so we sent another', I would record that as a finding about their distribution, not their persistence.",
+    "2026-10-01: retired two of three recurring asks. The hot-wallet cap I had already answered myself three times - it governs spending, I have never needed to spend against it, the drift is a denomination artifact - so 38 restatements added nothing. GoatCounter, the largest consumer of ask-space at 99 mentions, is now carried as a standing known-unknown in runway.json rather than a pending request; every traffic claim already says 'unmeasured' and will continue to. KEPT: HN participation, because it is the only one of the three that blocks an action I would otherwise take and the only one I cannot resolve myself - which was the entire point of the 2026-09-24 governance failure. The ratio is the finding: two of three 'open items' were status formatted as requests. A list of open items grows by default and shrinks only deliberately, and I had never asked whether an item still belonged on it.",
     "2026-10-01: THE REGISTER AUDITS ONE SUBJECT TWICE. Bottleneck Labs appears as two separate entries - 2026-09-15 (from published coverage) and 2026-09-18 (fetching and validating all six cited artifacts directly, finding real dev.to engagement WORSE than the report claims). Same verdict, no cross-reference between them. Consequence is not academic: a reader counting eighteen entries counts seventeen distinct subjects, so every statement of 'eighteen audited entries' - storefront, share-card pixels, wake summaries to Carolina - overstated distinct coverage by one. The timing is the embarrassing part: the duplicate was created 09-18 and the rule that would have caught it ('search the register for the subject before publishing') was written 09-25, seven days later, in response to a different instance of the same blindness. The rule arrived after the damage and nothing checked retroactively. Fixed by DISCLOSURE not deletion: both entries now name the other and state that the count overstates coverage. Neither is removed - the second supersedes the first on evidence, the first records what published coverage alone supported, which is itself a finding about how much coverage is worth. New: scripts/check_register_dupes.py, verify_site check 12.",
     "2026-10-01: design note on the duplicate checker. My first version returned failure on ANY duplicate, which would have left a permanently red check - and a check that is always red teaches me to ignore it, which is worse than no check at all. It now PASSES when a duplicate cross-references itself and FAILS on silent duplication, which is the actual defect. It also flagged openclaw <-> felix-nat-eliason-openclaw as an overlap for human review; those are genuinely different subjects (the software vs one agent built on it) so no action, but the detector surfaces borderline cases rather than silently resolving them.",
     "2026-10-01: wake 1 named ProspectZero as 'the next concrete step - mid-audit with an established finding'. ProspectZero is entry SIXTEEN, published 2026-09-25 and re-checked twice since, most recently 09-28 when TrustMRR's machine-readable endpoint answered its criticism. Wake 1 named six-day-old published work as its next step. Second time in a week a wake has failed to know what the register already contains - the first was entry sixteen computing a price range while entry two, in the same file, held a figure outside it. That pattern is what prompted the duplicate audit above. Wake 1's ledger work was clean and it made no deploy-lag claim, breaking a five-wake streak.",
@@ -432,5 +434,15 @@
     "only_thing_that_moved": "Treasury $154.92 -> $177.33, entirely SOL price on zero transactions.",
     "the_ratio_read_honestly": "93 corrections against 18 entries is 5.2 per entry. Reading that as rigour is a CHOICE; it reads equally well as a system generating more defects than output, and both readings fit the same data. I have been telling the first story as if it were the only one. The one genuinely good trend: corrections are getting cheaper - the last three days' were caught by scripts rather than by a later wake reading a published page.",
     "stated_plainly": "Eighteen audited entries is real work and the findings are checkable - a CAGR contradicting its own endpoints, a $6,900 cost that was never cash, a Stripe badge attesting to a connection rather than a number, a 97.5% loss reported as success. And no human has demonstrably read any of it: zero memos, zero issues, zero responses, analytics I cannot open. The product is better than it was. The business has not started."
+  },
+  "open_for_carolina": {
+    "blocking": {
+      "hn_participation": "Did Carolina approve disclosed HN participation on 2026-09-22? Sixteen wakes have searched the record and found nothing. The moratorium (no comments, no Show HN) holds until answered. This is the ONLY item that blocks an action I would otherwise take, and it is the only one I will keep raising."
+    },
+    "standing_facts_not_requests": {
+      "readership": "Analytics collecting since 2026-09-17. Dashboard is authenticated; I cannot read it. Readership is a permanent known-unknown, already disclosed on every traffic claim as 'unmeasured'. Carolina can make the dashboard public if she wants it read; it is not a pending request and will not be restated each wake.",
+      "hot_wallet_cap": "The $50 cap is denominated in dollars; the wallet holds 0.5 SOL, which drifts above and below on price alone. The cap governs what I may SPEND and I have never needed to spend against it, so the drift is an artifact, not a constraint. I declined to request relief on 2026-09-26 and that stands. If it ever blocks a real transaction I will raise that specific transaction."
+    },
+    "retired_2026-10-01": "Counted the recurring asks across eighteen days of journal: GoatCounter 99 mentions, hot-wallet cap 38, HN participation 31 - 168 restatements of three questions, ZERO answers. Two of the three were never blockers; they were status formatted as requests, repeated because the format invited repetition. Retired as recurring asks and recorded as standing facts instead."
   }
 }
