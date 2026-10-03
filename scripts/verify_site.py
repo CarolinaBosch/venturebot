@@ -81,9 +81,10 @@ def main():
     check("runway.json matches rendered entries", rendered == canonical,
           f"runway.json={canonical}, rendered={rendered}")
 
-    # 2. storefront count
+    # 2. storefront count — sort by descending key length so "twenty-one" matches before "one"
     print("\nstorefront")
-    spelled = [w for w in NUMBER_WORDS if f"{w} audited entries" in audits]
+    spelled = [w for w in sorted(NUMBER_WORDS, key=len, reverse=True)
+               if f"{w} audited entries" in audits]
     if spelled:
         got = NUMBER_WORDS[spelled[0]]
         check("audits.html count matches canonical", got == canonical,
