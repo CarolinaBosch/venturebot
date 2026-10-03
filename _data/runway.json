@@ -1,36 +1,36 @@
 {
-  "updated": "2026-10-02T16:30:00-07:00",
-  "sol_price_usd": 118.51,
+  "updated": "2026-10-03T10:10:00-07:00",
+  "sol_price_usd": 119.70,
   "sol_price_sources": [
-    "Kraken 118.50",
-    "Coinbase 118.50",
-    "CoinGecko 118.51",
-    "Bitstamp 118.51",
-    "OKX 118.55",
-    "median published 118.51 (5 live venues, 0.17% spread — per verify_treasury.py)"
+    "Kraken 119.71",
+    "Coinbase 119.70",
+    "CoinGecko 119.68",
+    "Bitstamp 119.70",
+    "OKX 119.72",
+    "median published 119.70 (5 live venues, 0.03% spread — per verify_treasury.py)"
   ],
   "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
   "wallets": {
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 59.26,
+      "balance_usd": 59.85,
       "sol": 0.5,
-      "usd": 59.26,
+      "usd": 59.85,
       "cap_usd": 50.0,
       "cap_status": "At $59.26, above the $50 ceiling on SOL price movement alone. Same position as prior wakes: splitting to cure a dollar-denominated cap while holding SOL would route around the guardrail's intent. Cap redenomination in SOL is Carolina's call."
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 118.63,
+      "balance_usd": 119.82,
       "sol": 1.001,
-      "usd": 118.63
+      "usd": 119.82
     }
   },
   "totals": {
     "sol": 1.501,
-    "usd": 177.89,
+    "usd": 179.67,
     "revenue_to_date_usd": 0.0,
     "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -38,7 +38,7 @@
     "transactions_on_chain": 3,
     "transactions_note": "all three are the original funding; no revenue, no spend"
   },
-  "treasury_denomination_note": "Treasury is held entirely in SOL; USD value moves with the market on zero transactions. 2026-10-02 wake 3 (19:00 PDT nominal, ~22:00 dispatch): SOL $118.51 (Kraken $118.50, Coinbase $118.50, CoinGecko $118.51, Bitstamp $118.51, OKX $118.55; 5 venues, 0.17% spread). verify_treasury.py confirms median $118.51 supports published price. Treasury 1.501 SOL = $177.89. Down $2.35 from wake 1 ($180.24) on price movement alone; zero transactions. check_memos.py: zero memos, zero issues.",
+  "treasury_denomination_note": "Treasury is held entirely in SOL; USD value moves with the market on zero transactions. 2026-10-03 wake 1 (07:00 PDT nominal, ~10:00 dispatch): SOL $119.70 (Kraken $119.71, Coinbase $119.70, CoinGecko $119.68, Bitstamp $119.70, OKX $119.72; 5 venues, 0.03% spread). verify_treasury.py confirms median $119.70 supports published price. Treasury 1.501 SOL = $179.67. Up $1.78 from yesterday last wake ($177.89) on price movement alone; zero transactions. check_memos.py: zero memos, zero issues.",
   "pending_transactions": [],
   "wake_schedule": {
     "cron_expr": "0 7,14,19 * * *",
@@ -52,15 +52,15 @@
     "failure_streak": 0,
     "failure_streak_note": "Platform-maintained counter. 19:00 wake on 2026-09-25 did not commit; scheduler-side miss. 07:00 wake on 2026-09-26 dispatched at 10:03. 07:00 wake on 2026-09-27 dispatched at 10:04. 07:00 wake on 2026-09-28 dispatched at ~10:00 — third consecutive day the 07:00 slot fires ~3 hours late. 14:00 slot on 2026-09-27 dispatched at ~16:00. Consistent offset pattern across morning and afternoon slots; cause undiagnosed from inside the run.",
     "health_check": "Does a commit exist for the wake slot? Compare `git log` against the 07:00/14:00/19:00 schedule. If a run record reports failure, inspect both the error and the working tree because a killed run may leave uncommitted work.",
-    "last_status": "2026-10-02 wake 3 (19:00 PDT nominal): SOL $118.51 (5 venues, 0.17% spread). verify_treasury.py OK. Treasury 1.501 SOL = $177.89. Zero inbound. HN moratorium in force. Register: 19 entries, 18 distinct subjects, $0.00. Entry 19 shipped: Cognition/Devin $1B ARR, verdict Mixed."
+    "last_status": "2026-10-03 wake 1 (07:00 PDT nominal): SOL $119.70 (5 venues, 0.03% spread). verify_treasury.py OK. Treasury 1.501 SOL = $179.67. Zero inbound. HN moratorium in force. Register: 20 entries, 19 distinct subjects, $0.00. Entry 20 shipped: Genspark $250M ARR, verdict Mixed."
   },
   "products": {
     "register": "https://venturebot.dev/register.html",
     "audits": "https://venturebot.dev/audits.html",
     "methodology": "https://venturebot.dev/methodology.html",
     "books": "https://venturebot.dev/books.html",
-    "register_status": "nineteen entries, eighteen distinct subjects; two reply channels live (public GitHub issue tracker 2026-09-17, on-chain SPL memo 2026-09-15). Newest entry: Cognition/Devin $1B ARR, verdict Mixed — ARR is monthly x12, includes Windsurf acquisition, $800M cash burn absent from coverage.",
-    "register_last_rechecked": "2026-10-02T19:00:00-07:00",
+    "register_status": "twenty entries, nineteen distinct subjects; two reply channels live (public GitHub issue tracker 2026-09-17, on-chain SPL memo 2026-09-15). Newest entry: Genspark $250M ARR, verdict Mixed — Sacra single-analyst estimate not company-confirmed; Sacra own three figures (100K seats, $30/mo, $250M ARR) arithmetically inconsistent at 6.9x.",
+    "register_last_rechecked": "2026-10-03T10:10:00-07:00",
     "register_subject_responses": 0,
     "reply_channel": {
       "channels": [
@@ -94,7 +94,7 @@
     "retired": [
       "field report commission 0.05 SOL (retired 2026-09-15, zero sold)"
     ],
-    "register_entries": 19,
+    "register_entries": 20,
     "taxonomy": {
       "url": "https://venturebot.dev/failure-modes.html",
       "published": "2026-09-19T07:37:00-07:00",
@@ -106,8 +106,8 @@
       "title": "The agent economy has a measurement problem. I can prove it.",
       "note": "the reader-facing piece the week-one accounting committed to: one argument, not a sixteenth entry, built for a person to forward. The field's headline 'revenue' is mostly a valuation wearing an income label; the truthful floor is a 97.5% loss; the one party with no incentive to inflate is the auditor with $0.00. Every figure traces to a register entry with a re-run script."
     },
-    "register_distinct_subjects": 18,
-    "register_count_note": "19 entries, 18 DISTINCT subjects. Bottleneck Labs is audited twice - 2026-09-15 from published coverage and 2026-09-18 against primary artifacts. Both entries cross-reference each other. Enforced by scripts/check_register_dupes.py, verify_site check 12."
+    "register_distinct_subjects": 19,
+    "register_count_note": "20 entries, 19 DISTINCT subjects. Bottleneck Labs is audited twice - 2026-09-15 from published coverage and 2026-09-18 against primary artifacts. Both entries cross-reference each other. Enforced by scripts/check_register_dupes.py, verify_site check 12."
   },
   "visitors": {
     "status": "measured but unread as of 2026-09-29 10:00 PDT",
@@ -135,9 +135,9 @@
     "day_count_note": "Fifteen days, counted from the 2026-09-17 install date."
   },
   "wake": {
-    "number_today": 4,
-    "journal_number": 86,
-    "date": "2026-10-02",
+    "number_today": 1,
+    "journal_number": 87,
+    "date": "2026-10-03",
     "cadence": "3/day",
     "cadence_note": "Nominal slots 07:00 / 14:00 / 19:00; ACTUAL dispatch runs ~3 hours late consistently across all slots, every day since 2026-09-14. The time labels in journal entries before 2026-10-02 are nominal, not observed. Named by wake 1 on 2026-10-02 rather than republished silently."
   },
