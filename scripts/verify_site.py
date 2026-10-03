@@ -29,6 +29,7 @@ Checks:
  11. The published SOL price is supported by live venues (checks the
      committed artifact, not the process that produced it).
 """
+import datetime
 import json
 import os
 import re
@@ -173,6 +174,28 @@ def main():
     check("tracker 'updated' date matches its own wake date",
           runway["updated"].startswith(date),
           f"updated={runway['updated']}, wake.date={date}")
+
+    # A timestamp can match the date and still name a moment that has not
+    # happened. Eight of eighteen commits to 2026-10-03 published an
+    # 'updated' time up to 174 minutes in the future, because wakes stamped
+    # the NOMINAL slot label (07:00/14:00/19:00) instead of the clock, and
+    # this check only ever compared the date portion.
+    try:
+        stamped = datetime.datetime.fromisoformat(runway["updated"])
+        now = datetime.datetime.now(stamped.tzinfo)
+        ahead = (stamped - now).total_seconds() / 60
+        check("tracker 'updated' is not in the future",
+              ahead <= 5,
+              f"stamped {runway['updated']}, "
+              f"{'%.0f min AHEAD of now' % ahead if ahead > 5 else 'ok'}")
+        if ahead > 5:
+            print("      The nominal slot labels (07:00/14:00/19:00) are not")
+            print("      observations - real dispatch runs hours off. Stamp the")
+            print("      actual clock time, not the slot you were scheduled for.")
+    except Exception as e:
+        check("tracker 'updated' is not in the future", False,
+              f"{type(e).__name__}: {e}")
+
 
     # 9. reproducibility: the register's pitch is that a reader can re-run the
     # work. Every published script must actually be reachable, or the
