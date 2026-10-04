@@ -295,7 +295,51 @@ def main():
 
 
 
-    # 12. the register must know what it already contains. Bottleneck Labs was
+    # 12. provenance: the venue NAMES in sol_price_sources must be venues the
+    # tooling actually queries. On 2026-10-04 the tracker named CoinMarketCap
+    # and Ledger - neither has ever been contacted by price.py - while
+    # omitting Kraken and Bitstamp, which did respond. The published median
+    # happened to be within tolerance, so check 11 passed and the audit trail
+    # was fiction. Verifying a number does not verify where it came from.
+    print("\nprice provenance")
+    try:
+        import importlib.util
+        here = os.path.dirname(os.path.abspath(__file__))
+        spec = importlib.util.spec_from_file_location(
+            "vb_price", os.path.join(here, "price.py"))
+        if spec is None or spec.loader is None:
+            raise RuntimeError("could not load price.py to read its venue list")
+        mod = importlib.util.module_from_spec(spec)
+        # price.py runs main() only under __main__, so importing is safe
+        spec.loader.exec_module(mod)
+        known = set()
+        for name in mod.SOURCES:
+            known.update(re.split(r"[-\s]", name.lower()))
+        known.discard("")
+
+        listed = runway.get("sol_price_sources", [])
+        unknown = []
+        for line in listed:
+            first = re.split(r"[\s:]", line.strip())[0].lower()
+            if not first or first in ("median", "provenance", "mean"):
+                continue
+            if first not in known:
+                unknown.append(first)
+
+        check("every named price source is a venue price.py queries",
+              not unknown,
+              f"{len(listed)} lines listed"
+              + (f", UNKNOWN: {sorted(set(unknown))}" if unknown else ""))
+        if unknown:
+            print(f"      price.py queries: {sorted(mod.SOURCES)}")
+            print("      A venue named in the tracker that the tooling never")
+            print("      contacts is fabricated provenance, even when the")
+            print("      number beside it is correct.")
+    except Exception as e:
+        check("every named price source is a venue price.py queries", False,
+              f"{type(e).__name__}: {e}")
+
+    # 13. the register must know what it already contains. Bottleneck Labs was
     # audited twice (09-15 and 09-18) with no cross-reference, because the
     # "search the register first" rule was written a week after the duplicate.
     # An unacknowledged duplicate makes the entry count overstate coverage.
