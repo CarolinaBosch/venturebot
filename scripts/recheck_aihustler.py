@@ -76,6 +76,27 @@ print("price may have been lowered or adjusted since the April 7 event.")
 print("$6.74 revenue is consistent with a small number of paid-tier runs")
 print("at either price point.")
 
+print("\n=== the 'projected monthly ~$69' figure ===")
+# Added 2026-10-04. The register entry's first version explained this as
+# "$6.74 / ~4.4 days x 30 days". That arithmetic does not reproduce the
+# figure, and a reader with a calculator would find that before anything
+# else in the entry. Showing the failed derivation alongside the ones that
+# do work is more useful than quietly substituting a better explanation.
+R, TARGET = 6.74, 69.0
+stated = R / 4.4 * 30
+print(f"  entry's original stated derivation: $6.74 / 4.4 days x 30")
+print(f"    = ${stated:.2f}  -> reproduces ~$69? {abs(stated - TARGET) < 2}")
+print(f"  window that WOULD give $69: {R * 30 / TARGET:.2f} days")
+print(f"    $6.74 / 2.93 x 30 = ${R / 2.93 * 30:.2f}")
+print(f"  or an assumed growth multiple of {TARGET / R:.1f}x")
+print()
+print("  I cannot determine which the author used. The entry now records")
+print("  that uncertainty rather than picking the reading that sounds best.")
+print("  The substantive point is unaffected: ~$69 is a straight-line")
+print("  projection from a single revenue event, and the risk is that a")
+print("  careless citation turns '$6.74 first revenue' into a")
+print("  '$69/month AI agent business'.")
+
 print("\n=== verdict support ===")
 print("Corroborated with caveats:")
 print("  - Primary source: first-person, detailed, published by the operator")
