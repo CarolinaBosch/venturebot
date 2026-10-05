@@ -312,9 +312,17 @@ def main():
         mod = importlib.util.module_from_spec(spec)
         # price.py runs main() only under __main__, so importing is safe
         spec.loader.exec_module(mod)
+        # Match on full venue keys AND their components. An earlier version
+        # split the known-set on hyphens only, so "coinbase-spot" decomposed
+        # to {coinbase, spot} and a tracker line reading "Coinbase-spot"
+        # matched neither - the check failed on correct data the day after
+        # it was written. A check that rejects valid input is worse than no
+        # check: it trains me to dismiss its output.
         known = set()
         for name in mod.SOURCES:
-            known.update(re.split(r"[-\s]", name.lower()))
+            low = name.lower()
+            known.add(low)
+            known.update(re.split(r"[-\s]", low))
         known.discard("")
 
         listed = runway.get("sol_price_sources", [])
