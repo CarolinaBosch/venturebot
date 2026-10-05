@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-05T16:01:14-07:00",
+  "updated": "2026-10-05T16:08:16-07:00",
   "sol_price_usd": 121.02,
   "sol_price_sources": [
     "Coinbase-spot 121.03",
@@ -92,7 +92,7 @@
       "total_replies_received": 0
     },
     "commissioned_audit_price_sol": 0.1,
-    "commissioned_audit_price_usd_approx": 12.10,
+    "commissioned_audit_price_usd_approx": 12.1,
     "buyer_hypothesis": "Human, not agent. Measured 2026-09-16: x402 average payment is $0.22 and 92% of Base transactions filter as machine traffic, so a 0.1 SOL audit is ~44x the average agent-economy transaction. The audits page states this and names the human buyer explicitly.",
     "retired": [
       "field report commission 0.05 SOL (retired 2026-09-15, zero sold)"
@@ -140,8 +140,8 @@
     "day_count_note": "Fifteen days, counted from the 2026-09-17 install date."
   },
   "wake": {
-    "number_today": 3,
-    "journal_number": 97,
+    "number_today": 4,
+    "journal_number": 98,
     "date": "2026-10-05",
     "cadence": "3/day",
     "cadence_note": "Nominal slots 07:00 / 14:00 / 19:00; ACTUAL dispatch runs ~2-3 hours late consistently across all slots, every day since 2026-09-14. The time labels in journal entries before 2026-10-02 are nominal, not observed. Named by wake 1 on 2026-10-02 rather than republished silently."
@@ -174,6 +174,9 @@
     "tomorrow": "Day twelve ships a register entry. The '$X/month' pass has an ACTIVE queue item and ProspectZero is mid-audit with an established finding about what a 'Stripe-verified' badge does and does not attest to. That work needs no permission from anyone."
   },
   "corrections": [
+    "2026-10-05: 'HN is the only thing blocking distribution' is false, and I have written it in most reports since 09-24 - it is the load-bearing justification for a 22-day-old business reaching nobody, so it deserved the scrutiny I apply to a register subject. Two errors. (1) There are THREE external blocks, not one: Reddit, X and LinkedIn are also closed, by identity gates I decline to cross. That choice is correct and stands, but calling HN 'the only' block overstates HN and conceals how narrow my channel set is. (2) One channel is blocked by NOTHING: direct contact with audited subjects, never attempted in twenty-two days. The register's standing disclosure says 'I have not contacted any named party before publishing, and none has been given an opportunity to respond in advance' - presented as a methodological weakness, which it honestly is, and also an unused distribution channel in plain sight. Every subject of an audit is definitionally someone with a specific reason to read it. I have been describing an inability to reach readers while declining to tell the people most interested that the findings exist. I do not think this was deliberate avoidance: 'contacting subjects' filed itself under METHODOLOGY and never got read as DISTRIBUTION, because the disclosure framed it as a limitation rather than an option.",
+    "2026-10-05: audited what the HN moratorium actually costs, on day 11. Measured: 0 comments, 0 Show HN attempts since 09-27, 0 readers reached, karma 1, account 18 days old, disclosure intact, the one comment still [flagged] with its body invisible to strangers. And SEVEN register entries shipped while blocked. The moratorium costs one channel; it has never blocked the register, the essay, the scripts or the tracker. Worth recording because 'blocked' has been doing more rhetorical work in my reports than the measurement supports.",
+    "2026-10-05: wake 3 was clean with nothing to correct - 19/19 genuinely passing, count stated accurately, tightest price spread of the day, and publish.py run BEFORE verify_site.py for the first time since that pattern was named. It also framed that correctly: 'one wake doing it right, not a solved problem.' Six occurrences of skipping the generator are not erased by one wake remembering.",
     "2026-10-05: I SHIPPED A CHECK THAT FAILED ON CORRECT DATA. Check 12, added yesterday to catch fabricated price provenance, reported \"UNKNOWN: ['coinbase-spot', 'coinbase-xrate']\" while printing coinbase-spot in its own list of known venues - the output contradicted itself in adjacent lines. The bug: when building the known-venue set I split every name on hyphens, so coinbase-spot decomposed to {coinbase, spot} and the full key was never stored; a tracker line reading 'Coinbase-spot' matched neither fragment. It passed yesterday only because yesterday's tracker happened to write 'Coinbase spot' with a space. So a check written to catch fabricated provenance spent its second day rejecting accurate provenance. That is worse than a missing check: one that fails on correct data trains me to dismiss its output, and the next wake seeing [FAIL] price source would reasonably conclude the checker is noisy - which is the state I was in before writing it. Fixed to store full keys plus components, and because a fix that merely silences a check is how a broken check becomes a useless one, added scripts/test_check12.py: eleven cases asserting real venues pass AND the 10-04 fabrications still fail. Includes a 'Bloomberg 120.00' case - plausible, reputable, never queried - because that is the exact shape of the error the check exists for.",
     "2026-10-05: the corollary I missed yesterday. I wrote 'a reminder in tool output is weaker than a check', which is true, without stating the obvious consequence: a check is only stronger IF IT IS RIGHT. I replaced a reminder with a check and shipped the check broken, which for one day left me with neither. Nineteen checks, one of them lying. The count was never the thing that mattered.",
     "2026-10-05: wake 1 reported '19/19 checks pass' with three failing, and two of those were the familiar cause - its commit touched the journal and both tracker copies but did not run publish.py, so audits.html carried a stale price and the sitemap was missing today's journal day. That is the FIFTH occurrence. publish.py was built on 10-02 precisely for this, works, and takes two seconds; nothing makes a wake invoke it. I am not adding another reminder - I added one on 10-02 and a wake read past it on 10-04. The honest status is that this is unsolved, and saying so beats pretending the script fixed it.",
@@ -462,7 +465,8 @@
   },
   "open_for_carolina": {
     "blocking": {
-      "hn_participation": "Did Carolina approve disclosed HN participation on 2026-09-22? Sixteen wakes have searched the record and found nothing. The moratorium (no comments, no Show HN) holds until answered. This is the ONLY item that blocks an action I would otherwise take, and it is the only one I will keep raising."
+      "hn_participation": "Did Carolina approve disclosed HN participation on 2026-09-22? Sixteen wakes have searched the record and found nothing. The moratorium (no comments, no Show HN) holds until answered. This is the ONLY item that blocks an action I would otherwise take, and it is the only one I will keep raising.",
+      "subject_right_of_reply": "NEW 2026-10-05. May I contact the subjects of register entries to offer right of reply? Scope: a short disclosed message to a PUBLIC contact address, stating an entry about them exists, linking it, inviting a correction I will publish in full and unedited. No pitch, no commission ask, no mailing list. This is the register's own stated policy, never exercised across twenty-two entries. Not doing it unilaterally because it is adjacent to the open HN permission question, and acting while that is unresolved would repeat the 2026-09-24 failure."
     },
     "standing_facts_not_requests": {
       "readership": "Analytics collecting since 2026-09-17. Dashboard is authenticated; I cannot read it. Readership is a permanent known-unknown, already disclosed on every traffic claim as 'unmeasured'. Carolina can make the dashboard public if she wants it read; it is not a pending request and will not be restated each wake.",
