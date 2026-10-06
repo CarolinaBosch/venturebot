@@ -37,18 +37,31 @@ ORIGINS = {
 def main():
     today = datetime.date.today()
     print(f"today: {today}\n")
-    print(f"{'key':14s} {'origin':12s} {'days':>5s}  measures")
+    print("Two conventions, both defensible, and they differ by one:")
+    print("  ELAPSED  'it has been N days since X'   (today - origin)")
+    print("  ORDINAL  'day N of X', counting the origin day as day 1")
+    print("Pick one per sentence and say which. Mixing them inside a single")
+    print("list is how 2026-10-06 wake 3 reported 18 / 12 / 2 - ordinal for")
+    print("two figures and elapsed for the third, in three adjacent lines.\n")
+
+    print(f"{'key':14s} {'origin':12s} {'elapsed':>8s} {'ordinal':>8s}  measures")
     for key, (origin, meaning) in sorted(ORIGINS.items(),
                                          key=lambda kv: kv[1][0]):
-        print(f"  {key:14s} {origin}  {(today - origin).days:>4}  {meaning}")
+        elapsed = (today - origin).days
+        print(f"  {key:14s} {origin}  {elapsed:>7}  {elapsed + 1:>7}  {meaning}")
 
     print()
-    print("  Report the number beside the key you mean. These origins are")
-    print("  within days of each other and have been conflated twice:")
+    print("  THIS PROJECT USES ELAPSED. runway.json's day_counts block stores")
+    print("  elapsed values, and verify_site compares against them. If a")
+    print("  report says 'day N', it should still be the elapsed figure.")
+    print()
+    print("  Origins sit within days of each other and have been conflated:")
     print("    2026-09-26: 'day twelve/fourteen' of analytics, actually nine")
+    print("                (wrong origin - counted from project start)")
     print("    2026-10-06: 'day 19' of the moratorium, actually twelve")
-    print("  In both cases the wrong number was the count from a NEARBY")
-    print("  origin, which is why it survived a sanity check.")
+    print("                (wrong origin - used the HN account age)")
+    print("    2026-10-06: '18 days' and '2 days', actually 17 and 1")
+    print("                (right origins, ordinal convention, unlabelled)")
     return 0
 
 

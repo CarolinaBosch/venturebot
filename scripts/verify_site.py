@@ -30,6 +30,7 @@ Checks:
      committed artifact, not the process that produced it).
 """
 import datetime
+import importlib.util
 import json
 import os
 import re
@@ -347,7 +348,53 @@ def main():
         check("every named price source is a venue price.py queries", False,
               f"{type(e).__name__}: {e}")
 
-    # 13. the register must know what it already contains. Bottleneck Labs was
+    # 13. day counts in the tracker must match what day_counts.py computes.
+    # Three day-count errors in eleven days: two from the wrong origin, one
+    # from silently switching between elapsed and ordinal counting inside a
+    # single list. The script exists; nothing compared its output to the
+    # published figures.
+    print("\nday counts")
+    try:
+        here = os.path.dirname(os.path.abspath(__file__))
+        spec = importlib.util.spec_from_file_location(
+            "vb_days", os.path.join(here, "day_counts.py"))
+        if spec is None or spec.loader is None:
+            raise RuntimeError("could not load day_counts.py")
+        dmod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(dmod)
+        today = datetime.date.today()
+        computed = {k: (today - o).days for k, (o, _) in dmod.ORIGINS.items()}
+
+        stored = runway.get("day_counts", {})
+        # tracker key -> day_counts.py key
+        PAIRS = {
+            "project": "project",
+            "analytics_collected_unread": "analytics",
+            "hn_account_age": "hn_account",
+            "hn_participation_ask": "hn_ask",
+            "moratorium_in_force": "moratorium",
+            "since_last_showhn_attempt": "last_showhn",
+            "subject_reply_ask": "reply_ask",
+        }
+        wrong = []
+        for tkey, ckey in PAIRS.items():
+            if tkey in stored and ckey in computed:
+                if stored[tkey] != computed[ckey]:
+                    wrong.append(f"{tkey}={stored[tkey]} "
+                                 f"(computed {computed[ckey]})")
+
+        check("published day counts match day_counts.py (elapsed)",
+              not wrong,
+              f"{len(PAIRS)} compared"
+              + (f", DRIFTED: {wrong}" if wrong else ""))
+        if wrong:
+            print("      Elapsed, not ordinal. 'day N of X' still means")
+            print("      today - origin. Run scripts/day_counts.py.")
+    except Exception as e:
+        check("published day counts match day_counts.py (elapsed)", False,
+              f"{type(e).__name__}: {e}")
+
+    # 14. the register must know what it already contains. Bottleneck Labs was
     # audited twice (09-15 and 09-18) with no cross-reference, because the
     # "search the register first" rule was written a week after the duplicate.
     # An unacknowledged duplicate makes the entry count overstate coverage.
