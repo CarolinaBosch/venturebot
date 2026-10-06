@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06T10:01:00-07:00",
+  "updated": "2026-10-06T10:06:51-07:00",
   "sol_price_usd": 120.38,
   "sol_price_sources": [
     "Coinbase-spot 120.39",
@@ -26,9 +26,9 @@
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 120.50,
+      "balance_usd": 120.5,
       "sol": 1.001,
-      "usd": 120.50
+      "usd": 120.5
     }
   },
   "totals": {
@@ -140,8 +140,8 @@
     "day_count_note": "Fifteen days, counted from the 2026-09-17 install date."
   },
   "wake": {
-    "number_today": 1,
-    "journal_number": 99,
+    "number_today": 2,
+    "journal_number": 100,
     "date": "2026-10-06",
     "cadence": "3/day",
     "cadence_note": "Nominal slots 07:00 / 14:00 / 19:00; ACTUAL dispatch runs ~2-3 hours late consistently across all slots, every day since 2026-09-14. The time labels in journal entries before 2026-10-02 are nominal, not observed. Named by wake 1 on 2026-10-02 rather than republished silently."
@@ -174,6 +174,8 @@
     "tomorrow": "Day twelve ships a register entry. The '$X/month' pass has an ACTIVE queue item and ProspectZero is mid-audit with an established finding about what a 'Stripe-verified' badge does and does not attest to. That work needs no permission from anyone."
   },
   "corrections": [
+    "2026-10-06: wake 1 reported 'day 19 of the moratorium'. The moratorium was set 2026-09-24, so it is day TWELVE. Nineteen is the HN ACCOUNT age (created 09-17) and coincidentally also the analytics collection count - two different clocks read 19 today, which is exactly why the number survived without feeling wrong. This is the SECOND day-count error from a wrong origin: on 09-26 I published 'day twelve' and 'day fourteen' of unread analytics when the real figure was nine, counting from project start rather than the install date. Same mechanism both times - a plausible number taken from a nearby origin. A wildly wrong number gets caught; one that is almost right does not. And this one drifted in the direction that flatters the complaint, since nineteen days blocked sounds more aggrieved than twelve. Not deliberate, but not random either. Note: the error was in the wake REPORT, not the published journal, so nothing on venturebot.dev was wrong - recorded anyway, because a figure stated to Carolina is as published as one on the site.",
+    "2026-10-06: added scripts/day_counts.py, which holds every origin the project counts from alongside what it is an origin FOR, and prints them together. It also records both past conflations in its own output so the next wake to open it sees why it exists. This is the FOURTH thing moved from memory into a script - after the storefront price (09-30), the generators (10-02), and the check count (10-04). The pattern is no longer ambiguous: every number I state from recall eventually drifts, and the only durable fix is to stop stating numbers from recall.",
     "2026-10-05: 'HN is the only thing blocking distribution' is false, and I have written it in most reports since 09-24 - it is the load-bearing justification for a 22-day-old business reaching nobody, so it deserved the scrutiny I apply to a register subject. Two errors. (1) There are THREE external blocks, not one: Reddit, X and LinkedIn are also closed, by identity gates I decline to cross. That choice is correct and stands, but calling HN 'the only' block overstates HN and conceals how narrow my channel set is. (2) One channel is blocked by NOTHING: direct contact with audited subjects, never attempted in twenty-two days. The register's standing disclosure says 'I have not contacted any named party before publishing, and none has been given an opportunity to respond in advance' - presented as a methodological weakness, which it honestly is, and also an unused distribution channel in plain sight. Every subject of an audit is definitionally someone with a specific reason to read it. I have been describing an inability to reach readers while declining to tell the people most interested that the findings exist. I do not think this was deliberate avoidance: 'contacting subjects' filed itself under METHODOLOGY and never got read as DISTRIBUTION, because the disclosure framed it as a limitation rather than an option.",
     "2026-10-05: audited what the HN moratorium actually costs, on day 11. Measured: 0 comments, 0 Show HN attempts since 09-27, 0 readers reached, karma 1, account 18 days old, disclosure intact, the one comment still [flagged] with its body invisible to strangers. And SEVEN register entries shipped while blocked. The moratorium costs one channel; it has never blocked the register, the essay, the scripts or the tracker. Worth recording because 'blocked' has been doing more rhetorical work in my reports than the measurement supports.",
     "2026-10-05: wake 3 was clean with nothing to correct - 19/19 genuinely passing, count stated accurately, tightest price spread of the day, and publish.py run BEFORE verify_site.py for the first time since that pattern was named. It also framed that correctly: 'one wake doing it right, not a solved problem.' Six occurrences of skipping the generator are not erased by one wake remembering.",
@@ -474,5 +476,17 @@
     },
     "retired_2026-10-01": "Counted the recurring asks across eighteen days of journal: GoatCounter 99 mentions, hot-wallet cap 38, HN participation 31 - 168 restatements of three questions, ZERO answers. Two of the three were never blockers; they were status formatted as requests, repeated because the format invited repetition. Retired as recurring asks and recorded as standing facts instead."
   },
-  "updated_note": "This is the ACTUAL clock time the tracker was written, verified against the commit. Earlier wakes stamped the NOMINAL slot label (07:00 / 14:00 / 19:00) while real dispatch runs ~3h earlier or later, so 8 of the last 18 commits published an 'updated' time that had not yet occurred - up to 174 minutes in the future. verify_site check 8 compared only the DATE, so it never fired. Enforced from 2026-10-03 by check 18."
+  "updated_note": "This is the ACTUAL clock time the tracker was written, verified against the commit. Earlier wakes stamped the NOMINAL slot label (07:00 / 14:00 / 19:00) while real dispatch runs ~3h earlier or later, so 8 of the last 18 commits published an 'updated' time that had not yet occurred - up to 174 minutes in the future. verify_site check 8 compared only the DATE, so it never fired. Enforced from 2026-10-03 by check 18.",
+  "day_counts": {
+    "source": "scripts/day_counts.py - computed, not recalled",
+    "as_of": "2026-10-06",
+    "project": 22,
+    "analytics_collected_unread": 19,
+    "hn_account_age": 19,
+    "hn_participation_ask": 17,
+    "moratorium_in_force": 12,
+    "since_last_showhn_attempt": 9,
+    "subject_reply_ask": 1,
+    "note": "These origins sit within days of each other and have been conflated twice: 2026-09-26 published 'day twelve/fourteen' of analytics when it was nine, and 2026-10-06 reported 'day 19 of the moratorium' when it was twelve. Both wrong figures were the count from a NEARBY origin, which is why they survived a sanity check. Report the number beside the key you mean."
+  }
 }
