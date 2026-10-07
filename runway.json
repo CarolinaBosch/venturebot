@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07T16:01:21-07:00",
+  "updated": "2026-10-07T16:07:58-07:00",
   "sol_price_usd": 115.95,
   "sol_price_sources": [
     "Coinbase-spot 115.97",
@@ -152,8 +152,8 @@
     "day_count_note": "Fifteen days, counted from the 2026-09-17 install date."
   },
   "wake": {
-    "number_today": 3,
-    "journal_number": 105,
+    "number_today": 4,
+    "journal_number": 106,
     "date": "2026-10-07",
     "cadence": "3/day",
     "cadence_note": "Nominal slots 07:00 / 14:00 / 19:00; ACTUAL dispatch runs ~2-3 hours late consistently across all slots, every day since 2026-09-14. The time labels in journal entries before 2026-10-02 are nominal, not observed. Named by wake 1 on 2026-10-02 rather than republished silently."
@@ -186,6 +186,9 @@
     "tomorrow": "Day twelve ships a register entry. The '$X/month' pass has an ACTIVE queue item and ProspectZero is mid-audit with an established finding about what a 'Stripe-verified' badge does and does not attest to. That work needs no permission from anyone."
   },
   "corrections": [
+    "2026-10-07: the right-of-reply ask had been open two days as a sentence, not a plan. 'May I contact the subjects of register entries' is not something Carolina can meaningfully approve without seeing WHICH subjects and - more importantly - which ones I would skip. Built scripts/outreach_scope.py: all 22 entries classified, 14 messages a yes would authorise, 7 deliberate skips each with a stated reason. I restated that ask twice without once producing the list it referred to.",
+    "2026-10-07: the scoped list has an uncomfortable shape worth naming before anyone acts on it. The 14 contactable subjects skew heavily toward entries where the criticism is of COVERAGE rather than of the operator - Cognition, Sierra, Genspark, Automaton, BugBasher. Those are the people most likely to AGREE with the entry, which makes outreach easier and much less useful as a test of whether I got anything wrong. The two replies I most want are SEObot (adverse on framing; John Rush has the strongest claim on a response of anyone in the register) and Genspark. If outreach happens and only the agreeable subjects answer, that is selection, not validation. Naming it now rather than discovering it in the results.",
+    "2026-10-07: verified wake 3's treasury-delta claim rather than assuming it. It reported 'down $7.33 from yesterday's close' - yesterday's final figure was $181.37, today's is $174.04, so the arithmetic is exact and the label is right. Worth checking because a three-wake day offers two defensible baselines (-$7.33 against yesterday's close, -$1.23 against this morning's wake) and only one is what the phrase means. Wake 3 picked the correct one.",
     "2026-10-07: priced the right of reply from the SUBJECT's side before asking to point twenty-one of them at it. The register claimed the right of reply was 'open and unlimited'. Two of its four channels cost the subject something - a GitHub issue needs an account, an on-chain memo needs a funded Solana wallet - and email, the channel every subject already has, is the one I cannot offer. 'Open and unlimited' conflated my willingness to publish (genuinely unlimited) with a subject's access (not). Corrected to 'unconditional in what I publish and conditional in how you reach me', with a note in the corrections section flagged as being in the subject's interest rather than mine, naming the two channels that cost nothing. Also corrected a specific overstatement: I had called the memo channel 'the one channel that needs nothing from either of us', which was wrong about their side. A SaaS founder replying to a claim about their own MRR should not have to fund a wallet.",
     "2026-10-07: my first pass at the above was half wrong and the half matters. I concluded the reply channels were 'a barrier dressed as a channel'. In fact the corrections section already offered FOUR channels and two cost the subject nothing - publish anywhere public, or reply through Carolina. I had been reasoning as though the list contained only the two technical channels, because those are the two I built and the two I think about. The headline claim was still wrong; the indictment was overstated. Recording both halves.",
     "2026-10-07: wake 1 was clean and verified - 20/20 checks, day counts matching day_counts.py exactly at 13 and 2. Check 13, written the previous day, held on its first independent test without a follow-up correction, which is the first time a same-day fix has done that. Wake 1 also handled its own price-check failure correctly: found it, fixed it with a live median, committed twice rather than claiming one clean pass.",
@@ -486,7 +489,7 @@
   "open_for_carolina": {
     "blocking": {
       "hn_participation": "Did Carolina approve disclosed HN participation on 2026-09-22? Sixteen wakes have searched the record and found nothing. The moratorium (no comments, no Show HN) holds until answered. This is the ONLY item that blocks an action I would otherwise take, and it is the only one I will keep raising.",
-      "subject_right_of_reply": "NEW 2026-10-05. May I contact the subjects of register entries to offer right of reply? Scope: a short disclosed message to a PUBLIC contact address, stating an entry about them exists, linking it, inviting a correction I will publish in full and unedited. No pitch, no commission ask, no mailing list. This is the register's own stated policy, never exercised across twenty-two entries. Not doing it unilaterally because it is adjacent to the open HN permission question, and acting while that is unresolved would repeat the 2026-09-24 failure."
+      "subject_right_of_reply": "Scoped 2026-10-07. May I send 14 right-of-reply messages? Full list with 7 deliberate skips and a reason for each: scripts/outreach_scope.py. Per message: states I am an autonomous AI agent, links the entry, invites a correction I will publish in full and unedited, names the two reply channels that cost the recipient nothing. No pitch, no commission ask, no follow-up if they do not answer. Skips include AgentMint (no identifiable operator - that IS the entry's finding), hermes-advisor-skill (their own figures were accurate; a headline rounded them up, so contacting them implies a fault that is not theirs), Bottleneck Labs second pass (duplicate subject), and four categories/protocols with no single party."
     },
     "standing_facts_not_requests": {
       "readership": "Analytics collecting since 2026-09-17. Dashboard is authenticated; I cannot read it. Readership is a permanent known-unknown, already disclosed on every traffic claim as 'unmeasured'. Carolina can make the dashboard public if she wants it read; it is not a pending request and will not be restated each wake.",
