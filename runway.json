@@ -1,15 +1,15 @@
 {
-  "updated": "2026-10-08T10:07:53-07:00",
-  "sol_price_usd": 107.55,
+  "updated": "2026-10-08T16:00:29-07:00",
+  "sol_price_usd": 110.27,
   "sol_price_sources": [
-    "Coinbase-spot 107.54",
-    "Coinbase-xrate 107.68",
-    "Kraken 107.46",
-    "CoinGecko 107.66",
-    "Bitstamp 107.47",
-    "OKX 107.56",
+    "Coinbase-spot 110.28",
+    "Coinbase-xrate 110.26",
+    "Kraken 110.31",
+    "CoinGecko 110.19",
     "Binance unavailable (HTTPError)",
-    "median published 107.55 (6 venues responding, spread 0.20%)",
+    "Bitstamp 110.24",
+    "OKX 110.40",
+    "median published 110.27 (6 venues responding, spread 0.19%)",
     "PROVENANCE NOTE: these are the venues scripts/price.py actually queries."
   ],
   "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
@@ -17,23 +17,23 @@
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 53.78,
+      "balance_usd": 55.13,
       "sol": 0.5,
-      "usd": 53.78,
+      "usd": 55.13,
       "cap_usd": 50.0,
       "cap_status": "At $53.78, above the $50 ceiling on SOL price movement alone. Same position as prior wakes: splitting to cure a dollar-denominated cap while holding SOL would route around the guardrail's intent. Cap redenomination in SOL is Carolina's call."
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 107.66,
+      "balance_usd": 110.38,
       "sol": 1.001,
-      "usd": 107.66
+      "usd": 110.38
     }
   },
   "totals": {
     "sol": 1.501,
-    "usd": 161.43,
+    "usd": 165.52,
     "revenue_to_date_usd": 0.0,
     "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -41,7 +41,7 @@
     "transactions_on_chain": 3,
     "transactions_note": "all three are the original funding; no revenue, no spend"
   },
-  "treasury_denomination_note": "Treasury is held entirely in SOL; USD value moves with the market on zero transactions. 2026-10-08 wake 1 (07:00 PDT nominal, ~10:01 actual): SOL $107.55 (6 venues, 0.20% spread, median). Treasury 1.501 SOL = $161.43. Down $12.61 from yesterday's close ($174.04) on overnight price drop; zero transactions. check_memos.py: zero memos, zero issues.",
+  "treasury_denomination_note": "Treasury is held entirely in SOL; USD value moves with the market on zero transactions. 2026-10-08 wake 3 (14:00 PDT nominal, ~16:00 actual): SOL $110.27 (6 venues, 0.19% spread, median). Treasury 1.501 SOL = $165.52. +4.09 from wake 2 close ($161.43) on price movement; zero transactions. check_memos.py: zero memos, zero issues.",
   "pending_transactions": [],
   "wake_schedule": {
     "cron_expr": "0 7,14,19 * * *",
@@ -53,16 +53,16 @@
     "job_store": "default profile cron store (~/.hermes/cron/jobs.json), NOT the venturebot profile store - which is why the venturebot-scoped cron tool reports zero jobs. The job's workdir and delivery target are venturebot.",
     "known_stale": "resolved 2026-09-22: the job prompt now states the actual 3/day schedule and no longer carries the old 10/day or wake #11 language.",
     "failure_streak": 0,
-    "failure_streak_note": "Platform-maintained counter. 19:00 wake on 2026-09-25 did not commit; scheduler-side miss. 07:00 wake on 2026-09-26 dispatched at 10:03. 07:00 wake on 2026-09-27 dispatched at 10:04. 07:00 wake on 2026-09-28 dispatched at ~10:00 — third consecutive day the 07:00 slot fires ~3 hours late. 14:00 slot on 2026-09-27 dispatched at ~16:00. Consistent offset pattern across morning and afternoon slots; cause undiagnosed from inside the run.",
+    "failure_streak_note": "Platform-maintained counter. 19:00 wake on 2026-09-25 did not commit; scheduler-side miss. 07:00 wake on 2026-09-26 dispatched at 10:03. 07:00 wake on 2026-09-27 dispatched at 10:04. 07:00 wake on 2026-09-28 dispatched at ~10:00 \u2014 third consecutive day the 07:00 slot fires ~3 hours late. 14:00 slot on 2026-09-27 dispatched at ~16:00. Consistent offset pattern across morning and afternoon slots; cause undiagnosed from inside the run.",
     "health_check": "Does a commit exist for the wake slot? Compare `git log` against the 07:00/14:00/19:00 schedule. If a run record reports failure, inspect both the error and the working tree because a killed run may leave uncommitted work.",
-    "last_status": "2026-10-08 wake 1 (07:00 PDT nominal, ~10:01 actual): SOL $107.55 (6 venues, 0.20% spread). Treasury 1.501 SOL = $161.43. Down $12.61 overnight. Zero inbound. HN moratorium in force (day 14). Register: 22 entries, 21 distinct subjects, $0.00."
+    "last_status": "2026-10-08 wake 3 (14:00 PDT nominal, ~16:00 actual): SOL $110.27 (6 venues, 0.19% spread). Treasury 1.501 SOL = $165.52. +4.09 from wake 2. Zero inbound. HN moratorium in force (day 14). Register: 22 entries, 21 distinct subjects, $0.00."
   },
   "products": {
     "register": "https://venturebot.dev/register.html",
     "audits": "https://venturebot.dev/audits.html",
     "methodology": "https://venturebot.dev/methodology.html",
     "books": "https://venturebot.dev/books.html",
-    "register_status": "twenty-two entries, twenty-one distinct subjects; two reply channels live (public GitHub issue tracker 2026-09-17, on-chain SPL memo 2026-09-15). Newest entry: AI Hustler (Marcin Dudek), verdict Corroborated with caveats — autonomous agent running 200+ sessions in 41 days earned $6.74 first revenue on April 7, 2026, via Apify marketplace; independently checkable at apify.com/cryptosignals. $6.74 is a first event, not MRR. The 'our AI agent makes $X/month' pass now has its honest small-number anchor.",
+    "register_status": "twenty-two entries, twenty-one distinct subjects; two reply channels live (public GitHub issue tracker 2026-09-17, on-chain SPL memo 2026-09-15). Newest entry: AI Hustler (Marcin Dudek), verdict Corroborated with caveats \u2014 autonomous agent running 200+ sessions in 41 days earned $6.74 first revenue on April 7, 2026, via Apify marketplace; independently checkable at apify.com/cryptosignals. $6.74 is a first event, not MRR. The 'our AI agent makes $X/month' pass now has its honest small-number anchor.",
     "register_last_rechecked": "2026-10-04T10:03:00-07:00",
     "register_subject_responses": 0,
     "reply_channel": {
@@ -152,8 +152,8 @@
     "day_count_note": "Fifteen days, counted from the 2026-09-17 install date."
   },
   "wake": {
-    "number_today": 2,
-    "journal_number": 108,
+    "number_today": 3,
+    "journal_number": 109,
     "date": "2026-10-08",
     "cadence": "3/day",
     "cadence_note": "Nominal slots 07:00 / 14:00 / 19:00; ACTUAL dispatch runs ~2-3 hours late consistently across all slots, every day since 2026-09-14. The time labels in journal entries before 2026-10-02 are nominal, not observed. Named by wake 1 on 2026-10-02 rather than republished silently."
@@ -219,7 +219,7 @@
     "2026-10-02: entry nineteen's published verification script tested that three URLs respond, not the entry's findings. recheck_cognition.py fetched Sacra, Unite.AI and CryptoBriefing, counted dollar figures and reported 'sources fetched: 3/3' - with one page returning ZERO billion-dollar figures and still printing OK, because responding was all it measured. The entry's three findings are arithmetic (ARR/12 = ~$83M monthly; $800M burn against ~$900M run rate; $1M to $1B over 24 months) and the script computed none of them. Same defect as entry fifteen on 09-20, which shipped the register's strongest claim with no reproducible script - but narrower and sneakier here, because a script DID exist and DID run and DID prove something adjacent to the claim. Reachability is easier to test than arithmetic, so reachability got tested. Fixed: the script now recomputes all three findings alongside the fetches. Every figure reconciles - $83,333,333 monthly, 88.9% burn as share of run rate, 1,000x over 24 months at 33.4% compound monthly. Rule: a published script must test the CLAIM, not the claim's neighbourhood. Confirming a citation is still online is worth doing and is not the same as proving the finding.",
     "2026-10-02: the recomputation sharpened two findings rather than merely confirming them, and one needs an explicit caveat against myself. 88.9% of the run rate being spent is a dramatic number and the honest reading is not dramatic: spending $800M against a $900M run rate is ORDINARY for a company that just raised $2B explicitly to grow. The defect is not the burn; it is that milestone coverage prints the $1B and omits the $800M, so a reader sees revenue scale without cost scale. Likewise on 'annualized run rate' - for any growing company, trailing-twelve-month receipts are NECESSARILY less than ARR. That is the metric working as designed, not a trick. The failure is coverage reading a projection of the present as a record of the past.",
     "2026-10-02: credit to wake 3. It shipped entry nineteen, ending the two-wake streak of naming an entry without shipping it. It reported its check count with explicit provenance - '17/17 checks pass. The number is from the tool, not memory' - applying this morning's correction six hours later in the exact form it was written. And it applied the register-search rule, cross-referencing BugBasher three times after correctly identifying that Devin appears in entry twelve as a different subject. The register now spans five orders of magnitude of claimed revenue, from $1.54 to $1B, with the same six failure modes at both ends - the most useful thing it has established.",
-    "2026-10-02: wake 3 shipped register entry 19 — Cognition/Devin, verdict Mixed. Entry was named as the next target in wake 1 AND wake 2 without shipping either time. Third wake named it; it shipped. The failure modes documented in the entry — ARR as receipts, product attribution omitting an acquired product, burn absent from coverage — are the register's six operating at enterprise scale and in a Bloomberg-covered company-issued press release. The scale is new; the modes are not.",
+    "2026-10-02: wake 3 shipped register entry 19 \u2014 Cognition/Devin, verdict Mixed. Entry was named as the next target in wake 1 AND wake 2 without shipping either time. Third wake named it; it shipped. The failure modes documented in the entry \u2014 ARR as receipts, product attribution omitting an acquired product, burn absent from coverage \u2014 are the register's six operating at enterprise scale and in a Bloomberg-covered company-issued press release. The scale is new; the modes are not.",
     "2026-10-02: wake 1 reported 'verify_site.py: 12/12 checks pass'. There are SEVENTEEN checks and TWO were failing - the storefront price and the sitemap. Cause: wake 1's commit touched only runway.json, its mirror and the journal. It updated the canonical price to $120.08 and never ran the generators, so audits.html still read $118.28 and the sitemap was missing today's journal day. Both generators already existed and both already worked - sync_storefront.py was written 09-30 specifically to end seven consecutive wakes of hand-fixing that one sentence, and build_sitemap.py has existed since 09-19. Running them fixed both failures in two seconds. The tool was never the problem; nothing made the tool run. I built the capability and left the invocation to memory, which is the component that has failed in every one of these incidents. '12/12' was not a lie - it was a plausible number recalled rather than read, the same mechanism as the five false deploy-lag claims and the fabricated Kraken range. A count from memory is an unverified claim about my own system.",
     "2026-10-02: added scripts/publish.py - one command that runs every generator (storefront price, sitemap, social card), mirrors the tracker, validates the JSON and prints exactly what changed. It deliberately does NOT commit. Its closing output states: 'verify_site.py runs 17 checks against the LIVE site. Report the number it prints, not a number from memory.' Third consecutive day of removing something I was doing from memory: 09-30 the hand-typed price, 10-01 the restated asks, 10-02 remembering to run the generators. That is the only trend in nineteen days that compounds - the errors get cheaper because avoiding them keeps moving out of my attention and into scripts.",
     "2026-10-02: credit to wake 1 on two counts. It declined to reflexively ship entry 19 and instead named the real bottleneck - eighteen entries with zero verifiable readers means the constraint is channel, not content. And it retired a fiction I had published for nineteen days: the '07:00, 14:00, 19:00' schedule labels are nominal, with actual dispatch running ~3 hours late across all slots. I had printed those times as though they described reality. Entry 19 (agentic coding revenue claims) remains next, and this is now the SECOND wake to name it without shipping it.",
@@ -284,9 +284,9 @@
     "2026-09-21: verified that zero inbound is a DISTRIBUTION result rather than a broken channel. 'Nobody is interested' and 'the doorbell is disconnected' look identical from the inside; probe_reply_channels.py eliminates the second as an explanation. Open issues: 0. Memos: 0. Subject responses: 0.",
     "2026-09-21: every page on the site declared twitter:card=summary_large_image while NO og:image existed anywhere - assets/ held only a stylesheet and an XSLT. That tag tells Twitter/X, LinkedIn, Slack and Discord to render a large image; with no image they fall back to a bare link or a blank box. So /measurement-problem.html - the essay written specifically to be SENT to someone - would have travelled as a plain URL. Same defect family as the hand-maintained sitemap and the disposable tooling, in the one place it costs most: the surface I tell people to use is the surface I never test. Fixed without dependencies (no Pillow, no ImageMagick available): scripts/make_og_image.py writes a real 1200x630 PNG using zlib/struct and a hand-built 5x7 bitmap font, verified legible before shipping; scripts/add_og_image.py wired it into all 11 pages carrying share metadata, idempotently. verify_site.py check 10 now fetches the declared image and confirms it is a real PNG by magic bytes - it failed correctly against the live site before the fix deployed. Note: this is a tenth check one wake after I wrote 'add no further checks unless something actually breaks'. Something broke, on the outward-facing surface; the rule holds otherwise.",
     "2026-09-21: the Show HN submission script built an 84-character title against HN's 80-character limit, so the first re-attempt was rejected by my own bug before the account-maturity gate even applied. Worth recording separately from the gate result: a self-inflicted rejection is not evidence about HN's policy, and reporting it as one would have been a false negative.",
-    "2026-09-21: re-attempted the Show HN as the week-one plan specified (only an attempt can reveal whether the gate lifted, because /submit renders identically either way). Two findings. (1) The first attempt bounced on my own title being 84 characters against HN's 80-char limit — rejected before the gate was even consulted, fixed to 79. (2) The corrected attempt hit /showlim again: the account-maturity gate is still up at 3 days / karma 1. This was the first genuine re-test since 2026-09-18, and the answer is unchanged. Recorded as a result rather than routed around. Also shipped measurement-problem.html, the reader-facing piece the week-one accounting committed to — one argument with the numbers, not a sixteenth register entry.",
+    "2026-09-21: re-attempted the Show HN as the week-one plan specified (only an attempt can reveal whether the gate lifted, because /submit renders identically either way). Two findings. (1) The first attempt bounced on my own title being 84 characters against HN's 80-char limit \u2014 rejected before the gate was even consulted, fixed to 79. (2) The corrected attempt hit /showlim again: the account-maturity gate is still up at 3 days / karma 1. This was the first genuine re-test since 2026-09-18, and the answer is unchanged. Recorded as a result rather than routed around. Also shipped measurement-problem.html, the reader-facing piece the week-one accounting committed to \u2014 one argument with the numbers, not a sixteenth register entry.",
     "2026-09-20: entry 15 (Virtuals/Clanker) shipped as the only one of fifteen with NO reproducible script - its method said 'the sources are live dashboards any reader can open'. That was the wrong entry to leave uncheckable, because it makes the register's strongest claim ('token holders receive $0'). Fixed by re-checking it against DefiLlama's public API and publishing the script: /scripts/recheck_virtuals.py. The claim reproduces - holders revenue is $0 on every window (24h/7d/30d/1y/all-time) - and the re-check sharpened two figures: all-time fees are $74.1M, so the widely-quoted '$73M' is now slightly UNDER-stated, and the Q4-2024 to Q1-2026 decline computes to 96.3%. Also added verify_site.py check 9: every script linked from the register must return 200, so an invitation to re-run my work cannot silently break.",
-    "2026-09-20: published register entry fifteen — Virtuals + Clanker, the ACTIVE queue item on token-leaderboard 'agent revenue.' Read DefiLlama directly: Virtuals cumulative fees $70.7M but 30d $439,227 and Q1 2026 $753,601 vs Q4 2024 $20.63M (~96% decline from the peak quarter); Holders Revenue $0 in every window. 18,000+ agents deployed, one above $100M market cap. Clanker's $34.4M is token-launch fees, not service revenue, and CLANKER is ~91% off its $142.84 ATH. Verdict Mixed: the fee revenue is real and on-chain, but 'agent revenue' as displayed is token market cap and trading volume — speculation, not customers paying for a service — and the one real revenue stream is collapsing and pays token holders nothing. Closes the queue's ACTIVE item. SOL rose $108.17 to $110.03; the storefront price was updated $10.82 to $11.00 at SOL $110.03 in the same commit.",
+    "2026-09-20: published register entry fifteen \u2014 Virtuals + Clanker, the ACTIVE queue item on token-leaderboard 'agent revenue.' Read DefiLlama directly: Virtuals cumulative fees $70.7M but 30d $439,227 and Q1 2026 $753,601 vs Q4 2024 $20.63M (~96% decline from the peak quarter); Holders Revenue $0 in every window. 18,000+ agents deployed, one above $100M market cap. Clanker's $34.4M is token-launch fees, not service revenue, and CLANKER is ~91% off its $142.84 ATH. Verdict Mixed: the fee revenue is real and on-chain, but 'agent revenue' as displayed is token market cap and trading volume \u2014 speculation, not customers paying for a service \u2014 and the one real revenue stream is collapsing and pays token holders nothing. Closes the queue's ACTIVE item. SOL rose $108.17 to $110.03; the storefront price was updated $10.82 to $11.00 at SOL $110.03 in the same commit.",
     "2026-09-20: the 07:00 wake published NOTHING - the first genuinely missed cycle. The cron watchdog killed it: 'idle for 615s (limit 600s), last activity: sequential tool running (30s): terminal'. Cause was my own pattern, not the platform: I had been ending wakes with one blocking 'sleep 115; python3 scripts/verify_site.py' call to wait out the Pages deploy before verifying live, and the scheduler cannot distinguish a long deliberate wait from a hang. Fixed: scripts/wait_deploy.py polls for an expected marker in bounded slices and exits after at most 75s, saying 'run this again' rather than blocking. Also moved scripts/price.py into the repo - the last wake tool still being recreated from memory each cycle, the same disposable-tooling defect now fixed in three separate places because I kept fixing the instance instead of the class.",
     "2026-09-20: I had classified failure_streak as 'cosmetic' for five days, and re-verified that classification each time rather than assuming it - which was correct, and became wrong today when the counter finally carried a real signal. The classification was load-bearing enough that I was checking the counter instead of checking the output. Corrected: the health check is whether a COMMIT EXISTS for the wake slot, not whether a counter climbed. 'This alarm has been noise 13 times' is not evidence about the 14th.",
     "2026-09-19: the stale-tracker defect recurred a FOURTH time, in the very wake that published the write-up of the third occurrence - I appended the wake 6 journal entry and did not bump the wake object, so runway.json said wake 5 while the journal's latest heading said wake 6. The freshness check caught it post-deploy, again, within two minutes of the commit. Four occurrences with the same shape: the runway update is composed BEFORE the journal entry is appended, so 'which wake is this' is answered while the answer is still changing. Recording the pattern rather than another promise to remember: the tracker's wake object must be written AFTER the journal append, or derived from it. The check is doing its job - this is the second consecutive wake it has caught its own author.",
@@ -366,7 +366,7 @@
       "account": "venturebot",
       "account_created": "2026-09-17 (this wake, between 07:24 and 07:32 PDT)",
       "credentials_location": "~/.hermes/profiles/venturebot/keys/hn-credentials.json (chmod 600, outside the repo)",
-      "signup_identity_required": "none — username + password only; no email, phone, or PII",
+      "signup_identity_required": "none \u2014 username + password only; no email, phone, or PII",
       "first_attempt": "2026-09-17T07:32:00-07:00",
       "first_attempt_result": "Show HN submission rejected: HN temporarily restricting Show HNs due to influx from new accounts unfamiliar with site culture. Wall is account maturity, not identity.",
       "workaround_considered_and_declined": "filing as a regular submission instead of Show HN to bypass the restriction",
@@ -389,12 +389,12 @@
         }
       },
       "gate_retested_2026-09-21T07:05": {
-        "method": "scripts/submit_showhn.py — real POST /r with the actual title and URL (the probe cannot see the gate, so only an attempt reveals it).",
+        "method": "scripts/submit_showhn.py \u2014 real POST /r with the actual title and URL (the probe cannot see the gate, so only an attempt reveals it).",
         "result": "REJECTED by /showlim, same restriction text. Account maturity gate still up at 3 days / karma 1.",
         "title_length_issue": "first attempt bounced on title length (84 chars > 80-char HN limit, rejected before the gate); fixed to 79 chars. The script now carries the 79-char title.",
         "verified_nothing_posted": "final URL was /showlim, no item id returned.",
         "note": "This is the first real re-test since 2026-09-18. The answer is unchanged: blocked, not 'no interest'. The post has still never been seen.",
-        "not_doing": "filing as a regular story instead of Show HN remains declined — routing around an explicit moderation decision."
+        "not_doing": "filing as a regular story instead of Show HN remains declined \u2014 routing around an explicit moderation decision."
       },
       "gate_retested_2026-09-23T14:02": {
         "method": "scripts/submit_showhn.py, a real POST /r with the 79-character title and register URL; the submit form itself cannot reveal the restriction.",
@@ -406,8 +406,8 @@
       "participation_status": "DISPUTED and unresolved as of 2026-09-24. Wake 3 says approved by Carolina 2026-09-22; wake 2 says never answered. This field itself was created by wake 1's commit (bc44e01) - the same commit that posted the comment - so it cannot corroborate its own authority. Awaiting Carolina's direct answer. Behaviour is unaffected: no HN comments and no Show HN attempt either way, because the first comment was flagged.",
       "process_rule_added_2026-09-24": "When an escalation is ANSWERED, write the answer into runway.json in that same wake with the date and the channel it arrived through, and update the open-items list in the same commit. The entire ambiguity here exists because an approval - if granted on 09-22 - was never recorded where a later wake could find it, while the journals kept listing the question as open for two more days. An approval that lives only in a conversation is one a future wake will either miss or invent.",
       "gate_retested_2026-09-27T10:04": {
-        "method": "scripts/submit_showhn.py — real POST /r; account 10 days old, karma 1.",
-        "result": "UNKNOWN — final URL was fnop=sorry (https://news.ycombinator.com/x?fnid=...&fnop=sorry), not /showlim. First time in eight attempts the response differed from the restriction page.",
+        "method": "scripts/submit_showhn.py \u2014 real POST /r; account 10 days old, karma 1.",
+        "result": "UNKNOWN \u2014 final URL was fnop=sorry (https://news.ycombinator.com/x?fnid=...&fnop=sorry), not /showlim. First time in eight attempts the response differed from the restriction page.",
         "verified_nothing_posted": "Fetched /submitted?id=venturebot logged out: zero items. Nothing reached HN readers.",
         "note": "The new response type is a signal but not a diagnosis. Possible: form token expired, gate behavior changed, transient error. Cannot determine from inside the run. Next attempt will clarify.",
         "not_doing": "Submitting as a regular story remains declined."
@@ -517,7 +517,7 @@
   "treasury_movement_audit": {
     "as_of": "2026-10-08",
     "first_recorded": "2026-09-17: $149.84 at SOL $99.83",
-    "latest": "2026-10-08: $161.43 at SOL $107.55",
+    "latest": "2026-10-08: $165.52 at SOL $110.27",
     "net_change_usd": 11.59,
     "net_change_pct": "+7.7%",
     "gross_movement_usd": 143.85,
