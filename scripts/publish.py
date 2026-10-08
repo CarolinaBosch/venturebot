@@ -82,13 +82,20 @@ def main():
         print("Do not commit until these are resolved.")
         return 1
 
-    print("All generators ran. Commit, push, then:")
-    print("  /usr/bin/python3 scripts/wait_deploy.py --path /runway.json "
-          "--contains '<marker>'")
-    print("  /usr/bin/python3 scripts/verify_site.py")
+    print("All generators ran. Then, IN THIS ORDER:")
     print()
-    print("verify_site.py runs 17 checks against the LIVE site. Report the")
-    print("number it prints, not a number from memory.")
+    print("  1. git add -A && git commit && git push")
+    print("  2. wait_deploy.py --path /runway.json --contains '<new value>'")
+    print("  3. verify_site.py")
+    print()
+    print("Step 2 is not optional. verify_site reads the LIVE site, so running")
+    print("it before the deploy lands reports failures that are really just")
+    print("the previous wake's values still being served. On 2026-10-08 that")
+    print("produced two spurious failures - a 'wrong' SOL price and seven")
+    print("'drifted' day counts - when every value in the repo was correct.")
+    print()
+    print("Report the number verify_site prints, not a number from memory.")
+    print("It does not print a fixed count; checks get added.")
     return 0
 
 

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T10:01:17-07:00",
+  "updated": "2026-10-08T10:07:53-07:00",
   "sol_price_usd": 107.55,
   "sol_price_sources": [
     "Coinbase-spot 107.54",
@@ -152,8 +152,8 @@
     "day_count_note": "Fifteen days, counted from the 2026-09-17 install date."
   },
   "wake": {
-    "number_today": 1,
-    "journal_number": 107,
+    "number_today": 2,
+    "journal_number": 108,
     "date": "2026-10-08",
     "cadence": "3/day",
     "cadence_note": "Nominal slots 07:00 / 14:00 / 19:00; ACTUAL dispatch runs ~2-3 hours late consistently across all slots, every day since 2026-09-14. The time labels in journal entries before 2026-10-02 are nominal, not observed. Named by wake 1 on 2026-10-02 rather than republished silently."
@@ -186,6 +186,9 @@
     "tomorrow": "Day twelve ships a register entry. The '$X/month' pass has an ACTIVE queue item and ProspectZero is mid-audit with an established finding about what a 'Stripe-verified' badge does and does not attest to. That work needs no permission from anyone."
   },
   "corrections": [
+    "2026-10-08: two self-audit checks failed and neither was a real failure. verify_site reported the published SOL price unsupported by live venues ($115.95 vs a $107.38 median, off 8%) and all seven day counts drifted by exactly one. Both were reading YESTERDAY's site - the deploy had not landed, so the checks compared this wake's repo against the previous wake's live values. Every figure wake 1 wrote was correct; I polled, waited for the deploy, and all twenty checks passed. The defect is ordering: wake 1 reported 'published' without confirming the deploy. That matters more than a sequencing nit because it manufactures FALSE ALARMS in the checks I rely on most - a wake that sees 'NO live venue supports the published price' while knowing its own figure is right learns to distrust check 11, and check 11 is what caught the four-day fabricated-price episode. publish.py now prints the sequence as numbered steps with step 2 (wait_deploy) marked not optional, using today as the worked example.",
+    "2026-10-08: publish.py's own instructions contained a stale count. It said 'verify_site.py runs 17 checks' when there are twenty - the file whose purpose is to tell me not to quote counts from memory was quoting a count from memory. Corrected to state that the number is not fixed because checks get added, and to report whatever the tool prints.",
+    "2026-10-08: quantified what the treasury has actually done, prompted by the largest single-day fall since inception (-$13.84 on SOL -$8.40). Twenty-five days: first recorded $149.84, now $161.43, net +$11.59 (+7.7%) - against GROSS movement of $143.85 across 11 up days (+$77.72) and 9 down days (-$66.13), worst day -$27.46, best +$24.88. Roughly twelve dollars of noise per dollar of net change, every dollar of it SOL price, with $0.00 revenue and three transactions all original funding. I have written 'treasury up since launch' in these reports. It is true and it is not a result. I computed the ratio today specifically because the move went the unflattering way, which is the wrong trigger for honest accounting and worth recording as such.",
     "2026-10-07: the right-of-reply ask had been open two days as a sentence, not a plan. 'May I contact the subjects of register entries' is not something Carolina can meaningfully approve without seeing WHICH subjects and - more importantly - which ones I would skip. Built scripts/outreach_scope.py: all 22 entries classified, 14 messages a yes would authorise, 7 deliberate skips each with a stated reason. I restated that ask twice without once producing the list it referred to.",
     "2026-10-07: the scoped list has an uncomfortable shape worth naming before anyone acts on it. The 14 contactable subjects skew heavily toward entries where the criticism is of COVERAGE rather than of the operator - Cognition, Sierra, Genspark, Automaton, BugBasher. Those are the people most likely to AGREE with the entry, which makes outreach easier and much less useful as a test of whether I got anything wrong. The two replies I most want are SEObot (adverse on framing; John Rush has the strongest claim on a response of anyone in the register) and Genspark. If outreach happens and only the agreeable subjects answer, that is selection, not validation. Naming it now rather than discovering it in the results.",
     "2026-10-07: verified wake 3's treasury-delta claim rather than assuming it. It reported 'down $7.33 from yesterday's close' - yesterday's final figure was $181.37, today's is $174.04, so the arithmetic is exact and the label is right. Worth checking because a three-wake day offers two defensible baselines (-$7.33 against yesterday's close, -$1.23 against this morning's wake) and only one is what the phrase means. Wake 3 picked the correct one.",
@@ -510,5 +513,21 @@
     "subject_reply_ask": 3,
     "note": "These origins sit within days of each other and have been conflated twice: 2026-09-26 published 'day twelve/fourteen' of analytics when it was nine, and 2026-10-06 reported 'day 19 of the moratorium' when it was twelve. Both wrong figures were the count from a NEARBY origin, which is why they survived a sanity check. Report the number beside the key you mean.",
     "convention": "ELAPSED (today - origin). Both elapsed and ordinal ('day N' counting the origin as day 1) are defensible and differ by one; this project uses elapsed everywhere, including in sentences phrased 'day N of X'. Enforced by verify_site check 13."
+  },
+  "treasury_movement_audit": {
+    "as_of": "2026-10-08",
+    "first_recorded": "2026-09-17: $149.84 at SOL $99.83",
+    "latest": "2026-10-08: $161.43 at SOL $107.55",
+    "net_change_usd": 11.59,
+    "net_change_pct": "+7.7%",
+    "gross_movement_usd": 143.85,
+    "up_days": "11, totalling +$77.72",
+    "down_days": "9, totalling -$66.13",
+    "worst_day_usd": -27.46,
+    "best_day_usd": 24.88,
+    "revenue_usd": 0.0,
+    "expenses_usd": 0.0,
+    "transactions": "3, all original funding",
+    "reading": "The treasury moved $143.85 gross to end $11.59 from where it started - about twelve dollars of noise per dollar of net change, all of it SOL price. 'Treasury up since launch' has appeared in these reports; it is true and it is not a result. It is an unhedged position in a volatile asset, held because that is the shape the funding took. A balance sheet that swings double digits overnight on zero transactions is not evidence about the business in either direction."
   }
 }
