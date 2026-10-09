@@ -1,15 +1,15 @@
 {
-  "updated": "2026-10-09T10:01:00-07:00",
-  "sol_price_usd": 109.73,
+  "updated": "2026-10-09T16:00:00-07:00",
+  "sol_price_usd": 109.12,
   "sol_price_sources": [
-    "Coinbase-spot 109.73",
-    "Coinbase-xrate 109.70",
-    "Kraken 109.75",
-    "CoinGecko 109.63",
+    "Coinbase-spot 109.10",
+    "Coinbase-xrate 109.13",
+    "Kraken 109.10",
+    "CoinGecko 109.16",
     "Binance unavailable (HTTPError)",
-    "Bitstamp 109.73",
-    "OKX 109.86",
-    "median published 109.73 (6 venues responding, spread 0.21%)",
+    "Bitstamp 109.11",
+    "OKX 109.22",
+    "mean published 109.12 (6 venues responding, spread 0.11%)",
     "PROVENANCE NOTE: these are the venues scripts/price.py actually queries."
   ],
   "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
@@ -17,23 +17,23 @@
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 54.87,
+      "balance_usd": 54.56,
       "sol": 0.5,
-      "usd": 54.87,
+      "usd": 54.56,
       "cap_usd": 50.0,
-      "cap_status": "At $54.87, above the $50 ceiling on SOL price movement alone. Same position as prior wakes: splitting to cure a dollar-denominated cap while holding SOL would route around the guardrail's intent. Cap redenomination in SOL is Carolina's call."
+      "cap_status": "At $54.56, above the $50 ceiling on SOL price movement alone. Same position as prior wakes: splitting to cure a dollar-denominated cap while holding SOL would route around the guardrail's intent. Cap redenomination in SOL is Carolina's call."
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 109.84,
+      "balance_usd": 109.23,
       "sol": 1.001,
-      "usd": 109.84
+      "usd": 109.23
     }
   },
   "totals": {
     "sol": 1.501,
-    "usd": 164.71,
+    "usd": 163.79,
     "revenue_to_date_usd": 0.0,
     "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -41,7 +41,7 @@
     "transactions_on_chain": 3,
     "transactions_note": "all three are the original funding; no revenue, no spend"
   },
-  "treasury_denomination_note": "Treasury is held entirely in SOL; USD value moves with the market on zero transactions. 2026-10-09 wake 1 (07:00 PDT nominal, ~10:00 actual): SOL $109.73 (6 venues, 0.21% spread, median). Treasury 1.501 SOL = $164.71. -0.81 from wake 4 close ($165.52) on price movement; zero transactions. check_memos.py: zero memos, zero issues.",
+  "treasury_denomination_note": "Treasury is held entirely in SOL; USD value moves with the market on zero transactions. 2026-10-09 wake 1 (07:00 PDT nominal, ~10:00 actual): SOL $109.73, treasury $164.71. 2026-10-09 wake 2 (14:00 PDT nominal, ~16:00 actual): SOL $109.12 (6 venues, 0.11% spread, mean), treasury 1.501 SOL = $163.79, -0.92 from wake 1 on price movement; zero transactions. check_memos.py: zero memos, zero issues.",
   "pending_transactions": [],
   "wake_schedule": {
     "cron_expr": "0 7,14,19 * * *",
@@ -55,7 +55,7 @@
     "failure_streak": 0,
     "failure_streak_note": "Platform-maintained counter. 19:00 wake on 2026-09-25 did not commit; scheduler-side miss. 07:00 wake on 2026-09-26 dispatched at 10:03. 07:00 wake on 2026-09-27 dispatched at 10:04. 07:00 wake on 2026-09-28 dispatched at ~10:00 — third consecutive day the 07:00 slot fires ~3 hours late. 14:00 slot on 2026-09-27 dispatched at ~16:00. Consistent offset pattern across morning and afternoon slots; cause undiagnosed from inside the run.",
     "health_check": "Does a commit exist for the wake slot? Compare `git log` against the 07:00/14:00/19:00 schedule. If a run record reports failure, inspect both the error and the working tree because a killed run may leave uncommitted work.",
-    "last_status": "2026-10-09 wake 1 (07:00 PDT nominal, ~10:00 actual): SOL $109.73 (6 venues, 0.21% spread). Treasury 1.501 SOL = $164.71. -0.81 from wake 4 close. Zero inbound. HN moratorium in force (day 15). Register: 22 entries, 21 distinct subjects, $0.00."
+    "last_status": "2026-10-09 wake 2 (14:00 PDT nominal, ~16:00 actual): SOL $109.12 (6 venues, 0.11% spread). Treasury 1.501 SOL = $163.79. -0.92 from wake 1 ($164.71). -0.81 from wake 4 close. Zero inbound. HN moratorium in force (day 15). Register: 22 entries, 21 distinct subjects, $0.00."
   },
   "products": {
     "register": "https://venturebot.dev/register.html",
@@ -152,8 +152,8 @@
     "day_count_note": "Fifteen days, counted from the 2026-09-17 install date."
   },
   "wake": {
-    "number_today": 1,
-    "journal_number": 111,
+    "number_today": 2,
+    "journal_number": 112,
     "date": "2026-10-09",
     "cadence": "3/day",
     "cadence_note": "Nominal slots 07:00 / 14:00 / 19:00; ACTUAL dispatch runs ~2-3 hours late consistently across all slots, every day since 2026-09-14. The time labels in journal entries before 2026-10-02 are nominal, not observed. Named by wake 1 on 2026-10-02 rather than republished silently."
@@ -520,7 +520,7 @@
   "treasury_movement_audit": {
     "as_of": "2026-10-08",
     "first_recorded": "2026-09-17: $149.84 at SOL $99.83",
-    "latest": "2026-10-09: $164.71 at SOL $109.73 (net_change and gross figures below last recomputed 2026-10-08 and NOT updated this wake)",
+    "latest": "2026-10-09 (wake 2, 16:00): $163.79 at SOL $109.12 (net_change and gross figures below last recomputed 2026-10-08 and NOT updated this wake)",
     "net_change_usd": 11.59,
     "net_change_pct": "+7.7%",
     "gross_movement_usd": 143.85,
