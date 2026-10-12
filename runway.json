@@ -1,15 +1,15 @@
 {
-  "updated": "2026-10-11T16:00:00-07:00",
-  "sol_price_usd": 110.97,
+  "updated": "2026-10-12T10:00:00-07:00",
+  "sol_price_usd": 107.81,
   "sol_price_sources": [
-    "coinbase-spot 110.97",
-    "coinbase-xrate 110.97",
-    "kraken 110.97",
-    "coingecko 111.01",
+    "coinbase-spot 107.89",
+    "coinbase-xrate 107.70",
+    "kraken 107.81",
+    "coingecko 107.81",
     "binance unavailable (HTTPError)",
-    "bitstamp 110.96",
-    "okx 111.09",
-    "median published 110.97 (6 venues responding, spread 0.11%)",
+    "bitstamp 107.77",
+    "okx 107.97",
+    "median published 107.81 (6 venues responding, spread 0.25%)",
     "PROVENANCE NOTE: these are the venues scripts/price.py actually queries."
   ],
   "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
@@ -17,23 +17,23 @@
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 55.48,
+      "balance_usd": 53.91,
       "sol": 0.5,
-      "usd": 55.48,
+      "usd": 53.91,
       "cap_usd": 50.0,
-      "cap_status": "At $55.48, above the $50 ceiling on SOL price movement alone. Same position as prior wakes: splitting to cure a dollar-denominated cap while holding SOL would route around the guardrail's intent. Cap redenomination in SOL is Carolina's call."
+      "cap_status": "At $53.91, above the $50 ceiling on SOL price movement alone. Same position as prior wakes: splitting to cure a dollar-denominated cap while holding SOL would route around the guardrail's intent. Cap redenomination in SOL is Carolina's call."
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 111.08,
+      "balance_usd": 107.92,
       "sol": 1.001,
-      "usd": 111.08
+      "usd": 107.92
     }
   },
   "totals": {
     "sol": 1.501,
-    "usd": 166.57,
+    "usd": 161.82,
     "revenue_to_date_usd": 0.0,
     "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -41,7 +41,7 @@
     "transactions_on_chain": 3,
     "transactions_note": "all three are the original funding; no revenue, no spend"
   },
-  "treasury_denomination_note": "Treasury is held entirely in SOL; USD value moves with the market on zero transactions. 2026-10-09 wake 1 (07:00 PDT nominal, ~10:00 actual): SOL $109.73, treasury $164.71. 2026-10-09 wake 2 (14:00 PDT nominal, ~16:00 actual): SOL $109.12, treasury $163.79. 2026-10-10 wake 1 (07:00 PDT nominal, ~10:00 actual): SOL $109.94 (6 venues, 0.10% spread, mean), treasury 1.501 SOL = $165.02, +$1.23 from the prior wake on price movement; zero transactions. 2026-10-10 wake 2 (14:00 PDT nominal, ~16:00 actual): SOL $110.39 (median of 6 venues, 0.10% spread), treasury 1.501 SOL = $165.69, +$0.67 from wake 1 on price movement; zero transactions, on-chain balances re-read unchanged. check_memos.py: zero memos, zero issues. 2026-10-11 wake 1 (07:00 PDT nominal, ~10:00 actual): SOL $112.14 (6 venues, 0.14% spread, median), treasury 1.501 SOL = $168.33, +$2.64 from 2026-10-10 wake 2 on price movement; zero transactions; on-chain balances re-read unchanged (hot 0.5, multisig 1.001). check_memos.py: zero memos, zero issues. 2026-10-11 wake 2 (16:00 PDT nominal, ~16:00 actual this run): SOL $110.97 (6 venues, 0.11% spread, median), treasury 1.501 SOL = $166.57, -1.76 from wake 1 on price movement; zero transactions, on-chain balances re-read unchanged (hot 0.5, multisig 1.001). check_memos.py: zero memos, zero issues.",
+  "treasury_denomination_note": "Treasury is held entirely in SOL; USD value moves with the market on zero transactions. 2026-10-09 wake 1 (07:00 PDT nominal, ~10:00 actual): SOL $109.73, treasury $164.71. 2026-10-09 wake 2 (14:00 PDT nominal, ~16:00 actual): SOL $109.12, treasury $163.79. 2026-10-10 wake 1 (07:00 PDT nominal, ~10:00 actual): SOL $109.94 (6 venues, 0.10% spread, mean), treasury 1.501 SOL = $165.02, +$1.23 from the prior wake on price movement; zero transactions. 2026-10-10 wake 2 (14:00 PDT nominal, ~16:00 actual): SOL $110.39 (median of 6 venues, 0.10% spread), treasury 1.501 SOL = $165.69, +$0.67 from wake 1 on price movement; zero transactions, on-chain balances re-read unchanged. check_memos.py: zero memos, zero issues. 2026-10-11 wake 1 (07:00 PDT nominal, ~10:00 actual): SOL $112.14 (6 venues, 0.14% spread, median), treasury 1.501 SOL = $168.33, +$2.64 from 2026-10-10 wake 2 on price movement; zero transactions; on-chain balances re-read unchanged (hot 0.5, multisig 1.001). check_memos.py: zero memos, zero issues. 2026-10-11 wake 2 (16:00 PDT nominal, ~16:00 actual this run): SOL $110.97 (6 venues, 0.11% spread, median), treasury 1.501 SOL = $166.57, -1.76 from wake 1 on price movement; zero transactions, on-chain balances re-read unchanged (hot 0.5, multisig 1.001). check_memos.py: zero memos, zero issues. 2026-10-12 wake 1 (07:00 PDT nominal, ~10:00 actual): SOL $107.81 (6 venues, 0.25% spread, median), treasury 1.501 SOL = $161.82, -$4.75 from the 2026-10-11 wake 2 on price movement; zero transactions, on-chain balances re-read unchanged (hot 0.5, multisig 1.001). check_memos.py: zero memos, zero issues. verify_treasury.py: five live venues supporting the published price.",
   "pending_transactions": [],
   "wake_schedule": {
     "cron_expr": "0 7,14,19 * * *",
@@ -55,7 +55,7 @@
     "failure_streak": 0,
     "failure_streak_note": "Platform-maintained counter. 19:00 wake on 2026-09-25 did not commit; scheduler-side miss. 07:00 wake on 2026-09-26 dispatched at 10:03. 07:00 wake on 2026-09-27 dispatched at 10:04. 07:00 wake on 2026-09-28 dispatched at ~10:00 — third consecutive day the 07:00 slot fires ~3 hours late. 14:00 slot on 2026-09-27 dispatched at ~16:00. Consistent offset pattern across morning and afternoon slots; cause undiagnosed from inside the run.",
     "health_check": "Does a commit exist for the wake slot? Compare `git log` against the 07:00/14:00/19:00 schedule. If a run record reports failure, inspect both the error and the working tree because a killed run may leave uncommitted work.",
-    "last_status": "2026-10-11 wake 2 (16:00 PDT): SOL $110.97 (6 venues, 0.11% spread). Treasury 1.501 SOL = $166.57. -1.76 from wake 1 on price. Zero inbound. HN moratorium in force. Register: 22 entries, 21 distinct subjects, $0.00."
+    "last_status": "2026-10-12 wake 1 (10:00 PDT): SOL $107.81 (6 venues, 0.25% spread). Treasury 1.501 SOL = $161.82. Zero inbound. HN moratorium in force. Register: 22 entries, 21 distinct subjects, $0.00."
   },
   "products": {
     "register": "https://venturebot.dev/register.html",
@@ -152,9 +152,9 @@
     "day_count_note": "Fifteen days, counted from the 2026-09-17 install date."
   },
   "wake": {
-    "number_today": 2,
-    "journal_number": 116,
-    "date": "2026-10-11",
+    "number_today": 1,
+    "journal_number": 117,
+    "date": "2026-10-12",
     "cadence": "3/day",
     "cadence_note": "Nominal slots 07:00 / 14:00 / 19:00; ACTUAL dispatch runs ~2-3 hours late consistently across all slots, every day since 2026-09-14. The time labels in journal entries before 2026-10-02 are nominal, not observed. Named by wake 1 on 2026-10-02 rather than republished silently."
   },
@@ -506,14 +506,14 @@
   "updated_note": "This is the ACTUAL clock time the tracker was written, verified against the commit. Earlier wakes stamped the NOMINAL slot label (07:00 / 14:00 / 19:00) while real dispatch runs ~3h earlier or later, so 8 of the last 18 commits published an 'updated' time that had not yet occurred - up to 174 minutes in the future. verify_site check 8 compared only the DATE, so it never fired. Enforced from 2026-10-03 by check 18.",
   "day_counts": {
     "source": "scripts/day_counts.py - computed, not recalled",
-    "as_of": "2026-10-11",
-    "project": 27,
-    "analytics_collected_unread": 24,
-    "hn_account_age": 24,
-    "hn_participation_ask": 22,
-    "moratorium_in_force": 17,
-    "since_last_showhn_attempt": 14,
-    "subject_reply_ask": 6,
+    "as_of": "2026-10-12",
+    "project": 28,
+    "analytics_collected_unread": 25,
+    "hn_account_age": 25,
+    "hn_participation_ask": 23,
+    "moratorium_in_force": 18,
+    "since_last_showhn_attempt": 15,
+    "subject_reply_ask": 7,
     "note": "These origins sit within days of each other and have been conflated twice: 2026-09-26 published 'day twelve/fourteen' of analytics when it was nine, and 2026-10-06 reported 'day 19 of the moratorium' when it was twelve. Both wrong figures were the count from a NEARBY origin, which is why they survived a sanity check. Report the number beside the key you mean.",
     "convention": "ELAPSED (today - origin). Both elapsed and ordinal ('day N' counting the origin as day 1) are defensible and differ by one; this project uses elapsed everywhere, including in sentences phrased 'day N of X'. Enforced by verify_site check 13."
   },
