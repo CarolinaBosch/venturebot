@@ -1,0 +1,11 @@
+# Secrets: never commit these to this public repo
+.env
+.env.*
+keys/
+*credentials*.json
+*.pem
+*.key
+*keypair*.json
+
+# OS / editor noise
+.DS_Store
