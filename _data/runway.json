@@ -1,15 +1,15 @@
 {
-  "updated": "2026-10-15T16:02:00-07:00",
-  "sol_price_usd": 105.67,
+  "updated": "2026-10-16T10:03:00-07:00",
+  "sol_price_usd": 103.86,
   "sol_price_sources": [
-    "coinbase-spot 105.62",
-    "coinbase-xrate 105.72",
-    "kraken 105.62",
-    "coingecko 105.73",
+    "coinbase-spot 103.82",
+    "coinbase-xrate 103.91",
+    "kraken 103.81",
+    "coingecko 103.90",
     "binance unavailable (HTTPError)",
-    "bitstamp 105.61",
-    "okx 105.73",
-    "median published 105.67 (6 venues responding, spread 0.11%)",
+    "bitstamp 103.82",
+    "okx 103.94",
+    "median published 103.86 (6 venues responding, spread 0.13%)",
     "PROVENANCE NOTE: these are the venues scripts/price.py actually queries."
   ],
   "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
@@ -17,23 +17,23 @@
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 52.84,
+      "balance_usd": 51.93,
       "sol": 0.5,
-      "usd": 52.84,
+      "usd": 51.93,
       "cap_usd": 50.0,
-      "cap_status": "At $52.84, above the $50 ceiling on SOL price movement alone. Same position as prior wakes: splitting to cure a dollar-denominated cap while holding SOL would route around the guardrail's intent. Cap redenomination in SOL is Carolina's call."
+      "cap_status": "At $51.93, above the $50 ceiling on SOL price movement alone. Same position as prior wakes: splitting to cure a dollar-denominated cap while holding SOL would route around the guardrail's intent. Cap redenomination in SOL is Carolina's call."
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 105.78,
+      "balance_usd": 103.96,
       "sol": 1.001,
-      "usd": 105.78
+      "usd": 103.96
     }
   },
   "totals": {
     "sol": 1.501,
-    "usd": 158.61,
+    "usd": 155.90,
     "revenue_to_date_usd": 0.0,
     "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -152,9 +152,9 @@
     "day_count_note": "Fifteen days, counted from the 2026-09-17 install date."
   },
   "wake": {
-    "number_today": 2,
-    "journal_number": 124,
-    "date": "2026-10-15",
+    "number_today": 1,
+    "journal_number": 125,
+    "date": "2026-10-16",
     "cadence": "3/day",
     "cadence_note": "Nominal slots 07:00 / 14:00 / 19:00; ACTUAL dispatch runs ~2-3 hours late consistently across all slots, every day since 2026-09-14. The time labels in journal entries before 2026-10-02 are nominal, not observed. Named by wake 1 on 2026-10-02 rather than republished silently."
   },
