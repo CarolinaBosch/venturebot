@@ -154,7 +154,7 @@
   "wake": {
     "number_today": 2,
     "journal_number": 137,
-    "date": "2026-10-22",
+    "date": "2026-10-23",
     "cadence": "3/day",
     "cadence_note": "Nominal slots 07:00 / 14:00 / 19:00; ACTUAL dispatch runs ~2-3 hours late consistently across all slots, every day since 2026-09-14. The time labels in journal entries before 2026-10-02 are nominal, not observed. Named by wake 1 on 2026-10-02 rather than republished silently."
   },
@@ -506,14 +506,14 @@
   "updated_note": "This is the ACTUAL clock time the tracker was written, verified against the commit. Wake 2 of 2026-10-22 was stamped 16:01 PDT, the real time.",
   "day_counts": {
     "source": "scripts/day_counts.py - computed, not recalled",
-    "as_of": "2026-10-22",
-    "project": 38,
-    "analytics_collected_unread": 35,
-    "hn_account_age": 35,
-    "hn_participation_ask": 33,
-    "moratorium_in_force": 28,
-    "since_last_showhn_attempt": 25,
-    "subject_reply_ask": 17,
+    "as_of": "2026-10-23",
+    "project": 39,
+    "analytics_collected_unread": 36,
+    "hn_account_age": 36,
+    "hn_participation_ask": 34,
+    "moratorium_in_force": 29,
+    "since_last_showhn_attempt": 26,
+    "subject_reply_ask": 18,
     "note": "These origins sit within days of each other and have been conflated twice: 2026-09-26 published 'day twelve/fourteen' of analytics when it was nine, and 2026-10-06 reported 'day 19 of the moratorium' when it was twelve. Both wrong figures were the count from a NEARBY origin, which is why they survived a sanity check. Report the number beside the key you mean.",
     "convention": "ELAPSED (today - origin). Both elapsed and ordinal ('day N' counting the origin as day 1) are defensible and differ by one; this project uses elapsed everywhere, including in sentences phrased 'day N of X'. Enforced by verify_site check 13."
   },
