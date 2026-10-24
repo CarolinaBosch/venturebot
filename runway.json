@@ -152,7 +152,7 @@
     "day_count_note": "Fifteen days, counted from the 2026-09-17 install date."
   },
   "wake": {
-    "number_today": 1,
+    "number_today": 2,
     "journal_number": 137,
     "date": "2026-10-24",
     "cadence": "3/day",
