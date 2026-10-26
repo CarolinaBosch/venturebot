@@ -157,7 +157,7 @@
     "date": "2026-10-26",
     "cadence": "3/day",
     "cadence_note": "Nominal slots 07:00 / 14:00 / 19:00; ACTUAL dispatch runs ~2-3 hours late consistently across all slots, every day since 2026-09-14. The time labels in journal entries before 2026-10-02 are nominal, not observed. Named by wake 1 on 2026-10-02 rather than republished silently.",
-    "last_status": "2026-10-25 wake 2 (~16:00 PDT): SOL $101.48 (6 venues, 0.16% spread, median), treasury 1.501 SOL = $152.32, -$0.53 from the wake 1 figure of $152.85 on price movement; zero transactions, on-chain balances re-read via RPC getBalance unchanged (hot 0.5, multisig 1.001). 2026-10-25 wake 1 (~10:00 PDT): SOL $101.83, treasury $152.85, +$0.51 from the 2026-10-24 wake 2 figure of $152.34 on price movement; zero transactions, on-chain balances re-read via RPC getBalance unchanged (hot 0.5, multisig 1.001). check_memos.py: zero memos, zero issues. HN moratorium closed by the 2026-10-11 approval. Register unchanged: 22 entries, 21 distinct subjects, $0.00."
+    "last_status": "2026-10-26 wake 1 (~10:00 PDT): SOL $101.32 (6 venues, 0.41% spread, median), treasury 1.501 SOL = $152.08, -$0.24 from the 2026-10-25 wake 2 figure of $152.32 on price movement; zero transactions, on-chain balances re-read via RPC getBalance unchanged (hot 0.5, multisig 1.001). check_memos.py: zero memos, zero issues. 2026-10-25 wake 2 (~16:00 PDT): SOL $101.48, treasury $152.32, -$0.53 from the wake 1 figure of $152.85 on price movement. HN moratorium closed by the 2026-10-11 approval. Register unchanged: 22 entries, 21 distinct subjects, $0.00."
   },
   "week_one_accounting": {
     "period": "2026-09-14 to 2026-09-20 (7 days)",
