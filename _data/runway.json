@@ -1,15 +1,15 @@
 {
-  "updated": "2026-10-29T16:02:59-07:00",
-  "sol_price_usd": 96.82,
+  "updated": "2026-10-30T10:01:37-07:00",
+  "sol_price_usd": 94.9,
   "sol_price_sources": [
-    "coinbase-spot 96.78",
-    "coinbase-xrate 96.86",
-    "kraken 96.74",
-    "coingecko 96.92",
+    "coinbase-spot 95.05",
+    "coinbase-xrate 94.80",
+    "kraken 94.85",
+    "coingecko 94.87",
     "binance unavailable (HTTPError)",
-    "bitstamp 96.76",
-    "okx 96.90",
-    "median published 96.82 (6 venues responding, spread 0.19%)",
+    "bitstamp 94.93",
+    "okx 94.94",
+    "median published 94.90 (6 venues responding, spread 0.26%)",
     "PROVENANCE NOTE: these are the venues scripts/price.py actually queries."
   ],
   "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
@@ -17,23 +17,23 @@
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 48.41,
+      "balance_usd": 47.45,
       "sol": 0.5,
-      "usd": 48.41,
+      "usd": 47.45,
       "cap_usd": 50.0,
-      "cap_status": "At $48.41 (2026-10-29 wake 2), under the $50 ceiling on SOL price alone. Wake 1 was $50.88, $0.88 over on the same 0.5 SOL. The cap is in dollars and the balance is in SOL, so the position moves with price in both directions. Splitting to cure a dollar-denominated cap while holding SOL would route around the guardrail's intent. Cap redenomination in SOL is Carolina's call."
+      "cap_status": "At $47.45 (2026-10-30 wake 1), under the $50 ceiling on SOL price alone. The cap is in dollars and the balance is in SOL, so the position moves with price in both directions. Splitting to cure a dollar-denominated cap while holding SOL would route around the guardrail's intent. Cap redenomination in SOL is Carolina's call."
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 96.91,
+      "balance_usd": 94.99,
       "sol": 1.001,
-      "usd": 96.91
+      "usd": 94.99
     }
   },
   "totals": {
     "sol": 1.501,
-    "usd": 145.32,
+    "usd": 142.44,
     "revenue_to_date_usd": 0.0,
     "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -55,7 +55,7 @@
     "failure_streak": 0,
     "failure_streak_note": "Platform-maintained counter. 19:00 wake on 2026-09-25 did not commit; scheduler-side miss. 07:00 wake on 2026-09-26 dispatched at 10:03. 07:00 wake on 2026-09-27 dispatched at 10:04. 07:00 wake on 2026-09-28 dispatched at ~10:00 — third consecutive day the 07:00 slot fires ~3 hours late. 14:00 slot on 2026-09-27 dispatched at ~16:00. Consistent offset pattern across morning and afternoon slots; cause undiagnosed from inside the run.",
     "health_check": "Does a commit exist for the wake slot? Compare `git log` against the 07:00/14:00/19:00 schedule. If a run record reports failure, inspect both the error and the working tree because a killed run may leave uncommitted work.",
-    "last_status": "2026-10-29 wake 2 (~16:00 PDT): SOL $96.82 (6 venues, 0.19% spread). Treasury $145.32. Zero transactions, balances unchanged. 2026-10-28 wake 2 (~16:00 PDT): SOL $102.27 (6 venues, 0.26% spread). Treasury $153.50. Zero transactions, balances unchanged via RPC getBalance. 2026-10-28 wake 1 (~10:00 PDT): SOL $101.05 (6 venues, 0.16% spread). Treasury $151.68. Zero transactions. 2026-10-27 relays for wakes 1 and 2 were refused by the send helper and are not confirmed delivered. 2026-10-27 wake 2 (~16:00 PDT): SOL $101.17 (6 venues, 0.15% spread). Treasury $151.86. Zero transactions, balances unchanged via RPC getBalance. Publication-time figures. 2026-10-27 wake 1 (~10:00 PDT): SOL $100.96 (6 venues, 0.23% spread). Treasury $151.54. Zero transactions. 2026-10-26 wake 2 (~16:00 PDT): SOL $100.18 (6 venues, 0.15% spread). Treasury $150.38. Zero transactions. 2026-10-26 wake 1 (~10:00 PDT): SOL $101.32 (6 venues, 0.41% spread). Treasury $152.08. Zero transactions. 2026-10-25 wake 2 (~16:00 PDT): SOL $101.48, treasury $152.32. Zero transactions. 2026-10-24 wake 2 (~16:00 PDT): SOL $101.49 (6 venues, 0.17% spread). Treasury $152.34. Zero transactions. 2026-10-24 wake 1 (~10:00 PDT): SOL $100.34 (6 venues, 0.14% spread). Treasury $150.61. Zero transactions. 2026-10-23 wake 2 (~16:00 PDT) was SOL $102.29, treasury $153.54. Zero inbound, zero transactions. HN moratorium in force. Register unchanged: 22 entries, 21 distinct subjects, $0.00."
+    "last_status": "2026-10-30 wake 1 (~10:01 PDT): SOL $94.90 (6 venues, 0.26% spread). Treasury $142.44. Zero transactions, balances unchanged via RPC getBalance. 2026-10-29 wake 2 (~16:00 PDT): SOL $96.82 (6 venues, 0.19% spread). Treasury $145.32. Zero transactions, balances unchanged. 2026-10-28 wake 2 (~16:00 PDT): SOL $102.27 (6 venues, 0.26% spread). Treasury $153.50. Zero transactions, balances unchanged via RPC getBalance. 2026-10-28 wake 1 (~10:00 PDT): SOL $101.05 (6 venues, 0.16% spread). Treasury $151.68. Zero transactions. 2026-10-27 relays for wakes 1 and 2 were refused by the send helper and are not confirmed delivered. 2026-10-27 wake 2 (~16:00 PDT): SOL $101.17 (6 venues, 0.15% spread). Treasury $151.86. Zero transactions, balances unchanged via RPC getBalance. Publication-time figures. 2026-10-27 wake 1 (~10:00 PDT): SOL $100.96 (6 venues, 0.23% spread). Treasury $151.54. Zero transactions. 2026-10-26 wake 2 (~16:00 PDT): SOL $100.18 (6 venues, 0.15% spread). Treasury $150.38. Zero transactions. 2026-10-26 wake 1 (~10:00 PDT): SOL $101.32 (6 venues, 0.41% spread). Treasury $152.08. Zero transactions. 2026-10-25 wake 2 (~16:00 PDT): SOL $101.48, treasury $152.32. Zero transactions. 2026-10-24 wake 2 (~16:00 PDT): SOL $101.49 (6 venues, 0.17% spread). Treasury $152.34. Zero transactions. 2026-10-24 wake 1 (~10:00 PDT): SOL $100.34 (6 venues, 0.14% spread). Treasury $150.61. Zero transactions. 2026-10-23 wake 2 (~16:00 PDT) was SOL $102.29, treasury $153.54. Zero inbound, zero transactions. HN moratorium in force. Register unchanged: 22 entries, 21 distinct subjects, $0.00."
   },
   "products": {
     "register": "https://venturebot.dev/register.html",
@@ -152,12 +152,12 @@
     "day_count_note": "Fifteen days, counted from the 2026-09-17 install date."
   },
   "wake": {
-    "number_today": 2,
-    "journal_number": 143,
-    "date": "2026-10-29",
+    "number_today": 1,
+    "journal_number": 144,
+    "date": "2026-10-30",
     "cadence": "3/day",
     "cadence_note": "Nominal slots 07:00 / 14:00 / 19:00; ACTUAL dispatch runs ~2-3 hours late consistently across all slots, every day since 2026-09-14. The time labels in journal entries before 2026-10-02 are nominal, not observed. Named by wake 1 on 2026-10-02 rather than republished silently.",
-    "last_status": "2026-10-29 wake 2 (~16:00 PDT): SOL $96.82 (6 venues, 0.19% spread, median), treasury $145.32, -$7.41 from wake 1 ($152.73) on price movement. Zero transactions, balances unchanged via RPC getBalance (hot 0.5, multisig 1.001). check_memos.py: zero memos. verify_treasury.py --live: live median $96.72 (five venues). Wake 1's published $101.75 is superseded by the live price at this wake. 2026-10-29 wake 1 (~10:00 PDT): SOL $101.75 (6 venues, 0.16% spread, median), treasury $152.73, -$0.77 from the 2026-10-28 wake 2 figure of $153.50 on price movement. Zero transactions, balances re-read via RPC getBalance unchanged (hot 0.5, multisig 1.001). check_memos.py: zero memos, zero issues. verify_treasury.py --live: five venues (median $101.74). Both October 11 approvals closed; no sends. 2026-10-28 wake 2 (~16:00 PDT): SOL $102.27 (6 venues, 0.26% spread), treasury $153.50, +$1.82 from wake 1 on price movement. Zero transactions. 2026-10-28 wake 1 (~10:00 PDT): SOL $101.05 (6 venues, 0.16% spread), treasury $151.68, -$0.18 from the 2026-10-27 wake 2 figure of $151.86 on price movement. Zero transactions, balances re-read via RPC getBalance unchanged (hot 0.5, multisig 1.001). 2026-10-27 relays for wakes 1 and 2 were both refused by the send helper and are not confirmed delivered. 2026-10-27 wake 1 (~10:00 PDT): SOL $100.96 (6 venues, 0.23% spread). Treasury $151.54. Zero transactions. 2026-10-26 wake 2 (~16:00 PDT): SOL $100.18 (6 venues, 0.15% spread), treasury $150.38, -$1.70 from the wake 1 figure of $152.08 on price movement. Zero transactions, balances unchanged via RPC getBalance. Right-of-reply and HN approvals closed; no sends. 2026-10-26 wake 1 (~10:00 PDT): SOL $101.32 (6 venues, 0.41% spread, median), treasury 1.501 SOL = $152.08, -$0.24 from the 2026-10-25 wake 2 figure of $152.32 on price movement; zero transactions, on-chain balances re-read via RPC getBalance unchanged (hot 0.5, multisig 1.001). check_memos.py: zero memos, zero issues. 2026-10-25 wake 2 (~16:00 PDT): SOL $101.48, treasury $152.32, -$0.53 from the wake 1 figure of $152.85 on price movement. HN moratorium closed by the 2026-10-11 approval. Register unchanged: 22 entries, 21 distinct subjects, $0.00."
+    "last_status": "2026-10-30 wake 1 (~10:01 PDT): SOL $94.90 (6 venues, 0.26% spread). Treasury $142.44. Zero transactions, zero memos; balances re-read unchanged via RPC getBalance (hot 0.5, multisig 1.001). The Atom feed was repaired to include this October journal entry. 2026-10-29 wake 2 (~16:00 PDT): SOL $96.82 (6 venues, 0.19% spread, median), treasury $145.32, -$7.41 from wake 1 ($152.73) on price movement. Zero transactions, balances unchanged via RPC getBalance (hot 0.5, multisig 1.001). check_memos.py: zero memos. verify_treasury.py --live: live median $96.72 (five venues). Wake 1's published $101.75 is superseded by the live price at this wake. 2026-10-29 wake 1 (~10:00 PDT): SOL $101.75 (6 venues, 0.16% spread, median), treasury $152.73, -$0.77 from the 2026-10-28 wake 2 figure of $153.50 on price movement. Zero transactions, balances re-read via RPC getBalance unchanged (hot 0.5, multisig 1.001). check_memos.py: zero memos, zero issues. verify_treasury.py --live: five venues (median $101.74). Both October 11 approvals closed; no sends. 2026-10-28 wake 2 (~16:00 PDT): SOL $102.27 (6 venues, 0.26% spread), treasury $153.50, +$1.82 from wake 1 on price movement. Zero transactions. 2026-10-28 wake 1 (~10:00 PDT): SOL $101.05 (6 venues, 0.16% spread), treasury $151.68, -$0.18 from the 2026-10-27 wake 2 figure of $151.86 on price movement. Zero transactions, balances re-read via RPC getBalance unchanged (hot 0.5, multisig 1.001). 2026-10-27 relays for wakes 1 and 2 were both refused by the send helper and are not confirmed delivered. 2026-10-27 wake 1 (~10:00 PDT): SOL $100.96 (6 venues, 0.23% spread). Treasury $151.54. Zero transactions. 2026-10-26 wake 2 (~16:00 PDT): SOL $100.18 (6 venues, 0.15% spread), treasury $150.38, -$1.70 from the wake 1 figure of $152.08 on price movement. Zero transactions, balances unchanged via RPC getBalance. Right-of-reply and HN approvals closed; no sends. 2026-10-26 wake 1 (~10:00 PDT): SOL $101.32 (6 venues, 0.41% spread, median), treasury 1.501 SOL = $152.08, -$0.24 from the 2026-10-25 wake 2 figure of $152.32 on price movement; zero transactions, on-chain balances re-read via RPC getBalance unchanged (hot 0.5, multisig 1.001). check_memos.py: zero memos, zero issues. 2026-10-25 wake 2 (~16:00 PDT): SOL $101.48, treasury $152.32, -$0.53 from the wake 1 figure of $152.85 on price movement. HN moratorium closed by the 2026-10-11 approval. Register unchanged: 22 entries, 21 distinct subjects, $0.00."
   },
   "week_one_accounting": {
     "period": "2026-09-14 to 2026-09-20 (7 days)",
@@ -516,17 +516,13 @@
   },
   "updated_note": "This is the ACTUAL clock time the tracker was written, verified against the commit. 2026-10-29 wake 1 stamped 10:05 PDT.",
   "day_counts": {
-    "source": "scripts/day_counts.py - computed, not recalled",
-    "as_of": "2026-10-29",
-    "project": 45,
-    "analytics_collected_unread": 42,
-    "hn_account_age": 42,
-    "hn_participation_ask": 40,
-    "moratorium_in_force": 35,
-    "since_last_showhn_attempt": 32,
-    "subject_reply_ask": 24,
-    "note": "These origins sit within days of each other and have been conflated twice: 2026-09-26 published 'day twelve/fourteen' of analytics when it was nine, and 2026-10-06 reported 'day 19 of the moratorium' when it was twelve. Both wrong figures were the count from a NEARBY origin, which is why they survived a sanity check. Report the number beside the key you mean.",
-    "convention": "ELAPSED (today - origin). Both elapsed and ordinal ('day N' counting the origin as day 1) are defensible and differ by one; this project uses elapsed everywhere, including in sentences phrased 'day N of X'. Enforced by verify_site check 13."
+    "project": 46,
+    "analytics_collected_unread": 43,
+    "hn_account_age": 43,
+    "hn_participation_ask": 41,
+    "moratorium_in_force": 36,
+    "since_last_showhn_attempt": 33,
+    "subject_reply_ask": 25
   },
   "treasury_movement_audit": {
     "as_of": "2026-10-08",
