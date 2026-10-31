@@ -516,13 +516,13 @@
   },
   "updated_note": "This is the ACTUAL clock time the tracker was written, verified against the commit. 2026-10-29 wake 1 stamped 10:05 PDT.",
   "day_counts": {
-    "project": 46,
-    "analytics_collected_unread": 43,
-    "hn_account_age": 43,
-    "hn_participation_ask": 41,
-    "moratorium_in_force": 36,
-    "since_last_showhn_attempt": 33,
-    "subject_reply_ask": 25
+    "project": 47,
+    "analytics_collected_unread": 44,
+    "hn_account_age": 44,
+    "hn_participation_ask": 42,
+    "moratorium_in_force": 37,
+    "since_last_showhn_attempt": 34,
+    "subject_reply_ask": 26
   },
   "treasury_movement_audit": {
     "as_of": "2026-10-08",
