@@ -1,15 +1,15 @@
 {
-  "updated": "2026-11-07T16:01:24-08:00",
-  "sol_price_usd": 89.66,
+  "updated": "2026-11-08T10:01:20-08:00",
+  "sol_price_usd": 89.07,
   "sol_price_sources": [
-    "coinbase-spot 89.62",
-    "coinbase-xrate 89.69",
-    "kraken 89.64",
-    "coingecko 89.71",
+    "coinbase-spot 89.06",
+    "coinbase-xrate 89.06",
+    "kraken 89.06",
+    "coingecko 89.07",
     "binance unavailable (HTTPError)",
-    "bitstamp 89.64",
-    "okx 89.73",
-    "median published 89.66 (6 venues responding, spread 0.12%)",
+    "bitstamp 89.08",
+    "okx 89.20",
+    "median published 89.07 (6 venues responding, spread 0.16%)",
     "PROVENANCE NOTE: these are the venues scripts/price.py actually queries."
   ],
   "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
@@ -17,23 +17,23 @@
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 44.83,
+      "balance_usd": 44.54,
       "sol": 0.5,
-      "usd": 44.83,
+      "usd": 44.54,
       "cap_usd": 50.0,
       "cap_status": "At 4.83 (2026-11-07 wake 2), under the 0 ceiling on SOL price alone. The cap is in dollars and the balance is in SOL, so the position moves with price in both directions. Splitting to cure a dollar-denominated cap while holding SOL would route around the guardrail intent. Cap redenomination in SOL is Carolina's call."
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 89.75,
+      "balance_usd": 89.16,
       "sol": 1.001,
-      "usd": 89.75
+      "usd": 89.16
     }
   },
   "totals": {
     "sol": 1.501,
-    "usd": 134.59,
+    "usd": 133.70,
     "revenue_to_date_usd": 0.0,
     "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -153,11 +153,11 @@
   },
   "wake": {
     "number_today": 2,
-    "journal_number": 161,
-    "date": "2026-11-07",
+    "journal_number": 162,
+    "date": "2026-11-08",
     "cadence": "2/day",
     "cadence_note": "Frozen existing schedule: 10:00 and 16:00 Pacific. Actual dispatch is recorded from the system clock in each journal entry.",
-    "last_status": "2026-11-07 wake 2 (16:01 PST): SOL 9.66 (6 venues, 0.12% spread). Treasury 34.59. Zero transactions, balances unchanged via public RPC getBalance (hot 0.5, multisig 1.001). Register unchanged: 22 entries, 21 distinct subjects, /bin/bash.00 revenue."
+    "last_status": "2026-11-08 wake 1 (10:01 PST): SOL $89.07 (6 venues, 0.16% spread). Treasury $133.70 (1.501 SOL). Zero transactions, balances unchanged via public RPC getBalance (hot 0.5, multisig 1.001). Register unchanged: 22 entries, 21 distinct subjects, $0.00 revenue."
   },
   "week_one_accounting": {
     "period": "2026-09-14 to 2026-09-20 (7 days)",
@@ -516,13 +516,13 @@
   },
   "updated_note": "This is the ACTUAL clock time the tracker was written, verified against the commit. 2026-10-29 wake 1 stamped 10:05 PDT.",
   "day_counts": {
-    "project": 54,
-    "analytics": 51,
-    "hn_account": 51,
-    "hn_ask": 49,
-    "moratorium": 44,
-    "last_showhn": 41,
-    "reply_ask": 33,
+    "project": 55,
+    "analytics": 52,
+    "hn_account": 52,
+    "hn_ask": 50,
+    "moratorium": 45,
+    "last_showhn": 42,
+    "reply_ask": 34,
     "convention": "elapsed"
   },
   "treasury_movement_audit": {
