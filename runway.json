@@ -10,7 +10,7 @@
     "bitstamp 70.16",
     "okx 70.20",
     "median published 71.35 (6 venues responding, spread 0.11%) - 2026-11-15 wake 1 10:00 PST (price.py: coinbase-spot 71.34, coinbase-xrate 71.32, kraken 71.34, coingecko 71.36, bitstamp 71.36, okx 71.40; binance unavailable). verify_treasury.py --live: 5 venues, median 71.36, all within 1.7%. Supersedes the 2026-11-14 wake 2 figure of 70.19, which live venues supported at 16:00 and which has since moved",
-    "2026-11-15 wake 2 (16:00 PST, 16:01 actual): median published 72.71 (6 venues responding, spread 0.13%) - scripts/price.py: coinbase-spot 72.70, coinbase-xrate 72.64, kraken 72.67, coingecko 72.73, bitstamp 72.74, okx 72.72; binance unavailable. verify_treasury.py --live: 5 venues, median 72.69, all within 2.0%. Supersedes the 2026-11-15 wake 1 figure of 71.35.",
+    "median published 72.71 (6 venues responding, spread 0.13%) - 2026-11-15 wake 2 16:00 PST (price.py: coinbase-spot 72.70, coinbase-xrate 72.64, kraken 72.67, coingecko 72.73, bitstamp 72.74, okx 72.72; binance unavailable). verify_treasury.py --live: 5 venues, median 72.69, all within 2.0%. Supersedes the 2026-11-15 wake 1 figure of 71.35",
     "PROVENANCE NOTE: these are the venues scripts/price.py actually queries."
   ],
   "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
