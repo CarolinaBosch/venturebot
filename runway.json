@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-15T10:01:00-08:00",
-  "sol_price_usd": 71.35,
+  "updated": "2026-11-15T16:01:00-08:00",
+  "sol_price_usd": 72.71,
   "sol_price_sources": [
     "coinbase-spot 70.17",
     "coinbase-xrate 70.25",
@@ -10,6 +10,7 @@
     "bitstamp 70.16",
     "okx 70.20",
     "median published 71.35 (6 venues responding, spread 0.11%) - 2026-11-15 wake 1 10:00 PST (price.py: coinbase-spot 71.34, coinbase-xrate 71.32, kraken 71.34, coingecko 71.36, bitstamp 71.36, okx 71.40; binance unavailable). verify_treasury.py --live: 5 venues, median 71.36, all within 1.7%. Supersedes the 2026-11-14 wake 2 figure of 70.19, which live venues supported at 16:00 and which has since moved",
+    "2026-11-15 wake 2 (16:00 PST, 16:01 actual): median published 72.71 (6 venues responding, spread 0.13%) - scripts/price.py: coinbase-spot 72.70, coinbase-xrate 72.64, kraken 72.67, coingecko 72.73, bitstamp 72.74, okx 72.72; binance unavailable. verify_treasury.py --live: 5 venues, median 72.69, all within 2.0%. Supersedes the 2026-11-15 wake 1 figure of 71.35.",
     "PROVENANCE NOTE: these are the venues scripts/price.py actually queries."
   ],
   "usd_figures_note": "SOL balances are exact and verifiable on-chain. USD figures are a snapshot at the price and timestamp above; they drift continuously between wake cycles and are not live.",
@@ -17,23 +18,23 @@
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 35.67,
+      "balance_usd": 36.36,
       "sol": 0.5,
-      "usd": 35.67,
+      "usd": 36.36,
       "cap_usd": 50.0,
       "cap_status": "At 4.83 (2026-11-07 wake 2), under the 0 ceiling on SOL price alone. The cap is in dollars and the balance is in SOL, so the position moves with price in both directions. Splitting to cure a dollar-denominated cap while holding SOL would route around the guardrail intent. Cap redenomination in SOL is Carolina's call."
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 71.42,
+      "balance_usd": 72.78,
       "sol": 1.001,
-      "usd": 71.42
+      "usd": 72.78
     }
   },
   "totals": {
     "sol": 1.501,
-    "usd": 107.09,
+    "usd": 109.14,
     "revenue_to_date_usd": 0.0,
     "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -152,12 +153,12 @@
     "day_count_note": "Fifteen days, counted from the 2026-09-17 install date."
   },
   "wake": {
-    "number_today": 1,
-    "journal_number": 176,
+    "number_today": 2,
+    "journal_number": 177,
     "date": "2026-11-15",
     "cadence": "2/day",
     "cadence_note": "Frozen existing schedule: 10:00 and 16:00 Pacific. Actual dispatch is recorded from the system clock in each journal entry.",
-    "last_status": "2026-11-15 wake 1 (10:00 PST, 10:01 actual): SOL $71.35 (6 venues, 0.11% spread, median). Treasury $107.09 (1.501 SOL), +$1.74 from the 2026-11-14 wake 2 figure of $105.35 on price movement. Zero transactions; balances re-read via public RPC getBalance unchanged (hot 0.5, multisig 1.001). check_memos.py: zero memos, zero issues. verify_treasury.py --live: 5 venues (median $71.36) support the published price. Register unchanged: 22 entries, 21 distinct subjects, $0.00 revenue."
+    "last_status": "2026-11-15 wake 2 (16:00 PST, 16:01 actual): SOL $72.71 (6 venues, 0.13% spread, median). Treasury $109.14 (1.501 SOL), +$2.05 from the 2026-11-15 wake 1 figure of $107.09 on price movement. Zero transactions; balances re-read via public RPC getBalance unchanged (hot 0.5, multisig 1.001). check_memos.py: zero memos, zero issues. verify_treasury.py --live: 5 venues (median $72.69) support the published price. Register unchanged: 22 entries, 21 distinct subjects, $0.00 revenue."
   },
   "week_one_accounting": {
     "period": "2026-09-14 to 2026-09-20 (7 days)",
