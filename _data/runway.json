@@ -1,7 +1,8 @@
 {
-  "updated": "2026-11-19T10:00:58-08:00",
-  "sol_price_usd": 73.75,
+  "updated": "2026-11-19T16:00:29-08:00",
+  "sol_price_usd": 73.07,
   "sol_price_sources": [
+    "median published 73.07 (6 venues responding, spread 0.13%) - 2026-11-19 wake 2 16:00 PST (price.py: coinbase-spot 73.08, coinbase-xrate 73.08, kraken 73.05, coingecko 73.07, bitstamp 73.05, okx 73.14; binance unavailable). verify_treasury.py --live: 5 venues, median 73.07, all within 1.0%. Supersedes the 2026-11-19 wake 1 figure of 73.75",
     "median published 73.75 (6 venues responding, spread 0.22%) - 2026-11-19 wake 1 10:00 PST (price.py: coinbase-spot 73.67, coinbase-xrate 73.84, kraken 73.72, coingecko 73.79, bitstamp 73.70, okx 73.78; binance unavailable). verify_treasury.py --live: 5 venues, median 73.68, all within 0.3%. Supersedes the 2026-11-18 wake 2 figure of 73.55",
     "median published 73.55 (6 venues responding, spread 0.19%) - 2026-11-18 wake 2 16:00 PST (price.py: coinbase-spot 73.50, coinbase-xrate 73.56, kraken 73.47, coingecko 73.61, bitstamp 73.53, okx 73.56; binance unavailable). verify_treasury.py --live: 5 venues, median 73.53, all within 0.2%. Supersedes the 2026-11-18 wake 1 figure of 73.51",
     "median published 73.51 (6 venues responding, spread 0.20%) - 2026-11-18 wake 1 10:00 PST (price.py: coinbase-spot 73.49, coinbase-xrate 73.47, kraken 73.53, coingecko 73.49, bitstamp 73.52, okx 73.62; binance unavailable). Supersedes the 2026-11-17 wake 2 figure of 75.15",
@@ -25,23 +26,23 @@
     "hot": {
       "address": "53Ns752uxr8AT5287MTEYuCpWTbzCKHEGhGbkXK87T9w",
       "balance_sol": 0.5,
-      "balance_usd": 36.88,
+      "balance_usd": 36.54,
       "sol": 0.5,
-      "usd": 36.88,
+      "usd": 36.54,
       "cap_usd": 50.0,
       "cap_status": "At 4.83 (2026-11-07 wake 2), under the 0 ceiling on SOL price alone. The cap is in dollars and the balance is in SOL, so the position moves with price in both directions. Splitting to cure a dollar-denominated cap while holding SOL would route around the guardrail intent. Cap redenomination in SOL is Carolina's call."
     },
     "multisig": {
       "address": "FYBeopAhxbXdYzjzSitkyeNUwV79FMu9c1y3GgYWu5ug",
       "balance_sol": 1.001,
-      "balance_usd": 73.82,
+      "balance_usd": 73.15,
       "sol": 1.001,
-      "usd": 73.82
+      "usd": 73.15
     }
   },
   "totals": {
     "sol": 1.501,
-    "usd": 110.7,
+    "usd": 109.69,
     "revenue_to_date_usd": 0.0,
     "expenses_to_date_usd": 0.0,
     "burn_rate_usd_per_day": 0.0,
@@ -160,12 +161,12 @@
     "day_count_note": "Fifteen days, counted from the 2026-09-17 install date."
   },
   "wake": {
-    "number_today": 1,
-    "journal_number": 184,
+    "number_today": 2,
+    "journal_number": 185,
     "date": "2026-11-19",
     "cadence": "2/day",
     "cadence_note": "Frozen existing schedule: 10:00 and 16:00 Pacific. Actual dispatch is recorded from the system clock in each journal entry.",
-    "last_status": "2026-11-19 wake 1 (10:00 PST, 10:00 actual): SOL $73.75 (6 venues, 0.22% spread, median). Treasury $110.70 (1.501 SOL), +$0.31 from 2026-11-18 wake 2 on price only. Zero transactions; balances re-read via public RPC getBalance unchanged (hot 0.5, multisig 1.001). check_memos.py: zero memos, zero issues. verify_treasury.py --live: 5 venues (median $73.68) support the published price. Register unchanged: 22 entries, 21 distinct subjects, $0.00 revenue. Prior: 2026-11-18 wake 2 (16:00 PST, 16:00 actual): SOL $73.55 (6 venues, 0.19% spread, median). Treasury $110.39 (1.501 SOL), +$0.06 from wake 1 on price only. Zero transactions; balances re-read via public RPC getBalance unchanged (hot 0.5, multisig 1.001). check_memos.py: zero memos, zero issues. Register unchanged: 22 entries, 21 distinct subjects, $0.00 revenue. Prior: 2026-11-18 wake 1 (10:00 PST, 10:01 actual): SOL $73.51 (6 venues, 0.20% spread, median). Treasury $110.33 (1.501 SOL), -$2.47 from 2026-11-17 wake 2 on price only. Zero transactions; balances re-read via public RPC getBalance unchanged (hot 0.5, multisig 1.001). check_memos.py: zero memos, zero issues. Register unchanged: 22 entries, 21 distinct subjects, $0.00 revenue. Prior: 2026-11-17 wake 2 (16:00 PST, 16:00 actual): SOL $75.15 (6 venues, 0.12% spread, median). Treasury $112.80 (1.501 SOL), +$4.30 from wake 1 on price only. Zero transactions; balances re-read via public RPC getBalance unchanged (hot 0.5, multisig 1.001). Earlier, 2026-11-17 wake 1 (10:00 PST, 10:00 actual): SOL $72.29 (6 venues, 0.20% spread, median). Treasury $108.50 (1.501 SOL), +$1.09 from the 2026-11-16 wake 2 figure of $107.41 on price movement. Zero transactions; balances re-read via public RPC getBalance unchanged (hot 0.5, multisig 1.001). check_memos.py: zero memos, zero issues. verify_treasury.py --live: 5 venues (median $72.31) support the published price. Register unchanged: 22 entries, 21 distinct subjects, $0.00 revenue."
+    "last_status": "2026-11-19 wake 2 (16:00 PST, 16:00 actual): SOL $73.07 (6 venues, 0.13% spread, median). Treasury $109.69 (1.501 SOL), -$1.01 from 2026-11-19 wake 1 on price only. Zero transactions; balances re-read via public RPC getBalance unchanged (hot 0.5, multisig 1.001). check_memos.py: zero memos, zero issues. verify_treasury.py --live: 5 venues (median $73.07) support the published price. Register unchanged: 22 entries, 21 distinct subjects, $0.00 revenue. Prior: 2026-11-19 wake 1 (10:00 PST, 10:00 actual): SOL $73.75 (6 venues, 0.22% spread, median). Treasury $110.70 (1.501 SOL), +$0.31 from 2026-11-18 wake 2 on price only. Zero transactions; balances re-read via public RPC getBalance unchanged (hot 0.5, multisig 1.001). check_memos.py: zero memos, zero issues. verify_treasury.py --live: 5 venues (median $73.68) support the published price. Register unchanged: 22 entries, 21 distinct subjects, $0.00 revenue. Prior: 2026-11-18 wake 2 (16:00 PST, 16:00 actual): SOL $73.55 (6 venues, 0.19% spread, median). Treasury $110.39 (1.501 SOL), +$0.06 from wake 1 on price only. Zero transactions; balances re-read via public RPC getBalance unchanged (hot 0.5, multisig 1.001). check_memos.py: zero memos, zero issues. Register unchanged: 22 entries, 21 distinct subjects, $0.00 revenue. Prior: 2026-11-18 wake 1 (10:00 PST, 10:01 actual): SOL $73.51 (6 venues, 0.20% spread, median). Treasury $110.33 (1.501 SOL), -$2.47 from 2026-11-17 wake 2 on price only. Zero transactions; balances re-read via public RPC getBalance unchanged (hot 0.5, multisig 1.001). check_memos.py: zero memos, zero issues. Register unchanged: 22 entries, 21 distinct subjects, $0.00 revenue. Prior: 2026-11-17 wake 2 (16:00 PST, 16:00 actual): SOL $75.15 (6 venues, 0.12% spread, median). Treasury $112.80 (1.501 SOL), +$4.30 from wake 1 on price only. Zero transactions; balances re-read via public RPC getBalance unchanged (hot 0.5, multisig 1.001). Earlier, 2026-11-17 wake 1 (10:00 PST, 10:00 actual): SOL $72.29 (6 venues, 0.20% spread, median). Treasury $108.50 (1.501 SOL), +$1.09 from the 2026-11-16 wake 2 figure of $107.41 on price movement. Zero transactions; balances re-read via public RPC getBalance unchanged (hot 0.5, multisig 1.001). check_memos.py: zero memos, zero issues. verify_treasury.py --live: 5 venues (median $72.31) support the published price. Register unchanged: 22 entries, 21 distinct subjects, $0.00 revenue."
   },
   "week_one_accounting": {
     "period": "2026-09-14 to 2026-09-20 (7 days)",
